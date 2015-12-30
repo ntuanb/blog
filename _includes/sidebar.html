@@ -6,7 +6,12 @@
           {{ site.title }}
         </a>
       </h1>
-      <p class="lead">{{ site.description }}</p>
+      <p class="lead">
+        <a href="https://github.com/ntuanb/" class="c-grey-i"><i class="fa fa-github"></i></a>
+        <a href="http://codepen.io/ntuanb/" class="c-grey-i"><i class="fa fa-codepen"></i></a>
+        <a href="http://jsfiddle.net/user/ntuanb/fiddles/" class="c-grey-i"><i class="fa fa-jsfiddle"></i></a>
+        <a href="http://stackoverflow.com/users/5395398/tuan-b" class="c-grey-i"><i class="fa fa-stack-overflow"></i></a>
+      </p>
     </div>
 
     <nav class="sidebar-nav">
@@ -25,12 +30,12 @@
           {% endif %}
         {% endif %}
       {% endfor %}
-
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
-      <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
     </nav>
 
-    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+    <p>
+      <a href="http://ntuanb.com/" class="c-grey-i"><i class="fa fa-home"></i></a> <a href="http://blog.ntuanb.com/" class="c-grey-i"><i class="fa fa-code"></i></a> <a href="http://games.ntuanb.com/" class="c-grey-i"><i class="fa fa-gamepad"></i></a><br>
+
+      Tuan B &copy; {{ site.time | date: '%Y' }}
+    </p>
   </div>
 </div>

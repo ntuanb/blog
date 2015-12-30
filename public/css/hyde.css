@@ -31,6 +31,8 @@
  * Update the foundational and global aspects of the page.
  */
 
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,300,200,500);
+
 html {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
@@ -41,7 +43,7 @@ html {
 }
 @media (min-width: 58em) {
   html {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
@@ -75,11 +77,15 @@ html {
   color: #fff;
 }
 
+.sidebar a:hover {
+  text-decoration: none;
+}
+
 /* About section */
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
-  font-family: "Abril Fatface", serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 3.25rem;
 }
 
@@ -93,7 +99,7 @@ html {
 }
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .sidebar-nav-item.active {
   font-weight: bold;
@@ -247,4 +253,13 @@ a.sidebar-nav-item:focus {
 .theme-base-0f .content a,
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
+}
+
+.c-grey-i { color: rgba(255,255,255,.5) !important; }
+
+/*
+Font
+*/
+.fa-gamepad {
+  font-size: 1.05em !important;
 }
