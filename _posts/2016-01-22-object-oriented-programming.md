@@ -5,87 +5,98 @@ title: Object Oriented Programming
 
 # OOP
 
-OOP or object oriented programming was always a concept I knew and though I
-understood well enough to have the ability to use it well in all the projects I
-have worked on.
+OOP or object oriented programming is a concept that all programmers should know
+and something I though I had a good understanding before I started working on a
+new project.
 
 ### Beginning
 
-Throughout the course of my 1st year of working in the industry since the end of 2014, I have mostly worked
-with PHP, JavaScript, CSS and HTML using tools like Laravel, Wordpress, Bootstrap and SaSS.
+My first year involved mainly PHP, JavaScript, CSS and HTML through tools such as
+Laravel, Wordpress and Bootstrap, which meant a lot of the functionality was
+already built.
 
-The code that I wrote for these several projects were not that complex, as I found
-myself using libraries a lot of the time, each of those providing just the right
-amount of feature and complexity for my needs.
+Coding for these projects were mostly not complex but did involve a good understanding
+of the requirements.
 
-The simplicity made reading through existing code easy, knowing where to lookig and
-what to change was straight forward.
+There were some projects that required a good understanding but those projects
+didn't get big enough to launch and continue working on.
 
-### Now
+Therefore, I didn't really find myself in situations where I needed to use a lot
+of complex structuring and coding.
 
-Until recently.
+### Cause
 
-I found myself looking through code in a project I was working on riddled with bugs
-where it was easy to fix, but annoying enough to be annoyed at myself.
+For the past couple of months, I have been working on a project that involved using
+Angular and Ionic.
 
-This project is written in JavaScript using Angular 1 inside Ionic 1.
+I followed the Angular structuring and guidelines as close as possible but found
+myself often coding in just the controller as it was quicker.
 
-I followed the Angular concepts as much as possible, using factories, controllers
-and directives where required. But every now and then, I found myself not using those
-recommended was and wrote a lot more parts in the controller than I should be.
+At the same time, I also coded in a very procedural way. Where that specific section
+would do a task from top to bottom, with a lot of if elses.
 
-### Changes
+Each time a problem occurred, I would just add to the if else, causing big chunks of
+code that would become a problem as I started to change certain parts.
 
-So now, I find myself having to rewrite parts of the old code to fix my previous
+Being in the situation where I had to start fixing the problem, I found myself being
+annoyed at what I was looking at. At the same time, having to fix the problems too.
+
+### Solution
+
+Now, I find myself having to rewrite parts of the old code to fix my previous
 mistakes.
+
+In addition, spending that extra time planning out what I needed to do and refactoring
+code wherever possible, even if it took that extra time.
 
 # Why
 
-Some possible reasons why I believe am getting better at OOP:
+Some reasons why I've decided to change things up:
 
 ### Better understanding of Angular and JavaScript
 
 Better understanding of the way Angular works with the controllers, directives and
 services/factories.
 
-Using JavaScript for 8 hours a day forced me to use '===' a lot, similiar to [AirBnb
-JavaScript](https://github.com/airbnb/javascript) style guide.
+Using JavaScript for 8 hours a day and having my colleague give that weird look
+each time he saw me use '==' instead of '===' forced me to write code in a more better way.
+
+Using [AirBnb JavaScript](https://github.com/airbnb/javascript) style guide is something
+I need to look into more.
 
 ### Seeing colleague's code and structure
 
-Not only have I been working with Angular to create the mobile app, but also parts of the
+I have been working with Angular to create the mobile app with Ionic and also the
 API that goes along with it.
 
-The API is a project another colleague is working on that I
-had input on as time constraints allowed me to also spend time on it, and because
-I needed specific ways data needed to be displayed in JSON.
+The API is a project another colleague is in charge of but I have gotten the
+opportunity to have input on as there were time constraints and on occasion,
+defining the output data.
 
-My colleague is more experienced as he has worked on other projects before so seeing
-the structure and coding style was a good opportunity. Everything was written in
-small functions where required and followed a neat coding structure.
+In addition, my colleague is more experienced as he has worked on other projects
+using Angular and Node before so seeing the structure and coding style eye changing.
+Everything was written in small functions where required and followed a neat structure.
+
+Its something I still need to improve on though.
 
 ### Better Understanding of the Requirements
 
-Having a good understanding of the project at the start is important as it allows
-the plan to be made at the start, rather the during the project where things are
-constantly changing.
+Having a good understanding of the project at the start was a bit challenging
+but with time, knowing the best solution to a new problem has become easier.
 
 ### Annoyed
 
-Being annoyed about my own code and fixing it forced me to write better code for newer
-features of the project.
+Being annoyed about fixing my code and rewriting it.
 
-### Dealing with Promises and Async
+### Dealing with Promises
 
-So annoying so splitting each part up made it a lot easier.
+Splitting these up to small parts made it easier.
 
 ### Objects
 
-Use objects as much as possible for UI as adding new object parameters for animations
-is easier.
+Using objects where possible allows more room to customize as new visual features
+are added in such as animations.
 
 # Conclusion
 
-Getting better, I hope!
-
-Also, I wrote this at 1am. Need to rewrite and fix grammar some day.
+Hopefully will fix the grammar for this some day.
