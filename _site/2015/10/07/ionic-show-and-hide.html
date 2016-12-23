@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ionic ng-if, ng-show, ng-hide and ng-class</title>
+    <meta name="description" content="All these attributes are similiar in a way where they can all be used to displayor hide an element, but differ in the way they function.ng-show and ng-hideng...">
+
+    <!-- evil icon -->
+
+    <link rel="stylesheet" href="/assets/evil-icons.min.css">
+    <script src="/assets/evil-icons.min.js"></script>
+
+    <!-- todo: include this into main.css -->
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://localhost:4000/2015/10/07/ionic-show-and-hide.html">
+    <link rel="alternate" type="application/rss+xml" title="Tuan B" href="http://localhost:4000/feed.xml">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+
+    <body>
+        <div class="page-content">
+            <div class="container">
+                <div class="three columns">
+                    <header class="site-header">
+
+    <h2 class="logo"><a href="/">Tuan B</a></h2>
+
+    <div class="nav">
+        
+        <label for="menu-toggle" class="menu-icon">
+            <!--div data-icon="ei-navicon"></div-->
+            <svg viewBox="0 0 18 15">
+                <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+        </label>
+        <input type="checkbox" id="menu-toggle">
+
+        <div class="site-nav">
+            <nav>
+                <ul class="page-link">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/archive">Posts</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                    <li>
+                        <a href="https://github.com/ntuanb/" target="_blank" rel="noopener"><i class="fa fa-github"></i></a>
+                        <a href="http://codepen.io/ntuanb/" target="_blank" rel="noopener"><i class="fa fa-codepen"></i></a>
+                        <a href="http://jsfiddle.net/user/ntuanb/fiddles/" target="_blank" rel="noopener"><i class="fa fa-jsfiddle"></i></a>
+                        <a href="http://stackoverflow.com/users/5395398/tuan-b" target="_blank" rel="noopener"><i class="fa fa-stack-overflow"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</header>
+
+                </div>
+
+                <div class="nine columns" style="z-index:100;">
+                    <div class="wrapper">
+                        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="artilce_header">
+    <h1 class="artilce_title" itemprop="name headline">Ionic ng-if, ng-show, ng-hide and ng-class</h1>
+    <p class="artilce_meta"><time datetime="2015-10-07T00:00:00+11:00" itemprop="datePublished">Oct 7, 2015</time></p>
+  </header>
+
+  <div class="article-content" itemprop="articleBody">
+    <p>All these attributes are similiar in a way where they can all be used to display
+or hide an element, but differ in the way they function.</p>
+
+<h3 id="ng-show-and-ng-hide">ng-show and ng-hide</h3>
+
+<p>ng-show and ng-hide work by adding and removing an Angular specific class
+<strong>.ng-hide</strong> to the element.</p>
+
+<h3 id="ng-if">ng-if</h3>
+
+<p>ng-if works by displaying the element if the variable is true and completely
+removing the element if false. This can affect performance if the element changes
+constantly, where the DOM has to manually create and remove each time, taking up
+CPU cycles unnecessarily.</p>
+
+<p>In most cases, loading the items straight after the initial load is usually better
+to keep things smoother during usage, as long as it doesn’t hinder the initial load
+speeds.</p>
+
+<h3 id="ng-class">ng-class</h3>
+
+<p>ng-class works by adding a custom class you define if a variable is equal to what
+you choose.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">ng-class=</span><span class="s">"{'d-none': buttonIsViewable == true}"</span><span class="nt">&gt;</span>
+	Button
+<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+
+<p>It works just like ng-show and ng-hide, but with the added customizability. ng-class
+can also get more complicated by adding in || and &amp;&amp;, just like a normal if/else
+statement.</p>
+
+  </div>
+
+  <footer class="article-footer">
+
+  <section class="share">
+  <a class="share-link" href="" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+    Twitter
+  </a>
+  <a class="share-link" href="" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+    Facebook
+  </a>
+  <a class="share-link" href="" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530'); return false;">
+    Google+
+  </a> 
+</section>
+
+
+  <hr/>
+
+  
+
+    <article class="post_card post">
+        <header class="post_header">
+            <h2 class="post_title">
+                <a href="/2015/12/30/compiling-and-testing-ionic-app-on-the-android.html">Compiling Testing the Ionic App on the Android</a>
+              </h2>
+            <time class="post_date">30 December 2015, Wednesday</time>
+        </header>
+    </article>
+
+
+
+    <article class="post_card post">
+        <header class="post_header">
+            <h2 class="post_title">
+                <a href="/2015/12/30/compiling-and-testing-ionic-app-on-apple.html">Compiling For Testing and Submission of the Ionic App for Apple</a>
+              </h2>
+            <time class="post_date">30 December 2015, Wednesday</time>
+        </header>
+    </article>
+
+
+
+    <article class="post_card post">
+        <header class="post_header">
+            <h2 class="post_title">
+                <a href="/2015/10/07/ionic-show-and-hide.html">Ionic ng-if, ng-show, ng-hide and ng-class</a>
+              </h2>
+            <time class="post_date">07 October 2015, Wednesday</time>
+        </header>
+    </article>
+
+
+
+    <article class="post_card post">
+        <header class="post_header">
+            <h2 class="post_title">
+                <a href="/2015/10/06/ionic-link-bug.html">Ionic Link Bug</a>
+              </h2>
+            <time class="post_date">06 October 2015, Tuesday</time>
+        </header>
+    </article>
+
+
+
+    <article class="post_card post">
+        <header class="post_header">
+            <h2 class="post_title">
+                <a href="/2015/10/04/ionic-swipe-left-right.html">Ionic - Swipe to Load Next or Previous Page</a>
+              </h2>
+            <time class="post_date">04 October 2015, Sunday</time>
+        </header>
+    </article>
+
+
+
+    <article class="post_card post">
+        <header class="post_header">
+            <h2 class="post_title">
+                <a href="/2015/10/03/simple-django-website.html">Simple Django Website</a>
+              </h2>
+            <time class="post_date">03 October 2015, Saturday</time>
+        </header>
+    </article>
+
+
+
+  </footer>
+
+  
+
+
+</article>
+
+                    </div>
+                </div>
+            </div>
+        <footer class="site-footer">
+    <div class="container">
+        <div class="footer left column one-half">
+            <section class="small-font">
+              Powered by <a href="https://github.com/jekyll/jekyll">jekyll</a>
+            </section>
+        </div>
+
+        <div class="footer right column one-half">
+            <section class="small-font">
+                
+                
+            </section>
+        </div>
+    </div>
+</footer> 
+    </div>
+
+    <div id="particles" style="
+        top: 0;
+        left: 0;
+        z-index: -999;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    "></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+    particlesJS("particles",{particles:{number:{value:80,density:{enable:!0,value_area:800}},color:{value:"#ccc"},shape:{type:"circle",stroke:{width:0,color:"#ddd"},polygon:{nb_sides:5}},opacity:{value:.5,random:!1,anim:{enable:!1,speed:1,opacity_min:.1,sync:!1}},size:{value:3,random:!0,anim:{enable:!1,speed:40,size_min:.1,sync:!1}},line_linked:{enable:!0,distance:150,color:"#ddd",opacity:.4,width:1},move:{enable:!0,speed:6,direction:"none",random:!1,straight:!1,out_mode:"out",bounce:!1,attract:{enable:!1,rotateX:600,rotateY:1200}}},interactivity:{detect_on:"canvas",events:{onhover:{enable:!0,mode:"repulse"},onclick:{enable:!0,mode:"push"},resize:!0},modes:{grab:{distance:400,line_linked:{opacity:1}},bubble:{distance:400,size:40,duration:2,opacity:8,speed:3},repulse:{distance:200,duration:.4},push:{particles_nb:4},remove:{particles_nb:2}}},retina_detect:!0});
+    </script>
+
+    </body>
+</html>

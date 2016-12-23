@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Home</title>
+    <meta name="description" content="">
+
+    <!-- evil icon -->
+
+    <link rel="stylesheet" href="/assets/evil-icons.min.css">
+    <script src="/assets/evil-icons.min.js"></script>
+
+    <!-- todo: include this into main.css -->
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://localhost:4000/">
+    <link rel="alternate" type="application/rss+xml" title="Tuan B" href="http://localhost:4000/feed.xml">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+
+    <body>
+        <div class="page-content">
+            <div class="container">
+                <div class="three columns">
+                    <header class="site-header">
+
+    <h2 class="logo"><a href="/">Tuan B</a></h2>
+
+    <div class="nav">
+        
+        <label for="menu-toggle" class="menu-icon">
+            <!--div data-icon="ei-navicon"></div-->
+            <svg viewBox="0 0 18 15">
+                <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+        </label>
+        <input type="checkbox" id="menu-toggle">
+
+        <div class="site-nav">
+            <nav>
+                <ul class="page-link">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/archive">Posts</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                    <li>
+                        <a href="https://github.com/ntuanb/" target="_blank" rel="noopener"><i class="fa fa-github"></i></a>
+                        <a href="http://codepen.io/ntuanb/" target="_blank" rel="noopener"><i class="fa fa-codepen"></i></a>
+                        <a href="http://jsfiddle.net/user/ntuanb/fiddles/" target="_blank" rel="noopener"><i class="fa fa-jsfiddle"></i></a>
+                        <a href="http://stackoverflow.com/users/5395398/tuan-b" target="_blank" rel="noopener"><i class="fa fa-stack-overflow"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</header>
+
+                </div>
+
+                <div class="nine columns" style="z-index:100;">
+                    <div class="wrapper">
+                        <div class="home">
+  <div class="post-list">
+
+    
+
+    <article class="post_card post">
+      <header class="post_header">
+        <h2 class="post_title"><a href="/2015/12/30/compiling-and-testing-ionic-app-on-the-android.html">Compiling Testing the Ionic App on the Android</a></h2>
+        <time class="post_date">30 December 2015, Wednesday</time>
+      </header>
+      <div class="post_excerpt">
+        <p>
+          
+          <h3 id="process">Process</h3>
+
+<p>To be able to compile the Ionic Application, Cordova, Android SDK and ADB must be
+installed. <code class="highlighter-rouge">npm install -g cordova</code>.</p>
+
+<p>Plug in the Android phone and turn on developer mode. Run the command <code class="highlighter-rouge">adb devices -l</code>
+to get the device’s ID.</p>
+
+<p>Next run, <code class="highlighter-rouge">cordova run android --target=YOUR_PHONE_ID</code> to compile the Ionic Application
+to an APK package.</p>
+
+<p>Once completed, the application should automatically run on the phone. To view any Problems
+that occur that you would usually view with the console and command <code class="highlighter-rouge">console.log</code>, use
+Chrome’s Device Inspection in Chrome with the link <code class="highlighter-rouge">chrome://inspect/#devices</code>. This should
+allow the device to view all applications currently running on the phone. Find the newly created
+app and from there, all logs can be seen.</p>
+
+<p><code class="highlighter-rouge">chrome://flags</code> also has many other options that can be useful.</p>
+
+<h3 id="problems">Problems</h3>
+
+<p>If the build fails, run <code class="highlighter-rouge">ionic platform rm android</code> and <code class="highlighter-rouge">ionic platform add android</code>
+again. An error might occur because the app’s ID is incorrect.</p>
+
+<p>Another problem occurs because Ionic might need to be updated. In this case, run <code class="highlighter-rouge">npm uninstall ionic</code>
+and <code class="highlighter-rouge">npm install ionic</code> to re-install some of the packages.</p>
+
+           
+          <a class="read-more" href="/2015/12/30/compiling-and-testing-ionic-app-on-the-android.html"> »  </a>
+        </p> 
+      </div>
+      <footer class="post_meta">
+
+
+        
+        <!--
+        
+        -->
+
+        <!--
+        
+        -->
+
+        <!--p class="readmore">
+          <a href=""><data data-icon="ei-arrow-right"></data>Read this article  </a>
+        </p-->
+      </footer>
+      <hr/>
+    </article>
+    
+
+    <article class="post_card post">
+      <header class="post_header">
+        <h2 class="post_title"><a href="/2015/12/30/compiling-and-testing-ionic-app-on-apple.html">Compiling For Testing and Submission of the Ionic App for Apple</a></h2>
+        <time class="post_date">30 December 2015, Wednesday</time>
+      </header>
+      <div class="post_excerpt">
+        <p>
+          
+          <h3 id="testing">Testing</h3>
+
+<p>Using the CLI, run the command <code class="highlighter-rouge">ionic add platform ios</code> to add Xcode files to the project.</p>
+
+<p>Using the Finder, open the <code class="highlighter-rouge">PROJECTNAME.xcodeproj</code> located in <code class="highlighter-rouge"><span class="p">{</span><span class="err">PATH_TO_PROJECT</span><span class="p">}</span><span class="err">/platforms/ios</span></code>.</p>
+
+<p>Once in Xcode, go to <code class="highlighter-rouge">Product &gt; Compile</code> and from there you can compile for testing.</p>
+
+<h3 id="new-project-to-be-submitted">New Project to be Submitted</h3>
+
+<h4 id="new">New</h4>
+
+<ul>
+  <li>NOTE: make sure your account is the highest role if you run into problems in creating certain parts.</li>
+  <li>
+    <p>NOTE: connect an Apple Mobile during the entire process or once you have registered it to XCode Organizer.</p>
+  </li>
+  <li>Using Apple Developer and ITunes Connect accounts, create your projects. (App IDS for Apple Developer and My Apps for ITunes Connect.)</li>
+  <li>Create a certificate for the development and production releases.</li>
+  <li>Create development and distribution provisioning profiles for development and production releases.</li>
+  <li><code class="highlighter-rouge">ionic prepare ios</code> to compile your project <code class="highlighter-rouge">config.xml</code></li>
+  <li>In <code class="highlighter-rouge">XCode</code> go to <code class="highlighter-rouge">XCode &gt; Perferences</code> and add your account.</li>
+  <li>in <code class="highlighter-rouge">XCode</code> go to <code class="highlighter-rouge">Product &gt; Archive</code> to create an archive.</li>
+  <li>In <code class="highlighter-rouge">XCode</code> go to <code class="highlighter-rouge">Window &gt; Organizer</code> and click on <code class="highlighter-rouge">Archives</code>, and complete both <code class="highlighter-rouge">Validate</code> and <code class="highlighter-rouge">Distribute</code>.</li>
+  <li>NOTE: if problems occurr, you either don’t have enough privileges, did not create your <code class="highlighter-rouge">distribution</code> provisioning profile or you set an incorrect App ID in your <code class="highlighter-rouge">config.xml</code></li>
+  <li>
+    <p>Once done, go into ITunes Connect, complete all the required fields and submit for review.</p>
+  </li>
+  <li>Clone the project</li>
+  <li>Pull the latest <code class="highlighter-rouge">develop</code> branch to get the latest files.</li>
+  <li>Install all the required packages using <code class="highlighter-rouge">npm install</code> and <code class="highlighter-rouge">bower install</code>. (NOTE: There might be some packages that are manually installed atm.)</li>
+  <li>Make sure the <code class="highlighter-rouge">config.xml</code> file is correct and contains the correct name for the APP ID. (NOTE: Do not add the random ID into the name, it will do it automatically. For this project, it was added it by mistake, so the ID is always be 4GAJFJCHB4.4GAJFJCHB4.com as the full string.)</li>
+  <li><code class="highlighter-rouge">ionic prepare ios</code> to compile the ID</li>
+</ul>
+
+<h4 id="existing">Existing</h4>
+
+<ul>
+  <li>Pull the latest <code class="highlighter-rouge">develop</code> branch to get the latest files.</li>
+  <li>Install all the required packages using <code class="highlighter-rouge">npm install</code> and <code class="highlighter-rouge">bower install</code>. (NOTE: There might be some packages that are manually installed atm.)</li>
+  <li>Make sure the <code class="highlighter-rouge">config.xml</code> file is correct and contains the correct name for the APP ID. (NOTE: Do not add the random ID into the name, it will do it automatically. For this project, it was added it by mistake, so the ID is always be 4GAJFJCHB4.4GAJFJCHB4.com as the full string.)</li>
+  <li><code class="highlighter-rouge">ionic prepare ios</code> to compile the ID</li>
+  <li>Using the Finder, open the <code class="highlighter-rouge">PROJECTNAME.xcodeproj</code> located in <code class="highlighter-rouge"><span class="p">{</span><span class="err">PATH_TO_PROJECT</span><span class="p">}</span><span class="err">/platfroms/ios</span></code>.</li>
+  <li>Once in XCode, go <code class="highlighter-rouge">Product &gt; Archive</code> to compile the project using correct credentials.</li>
+  <li>Next, go <code class="highlighter-rouge">Window &gt; Organizer</code> and go <code class="highlighter-rouge">Archives</code> to view your project so it can be Validated or Distributed.</li>
+</ul>
+
+<p>Manaul Compile</p>
+
+<ul>
+  <li><code class="highlighter-rouge">xcodebuild</code></li>
+</ul>
+
+           
+          <a class="read-more" href="/2015/12/30/compiling-and-testing-ionic-app-on-apple.html"> »  </a>
+        </p> 
+      </div>
+      <footer class="post_meta">
+
+
+        
+        <!--
+        
+        -->
+
+        <!--
+        
+        -->
+
+        <!--p class="readmore">
+          <a href=""><data data-icon="ei-arrow-right"></data>Read this article  </a>
+        </p-->
+      </footer>
+      <hr/>
+    </article>
+    
+
+    <article class="post_card post">
+      <header class="post_header">
+        <h2 class="post_title"><a href="/2015/10/07/ionic-show-and-hide.html">Ionic ng-if, ng-show, ng-hide and ng-class</a></h2>
+        <time class="post_date">07 October 2015, Wednesday</time>
+      </header>
+      <div class="post_excerpt">
+        <p>
+          
+          <p>All these attributes are similiar in a way where they can all be used to display
+or hide an element, but differ in the way they function.</p>
+
+<h3 id="ng-show-and-ng-hide">ng-show and ng-hide</h3>
+
+<p>ng-show and ng-hide work by adding and removing an Angular specific class
+<strong>.ng-hide</strong> to the element.</p>
+
+<h3 id="ng-if">ng-if</h3>
+
+<p>ng-if works by displaying the element if the variable is true and completely
+removing the element if false. This can affect performance if the element changes
+constantly, where the DOM has to manually create and remove each time, taking up
+CPU cycles unnecessarily.</p>
+
+<p>In most cases, loading the items straight after the initial load is usually better
+to keep things smoother during usage, as long as it doesn’t hinder the initial load
+speeds.</p>
+
+<h3 id="ng-class">ng-class</h3>
+
+<p>ng-class works by adding a custom class you define if a variable is equal to what
+you choose.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">ng-class=</span><span class="s">"{'d-none': buttonIsViewable == true}"</span><span class="nt">&gt;</span>
+	Button
+<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+
+<p>It works just like ng-show and ng-hide, but with the added customizability. ng-class
+can also get more complicated by adding in || and &amp;&amp;, just like a normal if/else
+statement.</p>
+
+           
+          <a class="read-more" href="/2015/10/07/ionic-show-and-hide.html"> »  </a>
+        </p> 
+      </div>
+      <footer class="post_meta">
+
+
+        
+        <!--
+        
+        -->
+
+        <!--
+        
+        -->
+
+        <!--p class="readmore">
+          <a href=""><data data-icon="ei-arrow-right"></data>Read this article  </a>
+        </p-->
+      </footer>
+      <hr/>
+    </article>
+    
+
+    <article class="post_card post">
+      <header class="post_header">
+        <h2 class="post_title"><a href="/2015/10/06/ionic-link-bug.html">Ionic Link Bug</a></h2>
+        <time class="post_date">06 October 2015, Tuesday</time>
+      </header>
+      <div class="post_excerpt">
+        <p>
+          
+          <p>Currently on the iOS, there is a link bug which occurs between page transitions
+with Ionic. I don’t know if it occurs when the app is published, but it
+occurring on the Ionic App thats used for testing.</p>
+
+<p>If the link uses <strong>menu-close</strong> or <strong>nav-clear</strong>, occasionally the page swipes
+backwards and other times, the back button occurs. If it was a consistent problem,
+a work around or the bug could be fixed, but in this case, it only occurs occasionally.</p>
+
+<p>To solve this, we’ll use <strong>ng-click</strong> and <strong>$location.path()</strong> to create the link in
+the controller. This solves the transition problem and also lets us control the
+next view animation. This probably isn’t the best solution, but it seems to work
+well enough for now.</p>
+
+<h3 id="html">HTML</h3>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">ng-click=</span><span class="s">"goTo('/app/place')"</span><span class="nt">&gt;</span>
+	Lets Go To This Place
+<span class="nt">&lt;/a&gt;</span></code></pre></figure>
+
+<h3 id="js">JS</h3>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$scope</span><span class="p">.</span><span class="kr">goto</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">goTo</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="c1">// Clears the history because we don't need</span>
+	<span class="nx">$ionicHistory</span><span class="p">.</span><span class="nx">clearHistory</span><span class="p">();</span>
+
+	<span class="c1">// Disables the back button</span>
+	<span class="nx">$ionicHistory</span><span class="p">.</span><span class="nx">nextViewOptions</span><span class="p">({</span><span class="na">disableBack</span><span class="p">:</span> <span class="kc">true</span><span class="p">});</span>
+
+	<span class="c1">// If the sidebar is open, lets close</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">$ionicSideMenuDelegate</span><span class="p">.</span><span class="nx">isOpen</span><span class="p">())</span> <span class="p">{</span>
+		<span class="nx">$ionicSideMenuDelegate</span><span class="p">.</span><span class="nx">toggleLeft</span><span class="p">();</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Lets go to the destination</span>
+	<span class="nx">$location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+
+           
+          <a class="read-more" href="/2015/10/06/ionic-link-bug.html"> »  </a>
+        </p> 
+      </div>
+      <footer class="post_meta">
+
+
+        
+        <!--
+        
+        -->
+
+        <!--
+        
+        -->
+
+        <!--p class="readmore">
+          <a href=""><data data-icon="ei-arrow-right"></data>Read this article  </a>
+        </p-->
+      </footer>
+      <hr/>
+    </article>
+    
+
+    <article class="post_card post">
+      <header class="post_header">
+        <h2 class="post_title"><a href="/2015/10/04/ionic-swipe-left-right.html">Ionic - Swipe to Load Next or Previous Page</a></h2>
+        <time class="post_date">04 October 2015, Sunday</time>
+      </header>
+      <div class="post_excerpt">
+        <p>
+          
+          <p>Hybrid frameworks such as <strong>Ionic</strong> provide an easier way to develop a phone app using
+a language that you would usually prefer into a native looking app that is smooth
+and has all the features of the phone readily available to be used.</p>
+
+<p>Using Ionic, we can create a page that allows swipe movements on the screen to
+move to the next item in the array.</p>
+
+<h3 id="controller">Controller</h3>
+
+<p>As usual, set up your a blank Ionic project and install all the required components
+to make the project work.</p>
+
+<p>In the controller, add the following snippet to the attached view:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Page 1'</span><span class="p">,</span> <span class="s1">'content'</span><span class="p">:</span> <span class="s1">'Page 1 Content'</span><span class="p">},</span>
+	<span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Page 2'</span><span class="p">,</span> <span class="s1">'content'</span><span class="p">:</span> <span class="s1">'Page 2 Content'</span><span class="p">},</span>
+	<span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Page 3'</span><span class="p">,</span> <span class="s1">'content'</span><span class="p">:</span> <span class="s1">'Page 3 Content'</span><span class="p">},</span>
+<span class="p">];</span>
+
+<span class="nx">$scope</span><span class="p">.</span><span class="nx">swipeRight</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">swipeRight</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="kd">var</span> <span class="nx">curr_page</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+				<span class="nx">curr_page</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span>
+					<span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span>
+				<span class="p">];</span>
+			<span class="p">}</span>
+			<span class="k">else</span> <span class="p">{</span>
+				<span class="nx">curr_page</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+			<span class="p">}</span>
+
+			<span class="nx">$location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="s1">'/pages/'</span> <span class="o">+</span> <span class="nx">curr_page</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nx">$scope</span><span class="p">.</span><span class="nx">swipeLeft</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">swipeLeft</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="kd">var</span> <span class="nx">curr_page</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+				<span class="nx">curr_page</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+			<span class="p">}</span>
+			<span class="k">else</span> <span class="p">{</span>
+				<span class="nx">curr_page</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+			<span class="p">}</span>
+
+			<span class="c1">// Tells Ionic which transition direction</span>
+			<span class="nx">$ionicViewSwitcher</span><span class="p">.</span><span class="nx">nextDirection</span><span class="p">(</span><span class="s1">'back'</span><span class="p">);</span>
+			<span class="nx">$location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="s1">'/pages/'</span> <span class="o">+</span> <span class="nx">curr_page</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="html">HTML</h3>
+
+<p>Add the following to the template:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ion-view</span> <span class="na">view-title=</span><span class="s">"page.name"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;ion-content</span>
+		<span class="na">on-swipe-left=</span><span class="s">"swipeLeft()"</span>
+		<span class="na">on-swipe-right=</span><span class="s">"swipeRight()"</span>
+		<span class="nt">&gt;</span>
+		{{ page.content }}
+	<span class="nt">&lt;/ion-content&gt;</span>
+<span class="nt">&lt;/ion-view&gt;</span></code></pre></figure>
+
+<p>There is currently a problem where the swipes aren’t immediate because the page
+needs to slide, but we’ll work on adding them later.</p>
+
+           
+          <a class="read-more" href="/2015/10/04/ionic-swipe-left-right.html"> »  </a>
+        </p> 
+      </div>
+      <footer class="post_meta">
+
+
+        
+        <!--
+        
+        -->
+
+        <!--
+        
+        -->
+
+        <!--p class="readmore">
+          <a href=""><data data-icon="ei-arrow-right"></data>Read this article  </a>
+        </p-->
+      </footer>
+      <hr/>
+    </article>
+    
+
+    <div class="pagination older-post"><a href="./archive"><data data-icon="ei-arrow-right"></data> Archive  </a></div>
+  </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        <footer class="site-footer">
+    <div class="container">
+        <div class="footer left column one-half">
+            <section class="small-font">
+              Powered by <a href="https://github.com/jekyll/jekyll">jekyll</a>
+            </section>
+        </div>
+
+        <div class="footer right column one-half">
+            <section class="small-font">
+                
+                
+            </section>
+        </div>
+    </div>
+</footer> 
+    </div>
+
+    <div id="particles" style="
+        top: 0;
+        left: 0;
+        z-index: -999;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    "></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+    particlesJS("particles",{particles:{number:{value:80,density:{enable:!0,value_area:800}},color:{value:"#ccc"},shape:{type:"circle",stroke:{width:0,color:"#ddd"},polygon:{nb_sides:5}},opacity:{value:.5,random:!1,anim:{enable:!1,speed:1,opacity_min:.1,sync:!1}},size:{value:3,random:!0,anim:{enable:!1,speed:40,size_min:.1,sync:!1}},line_linked:{enable:!0,distance:150,color:"#ddd",opacity:.4,width:1},move:{enable:!0,speed:6,direction:"none",random:!1,straight:!1,out_mode:"out",bounce:!1,attract:{enable:!1,rotateX:600,rotateY:1200}}},interactivity:{detect_on:"canvas",events:{onhover:{enable:!0,mode:"repulse"},onclick:{enable:!0,mode:"push"},resize:!0},modes:{grab:{distance:400,line_linked:{opacity:1}},bubble:{distance:400,size:40,duration:2,opacity:8,speed:3},repulse:{distance:200,duration:.4},push:{particles_nb:4},remove:{particles_nb:2}}},retina_detect:!0});
+    </script>
+
+    </body>
+</html>
