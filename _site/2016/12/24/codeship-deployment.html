@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Simple Django Website</title>
-    <meta name="description" content="This tutorial is for version 1.5 as it was written about a year ago during the early dayswhere I started off using Python first.For Django, I believe there h...">
+    <title>Continuous Deployment - Codeship</title>
+    <meta name="description" content="  Continuous delivery (CD) is a software engineering approach in which teams produce software in short cycles, ensuring that the software can be reliably rel...">
 
     <!-- evil icon -->
 
@@ -16,7 +16,7 @@
     <!-- todo: include this into main.css -->
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://blog.tuanb.me/2015/10/03/simple-django-website.html">
+    <link rel="canonical" href="http://blog.tuanb.me/2016/12/24/codeship-deployment.html">
     <link rel="alternate" type="application/rss+xml" title="Tuan B" href="http://blog.tuanb.me/feed.xml">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -69,113 +69,38 @@
                         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="artilce_header">
-    <h1 class="artilce_title" itemprop="name headline">Simple Django Website</h1>
-    <p class="artilce_meta"><time datetime="2015-10-03T00:00:00+10:00" itemprop="datePublished">Oct 3, 2015</time></p>
+    <h1 class="artilce_title" itemprop="name headline">Continuous Deployment - Codeship</h1>
+    <p class="artilce_meta"><time datetime="2016-12-24T00:00:00+11:00" itemprop="datePublished">Dec 24, 2016</time></p>
   </header>
 
   <div class="article-content" itemprop="articleBody">
-    <p>This tutorial is for version 1.5 as it was written about a year ago during the early days
-where I started off using Python first.</p>
+    <blockquote>
+  <p>Continuous delivery (CD) is a software engineering approach in which teams produce 
+software in short cycles, ensuring that the software can be reliably released at any 
+time. It aims at building, testing, and releasing software faster and more frequently. - Wikipedia</p>
+</blockquote>
 
-<p>For Django, I believe there hasn’t been a huge change since then, so this guide will definitely still be useful but
-for more information, best check out their actual website at <a href="https://djangoproject.com">Django Project</a>.</p>
+<p>Using Codeship as our deployer, create a new project and attach a git 
+repository to the chosen project.</p>
 
-<h3 id="install">Install</h3>
+<p>After doing so, go into the <strong>General</strong> options, grab the public SSH key and paste it
+the server at <code class="highlighter-rouge">~/.ssh/authorized_keys</code>. Each project requires a seperate key attachment
+as they point to different folders on the server.</p>
 
-<p>To begin, run the command:</p>
+<p>In Codeship, select a custom script deployment and add the following line
+<code class="highlighter-rouge">scp -rp ~/clone/* root@123.456.789.0:/var/www/blog.tuanb.me/</code>. By doing so, we can now
+allow the entire repo to be cloned onto the server everytime we make a push to the 
+desired branch (preferably <code class="highlighter-rouge">master</code>) in the deployment pipeline.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">pip</span> <span class="nx">install</span> <span class="nx">django</span></code></pre></figure>
+<p>More commands can be added such as <code class="highlighter-rouge">composer install</code> or <code class="highlighter-rouge">apt-get update</code> but we must
+ssh in with <code class="highlighter-rouge">ssh root@123.123.123.123</code>, to allow more automation. Another option is to 
+create a script file and run that script file instead.</p>
 
-<p>This will install the Django project into the console so that the project can be
-created using Django’s own commands.</p>
+<p>After it is all set up, we can now deploy to the server after every push rather using a file
+manager to manually copy over files or ssh into the server to run git pull. Certain hooks
+can be added into the pipeline and tests can also be ran for each push to master.</p>
 
-<h3 id="create-the-project">Create the project</h3>
-
-<p>Change to your chosen directory and use the following command to create the
-project.</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">django</span><span class="o">-</span><span class="nx">admin</span> <span class="nx">startproject</span> <span class="nx">myblog</span></code></pre></figure>
-
-<h3 id="database">Database</h3>
-
-<p>Open the file <strong>settings.py</strong> in the folder and edit the <strong>DATABASES</strong> variable
-to connect the website tot he <strong>POSTGRESQL</strong> database:</p>
-
-<figure class="highlight"><pre><code class="language-py" data-lang="py"><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
-	<span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
-		<span class="s">'ENGINE'</span><span class="p">:</span> <span class="s">'django.db.backends.postgresql_psycopg2'</span><span class="p">,</span>
-		<span class="s">'NAME'</span><span class="p">:</span> <span class="s">'mydatabase'</span><span class="p">,</span>
-		<span class="s">'USER'</span><span class="p">:</span> <span class="s">'mydatabaseuser'</span><span class="p">,</span>
-		<span class="s">'PASSWORD'</span><span class="p">:</span> <span class="s">'mypassword'</span><span class="p">,</span>
-		<span class="s">'POST'</span><span class="p">:</span> <span class="s">'5432'</span>
-	<span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
-<h3 id="create-an-app">Create an app</h3>
-
-<p>In the root of the project folder, create a new app to begin a new feature in
-the project, in this case a <strong>pages</strong> feature.</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">python</span> <span class="nx">manage</span><span class="p">.</span><span class="nx">py</span> <span class="nx">startapp</span> <span class="nx">pages</span></code></pre></figure>
-
-<h3 id="adding-a-view">Adding a view</h3>
-
-<p>Open the <strong>views.py</strong> file within the newly created feature/app called <strong>pages</strong>
-and replace everything with the following:</p>
-
-<figure class="highlight"><pre><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render_to_response</span>
-<span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">RequestContext</span>
-
-<span class="k">def</span> <span class="nf">home</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">template</span> <span class="o">=</span> <span class="s">'home.html'</span><span class="p">):</span>
-	<span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
-	<span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span>
-		 <span class="n">template</span><span class="p">,</span>
-		 <span class="n">context</span><span class="p">,</span>
-		 <span class="n">context_instance</span> <span class="o">=</span> <span class="n">RequestConext</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-	<span class="p">)</span></code></pre></figure>
-
-<p>Inside the <strong>templates</strong> folder within the feature/app, create a file called
-<strong>home.html</strong> to allow the view to point to. Add a line of text into this file
-to indicate that the file can be scene once we run the website. <strong>Hello World!</strong>
-should be good enough to start.</p>
-
-<h3 id="template-and-installed-apps">Template and Installed Apps</h3>
-
-<p>This section must be added in to tell the website to load the <strong>pages</strong> app and
-the <strong>templates</strong> folder.</p>
-
-<p>Open the file <strong>settings.py</strong> file again and scroll down to find a variable called <strong>TEMPLATE_DIRS</strong>.
-Replace it with the following to tell the website to poin to the <strong>templates</strong> folder:</p>
-
-<figure class="highlight"><pre><code class="language-py" data-lang="py"><span class="n">TEMPLATE_DIRS</span> <span class="o">=</span> <span class="p">(</span>
-	<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s">'templates'</span><span class="p">),</span>
-<span class="p">)</span></code></pre></figure>
-
-<p>Add a <strong>pages</strong> string to the <strong>INSTALLED_APPS</strong> like so:</p>
-
-<figure class="highlight"><pre><code class="language-py" data-lang="py"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
-  <span class="s">'django.contrib.admin'</span><span class="p">,</span>
-  <span class="s">'django.contrib.auth'</span><span class="p">,</span>
-  <span class="s">'django.contrib.contenttypes'</span><span class="p">,</span>
-  <span class="s">'django.contrib.sessions'</span><span class="p">,</span>
-  <span class="s">'django.contrib.messages'</span><span class="p">,</span>
-  <span class="s">'django.contrib.staticfiles'</span><span class="p">,</span>
-  <span class="s">'pages'</span><span class="p">,</span>
-<span class="p">)</span></code></pre></figure>
-
-<h3 id="urls">URLS</h3>
-
-<p>Add a route to the urls in the <strong>urls.py</strong> file like so</p>
-
-<figure class="highlight"><pre><code class="language-py" data-lang="py"><span class="n">url</span><span class="p">(</span><span class="s">r'^$'</span><span class="p">,</span> <span class="s">'pages.views.home'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'home'</span><span class="p">),</span></code></pre></figure>
-
-<h3 id="run-and-view-the-website">Run and view the website</h3>
-
-<p>Back in the console, run the following command to start the website:</p>
-
-<figure class="highlight"><pre><code class="language-py" data-lang="py"><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">runserver</span></code></pre></figure>
-
-<p>Congratulations, the website can now be viewed using the following link <a href="http://localhost:8000">http://localhost:8000</a>.</p>
+<p>Codeship is one of many continous deployment applications out there.</p>
 
   </div>
 

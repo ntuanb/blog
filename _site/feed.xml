@@ -3,11 +3,48 @@
   <channel>
     <title>Tuan B</title>
     <description></description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 24 Dec 2016 02:45:40 +1100</pubDate>
-    <lastBuildDate>Sat, 24 Dec 2016 02:45:40 +1100</lastBuildDate>
+    <link>http://blog.tuanb.me/</link>
+    <atom:link href="http://blog.tuanb.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 24 Dec 2016 03:09:18 +1100</pubDate>
+    <lastBuildDate>Sat, 24 Dec 2016 03:09:18 +1100</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Continuous Deployment - Codeship</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Continuous delivery (CD) is a software engineering approach in which teams produce 
+software in short cycles, ensuring that the software can be reliably released at any 
+time. It aims at building, testing, and releasing software faster and more frequently. - Wikipedia&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Using Codeship as our deployer, create a new project and attach a git 
+repository to the chosen project.&lt;/p&gt;
+
+&lt;p&gt;After doing so, go into the &lt;strong&gt;General&lt;/strong&gt; options, grab the public SSH key and paste it
+the server at &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.ssh/authorized_keys&lt;/code&gt;. Each project requires a seperate key attachment
+as they point to different folders on the server.&lt;/p&gt;
+
+&lt;p&gt;In Codeship, select a custom script deployment and add the following line
+&lt;code class=&quot;highlighter-rouge&quot;&gt;scp -rp ~/clone/* root@123.456.789.0:/var/www/blog.tuanb.me/&lt;/code&gt;. By doing so, we can now
+allow the entire repo to be cloned onto the server everytime we make a push to the 
+desired branch (preferably &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;) in the deployment pipeline.&lt;/p&gt;
+
+&lt;p&gt;More commands can be added such as &lt;code class=&quot;highlighter-rouge&quot;&gt;composer install&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get update&lt;/code&gt; but we must
+ssh in with &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh root@123.123.123.123&lt;/code&gt;, to allow more automation. Another option is to 
+create a script file and run that script file instead.&lt;/p&gt;
+
+&lt;p&gt;After it is all set up, we can now deploy to the server after every push rather using a file
+manager to manually copy over files or ssh into the server to run git pull. Certain hooks
+can be added into the pipeline and tests can also be ran for each push to master.&lt;/p&gt;
+
+&lt;p&gt;Codeship is one of many continous deployment applications out there.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 24 Dec 2016 00:00:00 +1100</pubDate>
+        <link>http://blog.tuanb.me/2016/12/24/codeship-deployment.html</link>
+        <guid isPermaLink="true">http://blog.tuanb.me/2016/12/24/codeship-deployment.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Compiling Testing the Ionic App on the Android</title>
@@ -39,8 +76,8 @@ again. An error might occur because the app’s ID is incorrect.&lt;/p&gt;
 and &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install ionic&lt;/code&gt; to re-install some of the packages.&lt;/p&gt;
 </description>
         <pubDate>Wed, 30 Dec 2015 00:00:00 +1100</pubDate>
-        <link>http://localhost:4000/2015/12/30/compiling-and-testing-ionic-app-on-the-android.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/12/30/compiling-and-testing-ionic-app-on-the-android.html</guid>
+        <link>http://blog.tuanb.me/2015/12/30/compiling-and-testing-ionic-app-on-the-android.html</link>
+        <guid isPermaLink="true">http://blog.tuanb.me/2015/12/30/compiling-and-testing-ionic-app-on-the-android.html</guid>
         
         
       </item>
@@ -101,8 +138,8 @@ and &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install ionic&lt;/code&g
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 30 Dec 2015 00:00:00 +1100</pubDate>
-        <link>http://localhost:4000/2015/12/30/compiling-and-testing-ionic-app-on-apple.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/12/30/compiling-and-testing-ionic-app-on-apple.html</guid>
+        <link>http://blog.tuanb.me/2015/12/30/compiling-and-testing-ionic-app-on-apple.html</link>
+        <guid isPermaLink="true">http://blog.tuanb.me/2015/12/30/compiling-and-testing-ionic-app-on-apple.html</guid>
         
         
       </item>
@@ -142,8 +179,8 @@ can also get more complicated by adding in || and &amp;amp;&amp;amp;, just like 
 statement.&lt;/p&gt;
 </description>
         <pubDate>Wed, 07 Oct 2015 00:00:00 +1100</pubDate>
-        <link>http://localhost:4000/2015/10/07/ionic-show-and-hide.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/10/07/ionic-show-and-hide.html</guid>
+        <link>http://blog.tuanb.me/2015/10/07/ionic-show-and-hide.html</link>
+        <guid isPermaLink="true">http://blog.tuanb.me/2015/10/07/ionic-show-and-hide.html</guid>
         
         
       </item>
@@ -190,8 +227,8 @@ well enough for now.&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 06 Oct 2015 00:00:00 +1100</pubDate>
-        <link>http://localhost:4000/2015/10/06/ionic-link-bug.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/10/06/ionic-link-bug.html</guid>
+        <link>http://blog.tuanb.me/2015/10/06/ionic-link-bug.html</link>
+        <guid isPermaLink="true">http://blog.tuanb.me/2015/10/06/ionic-link-bug.html</guid>
         
         
       </item>
@@ -277,8 +314,8 @@ to make the project work.&lt;/p&gt;
 needs to slide, but we’ll work on adding them later.&lt;/p&gt;
 </description>
         <pubDate>Sun, 04 Oct 2015 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2015/10/04/ionic-swipe-left-right.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/10/04/ionic-swipe-left-right.html</guid>
+        <link>http://blog.tuanb.me/2015/10/04/ionic-swipe-left-right.html</link>
+        <guid isPermaLink="true">http://blog.tuanb.me/2015/10/04/ionic-swipe-left-right.html</guid>
         
         
       </item>
@@ -389,8 +426,8 @@ Replace it with the following to tell the website to poin to the &lt;strong&gt;t
 &lt;p&gt;Congratulations, the website can now be viewed using the following link &lt;a href=&quot;http://localhost:8000&quot;&gt;http://localhost:8000&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sat, 03 Oct 2015 00:00:00 +1000</pubDate>
-        <link>http://localhost:4000/2015/10/03/simple-django-website.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/10/03/simple-django-website.html</guid>
+        <link>http://blog.tuanb.me/2015/10/03/simple-django-website.html</link>
+        <guid isPermaLink="true">http://blog.tuanb.me/2015/10/03/simple-django-website.html</guid>
         
         
       </item>

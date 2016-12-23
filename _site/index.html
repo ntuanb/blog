@@ -16,8 +16,8 @@
     <!-- todo: include this into main.css -->
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/">
-    <link rel="alternate" type="application/rss+xml" title="Tuan B" href="http://localhost:4000/feed.xml">
+    <link rel="canonical" href="http://blog.tuanb.me/">
+    <link rel="alternate" type="application/rss+xml" title="Tuan B" href="http://blog.tuanb.me/feed.xml">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
@@ -69,6 +69,66 @@
                         <div class="home">
   <div class="post-list">
 
+    
+
+    <article class="post_card post">
+      <header class="post_header">
+        <h2 class="post_title"><a href="/2016/12/24/codeship-deployment.html">Continuous Deployment - Codeship</a></h2>
+        <time class="post_date">24 December 2016, Saturday</time>
+      </header>
+      <div class="post_excerpt">
+        <p>
+          
+          <blockquote>
+  <p>Continuous delivery (CD) is a software engineering approach in which teams produce 
+software in short cycles, ensuring that the software can be reliably released at any 
+time. It aims at building, testing, and releasing software faster and more frequently. - Wikipedia</p>
+</blockquote>
+
+<p>Using Codeship as our deployer, create a new project and attach a git 
+repository to the chosen project.</p>
+
+<p>After doing so, go into the <strong>General</strong> options, grab the public SSH key and paste it
+the server at <code class="highlighter-rouge">~/.ssh/authorized_keys</code>. Each project requires a seperate key attachment
+as they point to different folders on the server.</p>
+
+<p>In Codeship, select a custom script deployment and add the following line
+<code class="highlighter-rouge">scp -rp ~/clone/* root@123.456.789.0:/var/www/blog.tuanb.me/</code>. By doing so, we can now
+allow the entire repo to be cloned onto the server everytime we make a push to the 
+desired branch (preferably <code class="highlighter-rouge">master</code>) in the deployment pipeline.</p>
+
+<p>More commands can be added such as <code class="highlighter-rouge">composer install</code> or <code class="highlighter-rouge">apt-get update</code> but we must
+ssh in with <code class="highlighter-rouge">ssh root@123.123.123.123</code>, to allow more automation. Another option is to 
+create a script file and run that script file instead.</p>
+
+<p>After it is all set up, we can now deploy to the server after every push rather using a file
+manager to manually copy over files or ssh into the server to run git pull. Certain hooks
+can be added into the pipeline and tests can also be ran for each push to master.</p>
+
+<p>Codeship is one of many continous deployment applications out there.</p>
+
+           
+          <a class="read-more" href="/2016/12/24/codeship-deployment.html"> »  </a>
+        </p> 
+      </div>
+      <footer class="post_meta">
+
+
+        
+        <!--
+        
+        -->
+
+        <!--
+        
+        -->
+
+        <!--p class="readmore">
+          <a href=""><data data-icon="ei-arrow-right"></data>Read this article  </a>
+        </p-->
+      </footer>
+      <hr/>
+    </article>
     
 
     <article class="post_card post">
@@ -328,116 +388,6 @@ well enough for now.</p>
 
            
           <a class="read-more" href="/2015/10/06/ionic-link-bug.html"> »  </a>
-        </p> 
-      </div>
-      <footer class="post_meta">
-
-
-        
-        <!--
-        
-        -->
-
-        <!--
-        
-        -->
-
-        <!--p class="readmore">
-          <a href=""><data data-icon="ei-arrow-right"></data>Read this article  </a>
-        </p-->
-      </footer>
-      <hr/>
-    </article>
-    
-
-    <article class="post_card post">
-      <header class="post_header">
-        <h2 class="post_title"><a href="/2015/10/04/ionic-swipe-left-right.html">Ionic - Swipe to Load Next or Previous Page</a></h2>
-        <time class="post_date">04 October 2015, Sunday</time>
-      </header>
-      <div class="post_excerpt">
-        <p>
-          
-          <p>Hybrid frameworks such as <strong>Ionic</strong> provide an easier way to develop a phone app using
-a language that you would usually prefer into a native looking app that is smooth
-and has all the features of the phone readily available to be used.</p>
-
-<p>Using Ionic, we can create a page that allows swipe movements on the screen to
-move to the next item in the array.</p>
-
-<h3 id="controller">Controller</h3>
-
-<p>As usual, set up your a blank Ionic project and install all the required components
-to make the project work.</p>
-
-<p>In the controller, add the following snippet to the attached view:</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span> <span class="o">=</span> <span class="p">[</span>
-	<span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Page 1'</span><span class="p">,</span> <span class="s1">'content'</span><span class="p">:</span> <span class="s1">'Page 1 Content'</span><span class="p">},</span>
-	<span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Page 2'</span><span class="p">,</span> <span class="s1">'content'</span><span class="p">:</span> <span class="s1">'Page 2 Content'</span><span class="p">},</span>
-	<span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Page 3'</span><span class="p">,</span> <span class="s1">'content'</span><span class="p">:</span> <span class="s1">'Page 3 Content'</span><span class="p">},</span>
-<span class="p">];</span>
-
-<span class="nx">$scope</span><span class="p">.</span><span class="nx">swipeRight</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">swipeRight</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-
-	<span class="kd">var</span> <span class="nx">curr_page</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-
-	<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">if</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-			<span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-				<span class="nx">curr_page</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span>
-					<span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span>
-				<span class="p">];</span>
-			<span class="p">}</span>
-			<span class="k">else</span> <span class="p">{</span>
-				<span class="nx">curr_page</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
-			<span class="p">}</span>
-
-			<span class="nx">$location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="s1">'/pages/'</span> <span class="o">+</span> <span class="nx">curr_page</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-
-<span class="p">}</span>
-
-<span class="nx">$scope</span><span class="p">.</span><span class="nx">swipeLeft</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">swipeLeft</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-
-	<span class="kd">var</span> <span class="nx">curr_page</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-
-	<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">if</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-			<span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-				<span class="nx">curr_page</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-			<span class="p">}</span>
-			<span class="k">else</span> <span class="p">{</span>
-				<span class="nx">curr_page</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
-			<span class="p">}</span>
-
-			<span class="c1">// Tells Ionic which transition direction</span>
-			<span class="nx">$ionicViewSwitcher</span><span class="p">.</span><span class="nx">nextDirection</span><span class="p">(</span><span class="s1">'back'</span><span class="p">);</span>
-			<span class="nx">$location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="s1">'/pages/'</span> <span class="o">+</span> <span class="nx">curr_page</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-
-<span class="p">}</span></code></pre></figure>
-
-<h3 id="html">HTML</h3>
-
-<p>Add the following to the template:</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ion-view</span> <span class="na">view-title=</span><span class="s">"page.name"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;ion-content</span>
-		<span class="na">on-swipe-left=</span><span class="s">"swipeLeft()"</span>
-		<span class="na">on-swipe-right=</span><span class="s">"swipeRight()"</span>
-		<span class="nt">&gt;</span>
-		{{ page.content }}
-	<span class="nt">&lt;/ion-content&gt;</span>
-<span class="nt">&lt;/ion-view&gt;</span></code></pre></figure>
-
-<p>There is currently a problem where the swipes aren’t immediate because the page
-needs to slide, but we’ll work on adding them later.</p>
-
-           
-          <a class="read-more" href="/2015/10/04/ionic-swipe-left-right.html"> »  </a>
         </p> 
       </div>
       <footer class="post_meta">
