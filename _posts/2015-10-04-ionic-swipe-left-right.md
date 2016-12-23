@@ -30,9 +30,11 @@ $scope.swipeRight = function swipeRight(id) {
 	var curr_page = null;
 
 	for (var i = 0; i < $scope.pages.length; i++) {
-		if ($scope.pages[i].id == id) {
+		if ($scope.pages[i].id === id) {
 			if (i == 0) {
-				curr_page = $scope.pages[$scope.pages.length - 1];
+				curr_page = $scope.pages[
+					$scope.pages.length - 1
+				];
 			}
 			else {
 				curr_page = $scope.pages[i - 1];
