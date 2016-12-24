@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Contact me at me@tuanb.me.
+Contact me at mail@tuanb.me.
