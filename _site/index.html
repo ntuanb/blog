@@ -16,8 +16,8 @@
     <!-- todo: include this into main.css -->
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://blog.tuanb.me/">
-    <link rel="alternate" type="application/rss+xml" title="Tuan B" href="http://blog.tuanb.me/feed.xml">
+    <link rel="canonical" href="http://localhost:4000/">
+    <link rel="alternate" type="application/rss+xml" title="Tuan B" href="http://localhost:4000/feed.xml">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
@@ -69,6 +69,86 @@
                         <div class="home">
   <div class="post-list">
 
+    
+
+    <article class="post_card post">
+      <header class="post_header">
+        <h2 class="post_title"><a href="/2016/12/26/https-with-nginx.html">HTTPS with Nginx</a></h2>
+        <time class="post_date">26 December 2016, Monday</time>
+      </header>
+      <div class="post_excerpt">
+        <p>
+          
+          <blockquote>
+  <p>Is the standard security technology for establishing an encrypted link between a web server and a browser.</p>
+</blockquote>
+
+<p>Using the following link <a href="https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04"><strong>How To Secure Nginx with Let’s Encrypt</strong></a>,
+any website in the domain can now be secured where all connections between to the server will be 
+encrypted.</p>
+
+<p>After installing <code class="highlighter-rouge">certbot-auto</code>, we can now secure any domain or subdomain. First we use the following command</p>
+
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">certbot-auto</span> <span class="s">certonly</span> <span class="s">-a</span> <span class="s">webroot</span> <span class="s">--webroot-path=/var/www/blog.tuanb.me/_site</span> <span class="s">-d</span> <span class="s">blog.tuanb.me</span></code></pre></figure>
+
+<p>A certificate will created for that particular subdomain. Next we will need to edit the nginx 
+domain config inside <code class="highlighter-rouge">/etc/nginx/sites-enabled/blog.tuanb.me</code>, remove port 80 access and add in the following:</p>
+
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>
+
+    <span class="kn">...</span>
+    
+    <span class="s">listen</span> <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span>
+
+    <span class="kn">server_name</span> <span class="s">blog.tuanb.me</span><span class="p">;</span>
+
+    <span class="kn">ssl_certificate</span> <span class="n">/etc/letsencrypt/live/blog.tuanb.me/fullchain.pem</span><span class="p">;</span>
+    <span class="kn">ssl_certificate_key</span> <span class="n">/etc/letsencrypt/live/blog.tuanb.me/privkey.pem</span><span class="p">;</span>
+    <span class="kn">include</span> <span class="s">conf.s/ssl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">server</span> <span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="kn">server_name</span> <span class="s">blog.tuanb.me</span><span class="p">;</span>
+    <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://</span><span class="nv">$host$request_uri</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Where <code class="highlighter-rouge">conf.s/ssl</code> is the ssl extra configurations</p>
+
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">ssl_protocols</span> <span class="s">TLSv1</span> <span class="s">TLSv1.1</span> <span class="s">TLSv1.2</span><span class="p">;</span>
+<span class="k">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>
+<span class="k">ssl_dhparam</span> <span class="n">/etc/ssl/certs/dhparam.pem</span><span class="p">;</span>
+<span class="k">ssl_ciphers</span> <span class="s">[the</span> <span class="s">cipher]</span>
+<span class="s">ssl_session_timeout</span> <span class="s">1d</span><span class="p">;</span>
+<span class="k">ssl_session_cache</span> <span class="s">shared:SSL:50m</span><span class="p">;</span>
+<span class="k">ssl_stapling</span> <span class="no">on</span><span class="p">;</span>
+<span class="k">ssl_stapling_verify</span> <span class="no">on</span><span class="p">;</span>
+<span class="k">add_header</span> <span class="s">Strict-Transport-Security</span> <span class="s">max-age=15768000</span><span class="p">;</span></code></pre></figure>
+
+<p>The steps will be needed to be replicated for each subdomain and will only take a few minutes.</p>
+
+           
+          <a class="read-more" href="/2016/12/26/https-with-nginx.html"> »  </a>
+        </p> 
+      </div>
+      <footer class="post_meta">
+
+
+        
+        <!--
+        
+        -->
+
+        <!--
+        
+        -->
+
+        <!--p class="readmore">
+          <a href=""><data data-icon="ei-arrow-right"></data>Read this article  </a>
+        </p-->
+      </footer>
+      <hr/>
+    </article>
     
 
     <article class="post_card post">
@@ -317,77 +397,6 @@ statement.</p>
 
            
           <a class="read-more" href="/2015/10/07/ionic-show-and-hide.html"> »  </a>
-        </p> 
-      </div>
-      <footer class="post_meta">
-
-
-        
-        <!--
-        
-        -->
-
-        <!--
-        
-        -->
-
-        <!--p class="readmore">
-          <a href=""><data data-icon="ei-arrow-right"></data>Read this article  </a>
-        </p-->
-      </footer>
-      <hr/>
-    </article>
-    
-
-    <article class="post_card post">
-      <header class="post_header">
-        <h2 class="post_title"><a href="/2015/10/06/ionic-link-bug.html">Ionic Link Bug</a></h2>
-        <time class="post_date">06 October 2015, Tuesday</time>
-      </header>
-      <div class="post_excerpt">
-        <p>
-          
-          <p>Currently on the iOS, there is a link bug which occurs between page transitions
-with Ionic. I don’t know if it occurs when the app is published, but it
-occurring on the Ionic App thats used for testing.</p>
-
-<p>If the link uses <strong>menu-close</strong> or <strong>nav-clear</strong>, occasionally the page swipes
-backwards and other times, the back button occurs. If it was a consistent problem,
-a work around or the bug could be fixed, but in this case, it only occurs occasionally.</p>
-
-<p>To solve this, we’ll use <strong>ng-click</strong> and <strong>$location.path()</strong> to create the link in
-the controller. This solves the transition problem and also lets us control the
-next view animation. This probably isn’t the best solution, but it seems to work
-well enough for now.</p>
-
-<h3 id="html">HTML</h3>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">ng-click=</span><span class="s">"goTo('/app/place')"</span><span class="nt">&gt;</span>
-	Lets Go To This Place
-<span class="nt">&lt;/a&gt;</span></code></pre></figure>
-
-<h3 id="js">JS</h3>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$scope</span><span class="p">.</span><span class="kr">goto</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">goTo</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
-
-	<span class="c1">// Clears the history because we don't need</span>
-	<span class="nx">$ionicHistory</span><span class="p">.</span><span class="nx">clearHistory</span><span class="p">();</span>
-
-	<span class="c1">// Disables the back button</span>
-	<span class="nx">$ionicHistory</span><span class="p">.</span><span class="nx">nextViewOptions</span><span class="p">({</span><span class="na">disableBack</span><span class="p">:</span> <span class="kc">true</span><span class="p">});</span>
-
-	<span class="c1">// If the sidebar is open, lets close</span>
-	<span class="k">if</span> <span class="p">(</span><span class="nx">$ionicSideMenuDelegate</span><span class="p">.</span><span class="nx">isOpen</span><span class="p">())</span> <span class="p">{</span>
-		<span class="nx">$ionicSideMenuDelegate</span><span class="p">.</span><span class="nx">toggleLeft</span><span class="p">();</span>
-	<span class="p">}</span>
-
-	<span class="c1">// Lets go to the destination</span>
-	<span class="nx">$location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
-
-
-           
-          <a class="read-more" href="/2015/10/06/ionic-link-bug.html"> »  </a>
         </p> 
       </div>
       <footer class="post_meta">

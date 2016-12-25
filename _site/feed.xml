@@ -3,11 +3,68 @@
   <channel>
     <title>Tuan B</title>
     <description></description>
-    <link>http://blog.tuanb.me/</link>
-    <atom:link href="http://blog.tuanb.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 24 Dec 2016 17:38:23 +1100</pubDate>
-    <lastBuildDate>Sat, 24 Dec 2016 17:38:23 +1100</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 26 Dec 2016 02:04:31 +1100</pubDate>
+    <lastBuildDate>Mon, 26 Dec 2016 02:04:31 +1100</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>HTTPS with Nginx</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Is the standard security technology for establishing an encrypted link between a web server and a browser.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Using the following link &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04&quot;&gt;&lt;strong&gt;How To Secure Nginx with Let’s Encrypt&lt;/strong&gt;&lt;/a&gt;,
+any website in the domain can now be secured where all connections between to the server will be 
+encrypted.&lt;/p&gt;
+
+&lt;p&gt;After installing &lt;code class=&quot;highlighter-rouge&quot;&gt;certbot-auto&lt;/code&gt;, we can now secure any domain or subdomain. First we use the following command&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-nginx&quot; data-lang=&quot;nginx&quot;&gt;&lt;span class=&quot;k&quot;&gt;certbot-auto&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;certonly&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;webroot&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;--webroot-path=/var/www/blog.tuanb.me/_site&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;blog.tuanb.me&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;A certificate will created for that particular subdomain. Next we will need to edit the nginx 
+domain config inside &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/nginx/sites-enabled/blog.tuanb.me&lt;/code&gt;, remove port 80 access and add in the following:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-nginx&quot; data-lang=&quot;nginx&quot;&gt;&lt;span class=&quot;k&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kn&quot;&gt;...&lt;/span&gt;
+    
+    &lt;span class=&quot;s&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;443&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ssl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kn&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;blog.tuanb.me&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kn&quot;&gt;ssl_certificate&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/etc/letsencrypt/live/blog.tuanb.me/fullchain.pem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;ssl_certificate_key&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/etc/letsencrypt/live/blog.tuanb.me/privkey.pem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;conf.s/ssl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;blog.tuanb.me&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;301&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$host$request_uri&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;highlighter-rouge&quot;&gt;conf.s/ssl&lt;/code&gt; is the ssl extra configurations&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-nginx&quot; data-lang=&quot;nginx&quot;&gt;&lt;span class=&quot;k&quot;&gt;ssl_protocols&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;TLSv1&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;TLSv1.1&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;TLSv1.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ssl_prefer_server_ciphers&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ssl_dhparam&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/etc/ssl/certs/dhparam.pem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ssl_ciphers&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;[the&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;cipher]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;ssl_session_timeout&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;1d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ssl_session_cache&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;shared:SSL:50m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ssl_stapling&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ssl_stapling_verify&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;add_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Strict-Transport-Security&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;max-age=15768000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The steps will be needed to be replicated for each subdomain and will only take a few minutes.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 26 Dec 2016 00:00:00 +1100</pubDate>
+        <link>http://localhost:4000/2016/12/26/https-with-nginx.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/26/https-with-nginx.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Continuous Deployment - Codeship</title>
@@ -40,8 +97,8 @@ can be added into the pipeline and tests can also be ran for each push to master
 &lt;p&gt;Codeship is one of many continous deployment applications out there.&lt;/p&gt;
 </description>
         <pubDate>Sat, 24 Dec 2016 00:00:00 +1100</pubDate>
-        <link>http://blog.tuanb.me/2016/12/24/codeship-deployment.html</link>
-        <guid isPermaLink="true">http://blog.tuanb.me/2016/12/24/codeship-deployment.html</guid>
+        <link>http://localhost:4000/2016/12/24/codeship-deployment.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/24/codeship-deployment.html</guid>
         
         
       </item>
@@ -76,8 +133,8 @@ again. An error might occur because the app’s ID is incorrect.&lt;/p&gt;
 and &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install ionic&lt;/code&gt; to re-install some of the packages.&lt;/p&gt;
 </description>
         <pubDate>Wed, 30 Dec 2015 00:00:00 +1100</pubDate>
-        <link>http://blog.tuanb.me/2015/12/30/compiling-and-testing-ionic-app-on-the-android.html</link>
-        <guid isPermaLink="true">http://blog.tuanb.me/2015/12/30/compiling-and-testing-ionic-app-on-the-android.html</guid>
+        <link>http://localhost:4000/2015/12/30/compiling-and-testing-ionic-app-on-the-android.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/12/30/compiling-and-testing-ionic-app-on-the-android.html</guid>
         
         
       </item>
@@ -138,8 +195,8 @@ and &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install ionic&lt;/code&g
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 30 Dec 2015 00:00:00 +1100</pubDate>
-        <link>http://blog.tuanb.me/2015/12/30/compiling-and-testing-ionic-app-on-apple.html</link>
-        <guid isPermaLink="true">http://blog.tuanb.me/2015/12/30/compiling-and-testing-ionic-app-on-apple.html</guid>
+        <link>http://localhost:4000/2015/12/30/compiling-and-testing-ionic-app-on-apple.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/12/30/compiling-and-testing-ionic-app-on-apple.html</guid>
         
         
       </item>
@@ -179,8 +236,8 @@ can also get more complicated by adding in || and &amp;amp;&amp;amp;, just like 
 statement.&lt;/p&gt;
 </description>
         <pubDate>Wed, 07 Oct 2015 00:00:00 +1100</pubDate>
-        <link>http://blog.tuanb.me/2015/10/07/ionic-show-and-hide.html</link>
-        <guid isPermaLink="true">http://blog.tuanb.me/2015/10/07/ionic-show-and-hide.html</guid>
+        <link>http://localhost:4000/2015/10/07/ionic-show-and-hide.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/10/07/ionic-show-and-hide.html</guid>
         
         
       </item>
@@ -227,8 +284,8 @@ well enough for now.&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 06 Oct 2015 00:00:00 +1100</pubDate>
-        <link>http://blog.tuanb.me/2015/10/06/ionic-link-bug.html</link>
-        <guid isPermaLink="true">http://blog.tuanb.me/2015/10/06/ionic-link-bug.html</guid>
+        <link>http://localhost:4000/2015/10/06/ionic-link-bug.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/10/06/ionic-link-bug.html</guid>
         
         
       </item>
@@ -314,8 +371,8 @@ to make the project work.&lt;/p&gt;
 needs to slide, but we’ll work on adding them later.&lt;/p&gt;
 </description>
         <pubDate>Sun, 04 Oct 2015 00:00:00 +1000</pubDate>
-        <link>http://blog.tuanb.me/2015/10/04/ionic-swipe-left-right.html</link>
-        <guid isPermaLink="true">http://blog.tuanb.me/2015/10/04/ionic-swipe-left-right.html</guid>
+        <link>http://localhost:4000/2015/10/04/ionic-swipe-left-right.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/10/04/ionic-swipe-left-right.html</guid>
         
         
       </item>
@@ -426,8 +483,8 @@ Replace it with the following to tell the website to poin to the &lt;strong&gt;t
 &lt;p&gt;Congratulations, the website can now be viewed using the following link &lt;a href=&quot;http://localhost:8000&quot;&gt;http://localhost:8000&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sat, 03 Oct 2015 00:00:00 +1000</pubDate>
-        <link>http://blog.tuanb.me/2015/10/03/simple-django-website.html</link>
-        <guid isPermaLink="true">http://blog.tuanb.me/2015/10/03/simple-django-website.html</guid>
+        <link>http://localhost:4000/2015/10/03/simple-django-website.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/10/03/simple-django-website.html</guid>
         
         
       </item>

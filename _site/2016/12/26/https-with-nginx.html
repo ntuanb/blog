@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Simple Django Website</title>
-    <meta name="description" content="This tutorial is for version 1.5 as it was written about a year ago during the early dayswhere I started off using Python first.For Django, I believe there h...">
+    <title>HTTPS with Nginx</title>
+    <meta name="description" content="  Is the standard security technology for establishing an encrypted link between a web server and a browser.Using the following link How To Secure Nginx with...">
 
     <!-- evil icon -->
 
@@ -16,7 +16,7 @@
     <!-- todo: include this into main.css -->
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/2015/10/03/simple-django-website.html">
+    <link rel="canonical" href="http://localhost:4000/2016/12/26/https-with-nginx.html">
     <link rel="alternate" type="application/rss+xml" title="Tuan B" href="http://localhost:4000/feed.xml">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -69,113 +69,58 @@
                         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="artilce_header">
-    <h1 class="artilce_title" itemprop="name headline">Simple Django Website</h1>
-    <p class="artilce_meta"><time datetime="2015-10-03T00:00:00+10:00" itemprop="datePublished">Oct 3, 2015</time></p>
+    <h1 class="artilce_title" itemprop="name headline">HTTPS with Nginx</h1>
+    <p class="artilce_meta"><time datetime="2016-12-26T00:00:00+11:00" itemprop="datePublished">Dec 26, 2016</time></p>
   </header>
 
   <div class="article-content" itemprop="articleBody">
-    <p>This tutorial is for version 1.5 as it was written about a year ago during the early days
-where I started off using Python first.</p>
+    <blockquote>
+  <p>Is the standard security technology for establishing an encrypted link between a web server and a browser.</p>
+</blockquote>
 
-<p>For Django, I believe there hasn’t been a huge change since then, so this guide will definitely still be useful but
-for more information, best check out their actual website at <a href="https://djangoproject.com">Django Project</a>.</p>
+<p>Using the following link <a href="https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04"><strong>How To Secure Nginx with Let’s Encrypt</strong></a>,
+any website in the domain can now be secured where all connections between to the server will be 
+encrypted.</p>
 
-<h3 id="install">Install</h3>
+<p>After installing <code class="highlighter-rouge">certbot-auto</code>, we can now secure any domain or subdomain. First we use the following command</p>
 
-<p>To begin, run the command:</p>
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">certbot-auto</span> <span class="s">certonly</span> <span class="s">-a</span> <span class="s">webroot</span> <span class="s">--webroot-path=/var/www/blog.tuanb.me/_site</span> <span class="s">-d</span> <span class="s">blog.tuanb.me</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">pip</span> <span class="nx">install</span> <span class="nx">django</span></code></pre></figure>
+<p>A certificate will created for that particular subdomain. Next we will need to edit the nginx 
+domain config inside <code class="highlighter-rouge">/etc/nginx/sites-enabled/blog.tuanb.me</code>, remove port 80 access and add in the following:</p>
 
-<p>This will install the Django project into the console so that the project can be
-created using Django’s own commands.</p>
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>
 
-<h3 id="create-the-project">Create the project</h3>
+    <span class="kn">...</span>
+    
+    <span class="s">listen</span> <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span>
 
-<p>Change to your chosen directory and use the following command to create the
-project.</p>
+    <span class="kn">server_name</span> <span class="s">blog.tuanb.me</span><span class="p">;</span>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">django</span><span class="o">-</span><span class="nx">admin</span> <span class="nx">startproject</span> <span class="nx">myblog</span></code></pre></figure>
+    <span class="kn">ssl_certificate</span> <span class="n">/etc/letsencrypt/live/blog.tuanb.me/fullchain.pem</span><span class="p">;</span>
+    <span class="kn">ssl_certificate_key</span> <span class="n">/etc/letsencrypt/live/blog.tuanb.me/privkey.pem</span><span class="p">;</span>
+    <span class="kn">include</span> <span class="s">conf.s/ssl</span><span class="p">;</span>
+<span class="p">}</span>
 
-<h3 id="database">Database</h3>
-
-<p>Open the file <strong>settings.py</strong> in the folder and edit the <strong>DATABASES</strong> variable
-to connect the website tot he <strong>POSTGRESQL</strong> database:</p>
-
-<figure class="highlight"><pre><code class="language-py" data-lang="py"><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
-	<span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
-		<span class="s">'ENGINE'</span><span class="p">:</span> <span class="s">'django.db.backends.postgresql_psycopg2'</span><span class="p">,</span>
-		<span class="s">'NAME'</span><span class="p">:</span> <span class="s">'mydatabase'</span><span class="p">,</span>
-		<span class="s">'USER'</span><span class="p">:</span> <span class="s">'mydatabaseuser'</span><span class="p">,</span>
-		<span class="s">'PASSWORD'</span><span class="p">:</span> <span class="s">'mypassword'</span><span class="p">,</span>
-		<span class="s">'POST'</span><span class="p">:</span> <span class="s">'5432'</span>
-	<span class="p">}</span>
+<span class="k">server</span> <span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="kn">server_name</span> <span class="s">blog.tuanb.me</span><span class="p">;</span>
+    <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://</span><span class="nv">$host$request_uri</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<h3 id="create-an-app">Create an app</h3>
+<p>Where <code class="highlighter-rouge">conf.s/ssl</code> is the ssl extra configurations</p>
 
-<p>In the root of the project folder, create a new app to begin a new feature in
-the project, in this case a <strong>pages</strong> feature.</p>
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">ssl_protocols</span> <span class="s">TLSv1</span> <span class="s">TLSv1.1</span> <span class="s">TLSv1.2</span><span class="p">;</span>
+<span class="k">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>
+<span class="k">ssl_dhparam</span> <span class="n">/etc/ssl/certs/dhparam.pem</span><span class="p">;</span>
+<span class="k">ssl_ciphers</span> <span class="s">[the</span> <span class="s">cipher]</span>
+<span class="s">ssl_session_timeout</span> <span class="s">1d</span><span class="p">;</span>
+<span class="k">ssl_session_cache</span> <span class="s">shared:SSL:50m</span><span class="p">;</span>
+<span class="k">ssl_stapling</span> <span class="no">on</span><span class="p">;</span>
+<span class="k">ssl_stapling_verify</span> <span class="no">on</span><span class="p">;</span>
+<span class="k">add_header</span> <span class="s">Strict-Transport-Security</span> <span class="s">max-age=15768000</span><span class="p">;</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">python</span> <span class="nx">manage</span><span class="p">.</span><span class="nx">py</span> <span class="nx">startapp</span> <span class="nx">pages</span></code></pre></figure>
-
-<h3 id="adding-a-view">Adding a view</h3>
-
-<p>Open the <strong>views.py</strong> file within the newly created feature/app called <strong>pages</strong>
-and replace everything with the following:</p>
-
-<figure class="highlight"><pre><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render_to_response</span>
-<span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">RequestContext</span>
-
-<span class="k">def</span> <span class="nf">home</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">template</span> <span class="o">=</span> <span class="s">'home.html'</span><span class="p">):</span>
-	<span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
-	<span class="k">return</span> <span class="n">render_to_response</span><span class="p">(</span>
-		 <span class="n">template</span><span class="p">,</span>
-		 <span class="n">context</span><span class="p">,</span>
-		 <span class="n">context_instance</span> <span class="o">=</span> <span class="n">RequestConext</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-	<span class="p">)</span></code></pre></figure>
-
-<p>Inside the <strong>templates</strong> folder within the feature/app, create a file called
-<strong>home.html</strong> to allow the view to point to. Add a line of text into this file
-to indicate that the file can be scene once we run the website. <strong>Hello World!</strong>
-should be good enough to start.</p>
-
-<h3 id="template-and-installed-apps">Template and Installed Apps</h3>
-
-<p>This section must be added in to tell the website to load the <strong>pages</strong> app and
-the <strong>templates</strong> folder.</p>
-
-<p>Open the file <strong>settings.py</strong> file again and scroll down to find a variable called <strong>TEMPLATE_DIRS</strong>.
-Replace it with the following to tell the website to poin to the <strong>templates</strong> folder:</p>
-
-<figure class="highlight"><pre><code class="language-py" data-lang="py"><span class="n">TEMPLATE_DIRS</span> <span class="o">=</span> <span class="p">(</span>
-	<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s">'templates'</span><span class="p">),</span>
-<span class="p">)</span></code></pre></figure>
-
-<p>Add a <strong>pages</strong> string to the <strong>INSTALLED_APPS</strong> like so:</p>
-
-<figure class="highlight"><pre><code class="language-py" data-lang="py"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
-  <span class="s">'django.contrib.admin'</span><span class="p">,</span>
-  <span class="s">'django.contrib.auth'</span><span class="p">,</span>
-  <span class="s">'django.contrib.contenttypes'</span><span class="p">,</span>
-  <span class="s">'django.contrib.sessions'</span><span class="p">,</span>
-  <span class="s">'django.contrib.messages'</span><span class="p">,</span>
-  <span class="s">'django.contrib.staticfiles'</span><span class="p">,</span>
-  <span class="s">'pages'</span><span class="p">,</span>
-<span class="p">)</span></code></pre></figure>
-
-<h3 id="urls">URLS</h3>
-
-<p>Add a route to the urls in the <strong>urls.py</strong> file like so</p>
-
-<figure class="highlight"><pre><code class="language-py" data-lang="py"><span class="n">url</span><span class="p">(</span><span class="s">r'^$'</span><span class="p">,</span> <span class="s">'pages.views.home'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'home'</span><span class="p">),</span></code></pre></figure>
-
-<h3 id="run-and-view-the-website">Run and view the website</h3>
-
-<p>Back in the console, run the following command to start the website:</p>
-
-<figure class="highlight"><pre><code class="language-py" data-lang="py"><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">runserver</span></code></pre></figure>
-
-<p>Congratulations, the website can now be viewed using the following link <a href="http://localhost:8000">http://localhost:8000</a>.</p>
+<p>The steps will be needed to be replicated for each subdomain and will only take a few minutes.</p>
 
   </div>
 
@@ -277,7 +222,7 @@ Replace it with the following to tell the website to poin to the <strong>templat
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_shortname  = 'tuanb-me';
-    var disqus_identifier = '/2015/10/03/simple-django-website';
+    var disqus_identifier = '/2016/12/26/https-with-nginx';
     (function() {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';

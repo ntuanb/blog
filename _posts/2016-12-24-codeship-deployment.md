@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Continuous Deployment - Codeship
-commets: true
 ---
 
 > Continuous delivery (CD) is a software engineering approach in which teams produce 
