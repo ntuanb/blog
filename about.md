@@ -1,7 +1,7 @@
 ---
-layout: page
-title: About
+title: About Hagura
+layout: post
 permalink: /about/
 ---
 
-Contact me at mail@tuanb.me.
+For more themes, visit [https://blog.webjeda.com](https://blog.webjeda.com)
