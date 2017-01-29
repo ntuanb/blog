@@ -9,13 +9,31 @@ Using the following link [**How To Secure Nginx with Let's Encrypt**](https://ww
 any website in the domain can now be secured where all connections between to the server will be 
 encrypted.
 
-After installing `certbot-auto`, we can now secure any domain or subdomain. First we use the following command
+After installing `certbot-auto`, we can now secure any domain or subdomain. 
+
+First we must allow certbot to access and create a file by adding in
+
+{% highlight nginx %}
+location ~ /.well-known {
+    allow all;
+}
+{% endhighlight %}
+
+For a proxy pass/port forward, we need to create an alias instead
+
+{% highlight nginx %}
+location /.well-known {
+    alias /var/www/blog.tuanb.me/.well-known;
+}
+{% endhighlight %}
+
+Next, we use the following command to create a certificate.
 {% highlight nginx %}
 certbot-auto certonly -a webroot --webroot-path=/var/www/blog.tuanb.me/_site -d blog.tuanb.me
 {% endhighlight %}
 
-A certificate will created for that particular subdomain. Next we will need to edit the nginx 
-domain config inside `/etc/nginx/sites-enabled/blog.tuanb.me`, remove port 80 access and add in the following:
+We will need to edit the nginx domain config inside `/etc/nginx/sites-enabled/blog.tuanb.me`, 
+remove port 80 access and add in the following:
 
 {% highlight nginx %}
 server {
