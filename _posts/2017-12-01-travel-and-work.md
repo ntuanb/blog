@@ -18,7 +18,7 @@ These were important as I could keep up to date with what was happening and ask 
 This didn't really work because no one read or kept up to date with what the other members typed in.
 
 ### Slack
-The primary chat system that we used with channels for specific projects. This was great because it also allowed fun tools such as `/giphy`, to be used to keep the connection going with the team.
+The primary chat tool that we used with channels for specific projects. This was great because it also allowed fun tools such as `/giphy` and custom emojis, which were used to keep the connection with the team.
 
 ### Hangouts
 Anytime a question or discussion was required, the best approach was a call.
@@ -26,10 +26,10 @@ Anytime a question or discussion was required, the best approach was a call.
 # Motivation
 
 ### Atmosphere
-Working at home for a week was bad for mentality and motivation. This was changed by a visit to library or cafe once a day, especially after lunch to the end of the day.
+Working at home for a week was bad for mentality and motivation. Visting the library or cafe once a day, especially after lunch kept things fresh.
 
 ### Routine
-Keeping a consistant routine was important to not stress the body, escpecially because I was in a different country with different weather, food etc.
+Keeping a consistant routine was important to not stress the body, escpecially because of the quick changes that occurred on a daily basis: weather, food etc.
 
 # Accomodation
 A good desk and internet is important.
@@ -90,8 +90,10 @@ These were important:
 
 # Lessons
 
-- Should try to learn the language before or during the trip 
-- Everyone travels differently
-- Excercise more
+### Upskill
+I stopped upskilling myself through out the trip. Upon returning after a year, I felt really behind. 
+
+### Excercise
+Excercise more
 
 The blog post was written mostly as bullet points because hey, it was quicker to write. I might update it someday with more information for each part.

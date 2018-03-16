@@ -7,8 +7,10 @@ title: Abstraction
 
 [The Wrong Abstraction by Sandi Metz](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction).
 
-Code duplication is okay.
-
 Solving the problem should be the main priority. 
 
-Sometimes it is good to write 'messy' code, especially when it comes to prototyping, but keep in mind the codebase will be thrown out for a rewrite at the very end to properly abstract the logic.
+Sometimes it is okay to write 'messy' code, especially when it comes to prototyping, but keep in mind if its done that way, the codebase must be thrown out for a rewrite at the very end to properly abstract the logic. 
+
+In addition, a better understanding is formed after the prototyping phase, which can allow better abstraction.
+
+Code duplication is okay when complexity for a section is higher than it should be.
