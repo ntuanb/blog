@@ -9,7 +9,7 @@ title: Abstraction
 
 Solving the problem should be the main priority. 
 
-Sometimes it is okay to write 'messy' code, especially when it comes to prototyping, but keep in mind if its done that way, the codebase must be thrown out for a rewrite at the very end to properly abstract the logic. 
+Sometimes it is okay to write 'messy' code, especially when it comes to prototyping, but keep in mind if its done that way, the codebase must be thrown out for a rewrite at some point to properly abstract it into a good structure.
 
 In addition, a better understanding is formed after the prototyping phase, which can allow better abstraction.
 
