@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Understand and Comprehend
+title: Assimilation
 ---
 
 The web world is too large to consume and remember each and every detail. The best way to fully absorb it is to understand and comprehend the idea, rather than remembering what information was about.
