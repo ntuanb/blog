@@ -11,7 +11,7 @@ The web world is too large to consume and remember each and every detail. The be
 
 Repetition is better than trying to absorb everything at once. 
 
-For a year, I completely stopped consuming any technology related information. Upon return, I felt so behind. To counter this, I tried to absorb as much as possible, all at once. It didn't work.
+For a year, I completely stopped consuming information and learning. Upon my return, I felt so behind. To counter this, I tried to absorb as much as possible in a short amount of time. It didn't work.
 
 The best way is to take in small bits of information and understand it. This blog will be the main way for me to write and take notes about it, understand it in my own way.
 

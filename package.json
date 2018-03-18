@@ -1,0 +1,16 @@
+{
+  "name": "blog.ntuanb.me",
+  "version": "1.0.0",
+  "description": "[**Demo**](http://webjeda.com/hagura)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ntuanb@bitbucket.org/ntuanb/personal-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/ntuanb/personal-blog#readme"
+}
