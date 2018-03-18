@@ -13,9 +13,11 @@ layout: compress
 </head>
 <body style="background-color: rgb(255, 255, 255)">
  <script async src="{{site.baseurl}}/js/theme.min.js"></script>
+ {% if page.url != "/" %}
   <header>
       <a href="{{site.baseurl}}/"><div class="home"></div></a>
   </header>
+  {% endif %}
 
     <main>
     <article>
