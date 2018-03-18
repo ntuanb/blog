@@ -59,7 +59,7 @@ These were important:
 
 ### Romance
 
-[5 Things No One Tells You - By Liz](https://youngadventuress.com/2013/02/falling-in-love-abroad.html)
+[5 Things No One Tells You by Liz](https://youngadventuress.com/2013/02/falling-in-love-abroad.html)
 
 # Country Reviews
 
