@@ -1,0 +1,1 @@
+https://medium.com/@xevix/gaijin-engineer-in-tokyo-aaa9be8919b2

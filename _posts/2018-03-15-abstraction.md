@@ -7,10 +7,14 @@ title: Abstraction
 
 [The Wrong Abstraction by Sandi Metz](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction).
 
+### Problem At Hand
+
 Solving the problem should be the main priority. 
 
-Sometimes it is okay to write 'messy' code, especially when it comes to prototyping, but keep in mind if its done that way, the codebase must be thrown out for a rewrite at some point to properly abstract it into a good structure.
+I believe that sometimes, it is okay to write 'messy' code. Especially when it comes to prototyping as this a conceptual phase, where we are testing whether its acheivable. But keep in mind if its done this way, the codebase must be thrown out for a rewrite at some point to a proper structure with proper abstraction.
 
-In addition, a better understanding is formed after the prototyping phase, which can allow better abstraction.
+### Code Duplication
 
-Code duplication is okay when complexity for a section is higher than it should be.
+Code duplication is okay when complexity for a part of the codebase is higher than it should be. This can usually be seen when there are too many conditionals within a block of code. 
+
+In this case, seperating the section that we want to change to seperate blocks is the best approach, because the new section is now scene as a seperate piece of logic.
