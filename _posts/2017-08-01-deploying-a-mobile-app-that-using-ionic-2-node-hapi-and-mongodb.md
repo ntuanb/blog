@@ -73,8 +73,8 @@ location / {
 
 {% endhighlight %}
 
-Restart your server `service nginx restart` and test your application's api endpoints via `https://api.example.com/`.
+Restart your server `service nginx restart` and test your application's api endpoints via `curl localhost:3000`.
 
 # Conclusion
 
-I plan on adding in `[Fastlane](https://fastlane.tools/)` at some point to this application if there are bugs or any new ideas are to be added in.
+My plan was to add in `[Fastlane](https://fastlane.tools/)` at some point.
