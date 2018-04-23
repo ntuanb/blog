@@ -1,12 +1,7 @@
 ---
 layout: post
-title: Missing Bindings for SQLite3 with Node
+title: Missing Bindings for SQLite3
 ---
-
-It is often best to develop an application on the same development environment using step by step process and automation
-tools such as Vagrant or Docker but there may come an occasion where it may not be possible.
-
-> Lowers development environment setup time, increases development/production parity, and makes the "works on my machine" excuse a relic of the past.
 
 This particular problem is related to installing SQLite3 for Node.
 
