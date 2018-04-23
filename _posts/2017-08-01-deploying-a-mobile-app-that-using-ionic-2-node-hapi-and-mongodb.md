@@ -44,14 +44,14 @@ mongoose.connect('mongodb://localhost/lastLink');
 
 {% endhighlight %}
 
-1. Install Package Manager 2 with the following cmd `npm install pm2 -g`.
-1. Run your application with the following cmd `pm2 start /var/www/index.js`.
-1. Check you app is in a healthy state with `pm2 l`.
+1. Install Package Manager 2 with the following cmd `sudo npm install pm2 -g`.
+1. Run your application with the following cmd `sudo pm2 start /var/www/index.js`.
+1. Check you app is in a healthy state with `sudo pm2 l`.
 
 # MongoDB
 
-1. Install Mongod as a service with the following cmd ``.
-1. Start Mongod with `service mongod start`.
+1. Install Mongod as a service with the following cmd `sudo apt-get install -y mongodb-org`.
+1. Start Mongod with `sudo service mongod start`.
 
 # Finally
 Setup your Nginx install to use a proxy pass configuration that points to the point that we are using, in this case port `3000` and include any relavent SSL configurations.
@@ -73,7 +73,7 @@ location / {
 
 {% endhighlight %}
 
-Restart your server `service nginx restart` and test your application's api endpoints via `curl localhost:3000`.
+Restart your server `sudo service nginx restart` and test your application's api endpoints via `curl localhost:3000`.
 
 # Conclusion
 
