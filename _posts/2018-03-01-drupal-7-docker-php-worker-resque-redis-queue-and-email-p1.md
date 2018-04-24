@@ -18,23 +18,23 @@ The goals that was laid out at the start was to:
 - Process the queueing independantly
 - Log any errors
 
-## Existing Import Module
+### Existing Import Module
 
 Was required because we were already using an import tool, which did the job but not fast enough. 
 
-## Cron System
+### Cron System
 
 It ran through the cron system which imported around 100 users per minute and ran on each web page load.
 
-## Seperate Storage
+### Seperate Storage
 
 We wanted to use a seperate storage because it would function faster if we stored the job in memory. A relational database was too slow.
 
-## Process Indepedantly
+### Process Indepedantly
 
 The cron system worked on each request. We wanted to import a large number of users so we needed speed.
 
-## Log
+### Log
 
 If a user could not be imported, we wanted it to reliably log where it stopped and why. Losing data was not an option because the data being inserted was too large to sit down and check by eye.
 
@@ -48,13 +48,13 @@ By approaching this problem first, we would be able to integrate another feature
 
 I picked [Resque](https://github.com/resque/resque) to be used after a bit of research because we already had a Redis server running for sessions. By using Redis to store the queue jobs, it would be fast and that data we stored there was independant of the database.
 
-## Setup Redis
+### Setup Redis
 
 Any redis server would work as long as we had the correct url, username and password.
 
 For this project, we used Docker containers `edis:3.2-alpine` and `eldadfux/resque-web`.
 
-## Create the Generic Module
+### Create the Generic Module
 
 Download and add the plugin into the module folder under `lib`.
 
@@ -177,11 +177,7 @@ Whats happening here is, the function will load the Resque library that was incl
 
 If this function is called succesfully, a job should now appear in Redis.
 
-## Create The Worker
-
-
-
-## Create a Mail Mailsytem
+### Create a Mail Mailsytem
 
 Create a new submodule to with the functionality to create a new mailsystem called `MyResqueMailSystem`, which is a class that implements `MailSystemInterface` in a file called `my_resque_mailsystem.mail.inc`.
 
@@ -244,3 +240,6 @@ public function format(array $message) {
 
 {% endhighlight %}
 
+### Create The Worker
+
+...// stuff
