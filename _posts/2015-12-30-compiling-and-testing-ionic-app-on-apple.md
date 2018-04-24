@@ -3,17 +3,13 @@ layout: post
 title: Compiling For Testing and Submission of the Ionic App for Apple
 ---
 
-### Testing
-
 Using the CLI, run the command `ionic add platform ios` to add Xcode files to the project.
 
 Using the Finder, open the `PROJECTNAME.xcodeproj` located in `{PATH_TO_PROJECT}/platforms/ios`.
 
 Once in Xcode, go to `Product > Compile` and from there you can compile for testing.
 
-### New Project to be Submitted
-
-#### New
+### New Project
 
 - NOTE: make sure your account is the highest role if you run into problems in creating certain parts.
 - NOTE: connect an Apple Mobile during the entire process or once you have registered it to XCode Organizer.
@@ -34,7 +30,7 @@ Once in Xcode, go to `Product > Compile` and from there you can compile for test
 - Make sure the `config.xml` file is correct and contains the correct name for the APP ID. (NOTE: Do not add the random ID into the name, it will do it automatically. For this project, it was added it by mistake, so the ID is always be 4GAJFJCHB4.4GAJFJCHB4.com as the full string.)
 - `ionic prepare ios` to compile the ID
 
-#### Existing
+### Existing Project
 
 - Pull the latest `develop` branch to get the latest files.
 - Install all the required packages using `npm install` and `bower install`. (NOTE: There might be some packages that are manually installed atm.)
