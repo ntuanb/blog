@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Assimilation
+title: Quick Script To Rename Files
 ---
 
-For quicker side project reasons, I wanted to loop through a list of directories to rename all pictures with there respective index in the folder. 
+For this particular function, I wanted quick results and didn't care about doing it 'properly'.
 
-I figured there were 2 ways to that I would do this by using either Node or Bash. 
+I wanted to loop through a list of directories to rename all pictures with there respective index in the folder and figured there were 2 ways that I would do this, by using either Node or Bash. 
 
-I figured that since I was comfortable using Node and would have no trouble figuring the solution, I would try out bash.
+I figured that since I was comfortable using Node and would have no trouble in producing a solution, bash would be the preferred method here.
 
-Here is the result from the first try:
+Result from the first try:
 
 {% highlight bash %}
 
@@ -28,6 +28,8 @@ find $galleries -mindepth 1 -maxdepth 1 -type d |
         done
 
 {% endhighlight %}
+
+`mindepth` removes the `.` and `..` from appearing.
 
 Is there a better solution?
 
