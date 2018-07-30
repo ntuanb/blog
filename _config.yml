@@ -1,15 +1,14 @@
-### your site title here
-
 title: Blog
-baseurl: "" # name of the repository
+baseurl: "https://blog.tuanb.me"
 email: ntuanb@gmail.com
-
-
+url: "https://blog.tuanb.me"
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
 
 highlighter: rouge
 markdown: kramdown
-### exclude the instructions / write-up in the README.md
-
 
 # Tracker
 analytics: "UA-90397102-1"
@@ -17,9 +16,6 @@ analytics: "UA-90397102-1"
 # Comments
 disqus-shortname: tuanb-me
 
-
-#optimization
-#compress.html
 compress_html:
   clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
   comments: ["<!-- ", " -->"]
@@ -29,13 +25,9 @@ compress_html:
   blanklines: false
   profile: false
   startings: []
-  
 
 sass:
  style: compressed
 
 exclude:
 - README.md
-
-
-gems: [jekyll-seo-tag, jekyll-paginate]
