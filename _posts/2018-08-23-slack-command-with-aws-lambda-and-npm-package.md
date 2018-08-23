@@ -39,4 +39,4 @@ An app is added in slack where a slack `command` is added with response url poin
 
 The resulting output is:
 
-![My helpful screenshot]({{ "/images/2018/slack-flip-table.png" | absolute_url }})
+![Slack table flipping]({{ "/images/2018/slack-flip-table.png" | absolute_url }})
