@@ -113,7 +113,8 @@ blockquote {
     }
     @include media-query($on-laptop) {
         top: 90%;
-        left: 90%;
+        right: 10%;
+        left: auto;
         height: 30px;
         width: 30px;
         opacity: 0.6;
