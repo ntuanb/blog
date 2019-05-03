@@ -4,7 +4,7 @@ title: The Collector’s Fallacy
 author: tuan
 categories: [motivation, software]
 image: assets/images/2018/newspaper.jpg
-tags: [featured]
+tags: [featured, sticky]
 ---
 
 The web world is too large to consume and remember each and every detail. The best way to fully absorb it is to understand and comprehend the idea, rather than remembering what information was about. 

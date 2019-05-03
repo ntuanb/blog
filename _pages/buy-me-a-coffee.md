@@ -1,6 +1,6 @@
 ---
 title: "Buy me a coffee"
-permalink: "/buy-me-a-coffee.html"
+permalink: "/buy-me-a-coffee"
 ---
 
 Hi! I am Tuan!
