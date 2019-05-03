@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Classes, Abstracts, Interfaces
+author: tuan
+categories: [tutorial, software]
+image: assets/images/2015/coding.jpg
 ---
 
 Class is an object that must have implementation.

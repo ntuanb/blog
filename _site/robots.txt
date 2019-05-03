@@ -1,1 +1,1 @@
-Sitemap: https://blog.tuanb.me/sitemap.xml
+Sitemap: /sitemap.xml

@@ -1,1 +1,1 @@
-https://medium.com/@xevix/gaijin-engineer-in-tokyo-aaa9be8919b2
+https://medium.com/@xevix/gaijin-software-in-tokyo-aaa9be8919b2

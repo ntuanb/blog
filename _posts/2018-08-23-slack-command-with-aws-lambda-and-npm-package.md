@@ -1,6 +1,10 @@
 ---
 layout: post
-title: Slack Command with AWS Lambda and NPM Package
+title:  Slack Command with AWS Lambda and NPM Package
+author: tuan
+categories: [tutorial, software]
+image: assets/images/2018/slack-lambda.jpg
+tags: []
 ---
 
 Challenge: Implement a Slack app that flips tables and deploy it to AWS Lambda and NPM.
@@ -39,4 +43,4 @@ An app is added in slack where a slack `command` is added with response url poin
 
 The resulting output is:
 
-![Slack table flipping]({{ "/images/2018/slack-flip-table.png" | absolute_url }})
+![Slack table flipping]({{ "assets/images/2018/slack-flip-table.png" | absolute_url }})

@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Self Signed Certs
+author: tuan
+categories: [tutorial, software]
+image: assets/images/2015/sign.jpg
 ---
 
 For some reason, its a bit hard to find a place where I can copy paste a few lines to generate a self signed certificate. Placing this here so that I can remember how to generate a self signed certificate.
