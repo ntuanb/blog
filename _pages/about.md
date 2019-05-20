@@ -2,7 +2,10 @@
 title: "About"
 layout: page-sidebar
 permalink: "/about"
-image: "/assets/images/screenshot.jpg"
+image: "/assets/images/2019/discount.jpg"
 comments: true
 ---
-Made with <i class="fa fa-heart text-danger"></i> by Sal [@wowthemesnet](https://www.wowthemes.net/category/free-themes-templates/).
+
+All images are taken from royalty free websites such as:
+
+- Unsplash

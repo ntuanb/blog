@@ -2,9 +2,8 @@
 title: "Tuan's Blog"
 layout: default
 pagination:
-    enabled: true
+    enabled: false
 description: "I love javascript, automation and write code for no reason."
-permalink: "/"
 ---
 
 
@@ -51,9 +50,9 @@ permalink: "/"
         
         <!-- second latest post -->
         {%- assign second_post = site.posts[1] -%}        
-        <div class="mb-3 d-flex align-items-center">                
+        <div class="mb-3 d-flex align-items-center">   
                 {% if second_post.image %}
-                <div class="col-md-4">
+                <div class="col-md-4 pl-0">
                 <a href="{{site.baseurl}}{{second_post.url}}">
                  <img class="w-100" src="{% if second_post.image contains "://" %}{{ second_post.image }}{% else %}{{ second_post.image | absolute_url }}{% endif %}" alt="{{ second_post.title }}">
                 </a>
@@ -75,12 +74,11 @@ permalink: "/"
                     </small>
                 </div>
             </div>
-        
         <!-- third latest post -->
         {%- assign third_post = site.posts[2] -%}        
         <div class="mb-3 d-flex align-items-center">                
                 {% if third_post.image %}
-                <div class="col-md-4">
+                <div class="col-md-4 pl-0">
                 <a href="{{site.baseurl}}{{third_post.url}}">
                  <img class="w-100" src="{% if third_post.image contains "://" %}{{ third_post.image }}{% else %}{{ third_post.image | absolute_url }}{% endif %}" alt="{{ third_post.title }}">
                 </a>
@@ -107,7 +105,7 @@ permalink: "/"
         {%- assign fourth_post = site.posts[3] -%}        
         <div class="mb-3 d-flex align-items-center">                
                 {% if fourth_post.image %}
-                <div class="col-md-4">
+                <div class="col-md-4 pl-0">
                 <a href="{{site.baseurl}}{{fourth_post.url}}">
                 <img class="w-100" src="{% if fourth_post.image contains "://" %}{{ fourth_post.image }}{% else %}{{ fourth_post.image | absolute_url }}{% endif %}" alt="{{ fourth_post.title }}">
                 </a>
@@ -167,7 +165,7 @@ permalink: "/"
     
 <div class="row mt-3">
    
-    <div class="col-md-8 main-loop">
+    <div class="col-md-8 mb-2rem main-loop">
         
         <h4 class="font-weight-bold spanborder"><span>All Stories</span></h4>
         

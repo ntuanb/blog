@@ -1,10 +1,11 @@
 ---
 title: "Contact"
-permalink: "/contact.html"
+layout: page-sidebar
+permalink: "/contact"
 ---
 
-<form action="https://formspree.io/{{site.email}}" method="POST">    
-<p class="mb-4">Please send your message to {{site.name}}. We will reply as soon as possible!</p>
+<form action="https://formspree.io/{{site.email}}" method="POST" autocomplete="off">    
+<p class="mb-4">We will reply as soon as possible!</p>
 <div class="form-group row">
 <div class="col-md-6">
 <input class="form-control" type="text" name="name" placeholder="Name*" required>

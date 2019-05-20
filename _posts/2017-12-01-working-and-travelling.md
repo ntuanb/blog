@@ -2,7 +2,7 @@
 layout: post
 title: Working and Travelling
 author: tuan
-categories: [motivation, software]
+categories: [motivation, software, travel]
 image: assets/images/2017/travel.jpg
 tags: [featured]
 ---
@@ -95,9 +95,10 @@ These were important:
 # Lessons
 
 ### Upskill
-I stopped upskilling myself through out the trip. Upon returning after a year, I felt really behind. 
+I stopped upskilling myself through out the trip. Upon returning after a year, I felt like I had
+fallen behind. 
 
 ### Excercise
-Excercise more
+Excercise as often as you can.
 
 The blog post was written mostly as bullet points it was quicker to jot down the key points. I might update it someday with more information for each part.

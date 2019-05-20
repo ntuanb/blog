@@ -15,7 +15,7 @@ tags: [featured]
 
 Solving the problem should be the main priority. 
 
-I believe that sometimes, it is okay to write 'messy' code. Especially when it comes to prototyping as this a conceptual phase, where we are testing whether its acheivable. But keep in mind if its done this way, the codebase must be thrown out for a rewrite at some point to a proper structure with proper abstraction.
+Sometimes, it is okay to write 'messy' code. Especially when it comes to prototyping as this a conceptual phase, where we are testing whether its acheivable. But keep in mind if its done this way, the codebase must be thrown out for a rewrite at some point to a proper structure with proper abstraction.
 
 ### Code Duplication
 

@@ -10,9 +10,9 @@ tags: []
 Challenge: Implement a Slack app that flips tables and deploy it to AWS Lambda and NPM.
 
 The following links are apart of this:
-- [https://github.com/ntuanb/slack-fliptable](https://github.com/ntuanb/slack-fliptable)
-- [https://www.npmjs.com/package/slack-fliptable](https://www.npmjs.com/package/slack-fliptable)
-- [https://travis-ci.org/ntuanb/slack-fliptable](https://travis-ci.org/ntuanb/slack-fliptable)
+- [Github - Slack Fliptable](https://github.com/ntuanb/slack-fliptable)
+- [NPM - Slack Fliptable](https://www.npmjs.com/package/slack-fliptable)
+- [Travis - Slack Fliptable](https://travis-ci.org/ntuanb/slack-fliptable)
 
 The magic in this is mostly done through the script file ran in Travis when the tests pass 100%:
 

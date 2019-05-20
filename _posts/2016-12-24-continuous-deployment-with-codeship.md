@@ -6,7 +6,7 @@ categories: [tutorial, software]
 image: assets/images/2016/codeship.jpg
 ---
 
-> Continuous delivery (CD) is a software softwareing approach in which teams produce 
+> Continuous delivery (CD) is a software softwaring approach in which teams produce 
 > software in short cycles, ensuring that the software can be reliably released at any 
 > time. It aims at building, testing, and releasing software faster and more frequently. - Wikipedia
 
