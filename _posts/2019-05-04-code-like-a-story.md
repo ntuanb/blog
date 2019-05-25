@@ -10,7 +10,7 @@ tags: []
 I always believed I wrote well structured code but got a shock when a team member commented
 on a piece of work I created, describing that it was hard to understand and did a complete rewrite. 
 
-I took pride in my work and respected his opinion, so when he did the rewrite, I had to understand why. We sat down, had a discussion and to this day, I will always remember what he said:
+I took ownership of my work and respected his opinion, so when he did the rewrite, I had to understand why. We sat down, had a discussion and to this day, I will always remember what he said:
 
 > ... write code like its a story ...
 
