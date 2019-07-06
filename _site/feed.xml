@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-05-25T15:00:04+10:00</updated><id>/feed.xml</id><title type="html">Blog</title><subtitle>Welcome to my personal blog!</subtitle><entry><title type="html">Serving Static Files</title><link href="/serving-static-files/" rel="alternate" type="text/html" title="Serving Static Files" /><published>2019-05-20T00:00:00+10:00</published><updated>2019-05-20T00:00:00+10:00</updated><id>/serving-static-files</id><content type="html" xml:base="/serving-static-files/">&lt;p&gt;Files should be served directly and whitelisted by the web server where applicable. If there comes a time
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-05-30T21:47:52+10:00</updated><id>/feed.xml</id><title type="html">Blog</title><subtitle>Welcome to my personal blog!</subtitle><entry><title type="html">Serving Static Files</title><link href="/serving-static-files/" rel="alternate" type="text/html" title="Serving Static Files" /><published>2019-05-20T00:00:00+10:00</published><updated>2019-05-20T00:00:00+10:00</updated><id>/serving-static-files</id><content type="html" xml:base="/serving-static-files/">&lt;p&gt;Files should be served directly and whitelisted by the web server where applicable. If there comes a time
 when the files timeout especially if of larger than normal size, this may be because the filetype has 
-not been added to the list to bypass and delivered as is.&lt;/p&gt;</content><author><name>tuan</name></author><summary type="html">Files should be served directly and whitelisted by the web server where applicable. If there comes a time when the files timeout especially if of larger than normal size, this may be because the filetype has not been added to the list to bypass and delivered as is.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/images/2019/storage.jpg" /></entry><entry><title type="html">Code Like a Story</title><link href="/code-like-a-story/" rel="alternate" type="text/html" title="Code Like a Story" /><published>2019-05-04T00:00:00+10:00</published><updated>2019-05-04T00:00:00+10:00</updated><id>/code-like-a-story</id><content type="html" xml:base="/code-like-a-story/">&lt;p&gt;I always believed I wrote well structured code but got a shock when a team member commented
-on a piece of work I created, describing that it was hard to understand and did a complete rewrite.&lt;/p&gt;
+not been added to the list to bypass and delivered as is.&lt;/p&gt;</content><author><name>tuan</name></author><summary type="html">Files should be served directly and whitelisted by the web server where applicable. If there comes a time when the files timeout especially if of larger than normal size, this may be because the filetype has not been added to the list to bypass and delivered as is.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/images/2019/storage.jpg" /></entry><entry><title type="html">Code Like a Story</title><link href="/code-like-a-story/" rel="alternate" type="text/html" title="Code Like a Story" /><published>2019-05-04T00:00:00+10:00</published><updated>2019-05-04T00:00:00+10:00</updated><id>/code-like-a-story</id><content type="html" xml:base="/code-like-a-story/">&lt;p&gt;I always thought I wrote well structured code but got a bit of a surprise when a co-worker described
+a piece of code I was writing as hard to understand.&lt;/p&gt;
 
-&lt;p&gt;I took ownership of my work and respected his opinion, so when he did the rewrite, I had to understand why. We sat down, had a discussion and to this day, I will always remember what he said:&lt;/p&gt;
+&lt;p&gt;Respecting his constructive criticism, I had to understand why. To summarise the most important section
+of the convsersion:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;… write code like its a story …&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Now, at first I didn’t quite understand what it meant so I had to find my own meaning.&lt;/p&gt;
+&lt;p&gt;At first I didn’t quite understand what it meant so I had to find my own meaning.&lt;/p&gt;
 
 &lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
 
@@ -37,55 +38,8 @@ to the consumer which may involve building the expected structure.&lt;/p&gt;
 
 &lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
 
-&lt;p&gt;Writing code like a story isn’t something that should applied to everything. Each language has its own quirks
-and correct way, so follow the best standards.&lt;/p&gt;
-
-&lt;p&gt;We should strive to avoid unexpected twists and turns as a developer.&lt;/p&gt;</content><author><name>tuan</name></author><summary type="html">I always believed I wrote well structured code but got a shock when a team member commented on a piece of work I created, describing that it was hard to understand and did a complete rewrite.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/images/2019/write.jpg" /></entry><entry><title type="html">Gift Ideas for Traditional Asian Moms</title><link href="/gift-ideas-for-traditional-asian-moms/" rel="alternate" type="text/html" title="Gift Ideas for Traditional Asian Moms" /><published>2019-05-03T00:00:00+10:00</published><updated>2019-05-03T00:00:00+10:00</updated><id>/gift-ideas-for-traditional-asian-moms</id><content type="html" xml:base="/gift-ideas-for-traditional-asian-moms/">&lt;p&gt;All year round, when the important day comes, I’ve always had to use the internet to search for some ideas on buying a gift for my mother for Mother’s Day or for her birthday. She is known to be quite picky when it comes
-to items so its always a tough decision.&lt;/p&gt;
-
-&lt;p&gt;Together with my sister, we’ve tried almost everything ranging from clothes to appliances. Here are some of 
-the items we’ve found to be the most receptive in terms of happiness, with no complaints.&lt;/p&gt;
-
-&lt;p&gt;This post is a mix of truth and satire, so use it wisely!&lt;/p&gt;
-
-&lt;h3 id=&quot;money&quot;&gt;Money&lt;/h3&gt;
-
-&lt;p&gt;As always, cold hard cash is the best gift, preferably in a nice envelope for a bit of a suprise.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/2019/money.jpg&quot; alt=&quot;money&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;university-degree&quot;&gt;University Degree&lt;/h3&gt;
-
-&lt;p&gt;If you’re still in university, this is the best gift of all. It will take a few years but it will be 
-worth it. Remember to take her to the ceremony and take plenty of photos, let her wear the cap instead
-for extra smiles.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/2019/university.jpg&quot; alt=&quot;university&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;phone-or-tablet&quot;&gt;Phone or Tablet&lt;/h3&gt;
-
-&lt;p&gt;This one revolves around the idea that growing up, she would always be using previous generation
-mobile phones that no one in the house would use anymore. It was her way of saving money.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/2019/phone.jpg&quot; alt=&quot;phone&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;flowers&quot;&gt;Flowers&lt;/h1&gt;
-
-&lt;p&gt;Every now and then, we would forget to buy her a gift so a fresh bouquet of flowers purchased from a 
-nearby flower shop makes a great gift.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/2019/flowers.jpg&quot; alt=&quot;flowers&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;heavily-discounted-item&quot;&gt;Heavily Discounted Item&lt;/h3&gt;
-
-&lt;p&gt;Items from a flea market or heavily discounted is the best. Make sure to 
-emphasize how lucky you were or how much energy you exerted bartering.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/2019/discount.jpg&quot; alt=&quot;discount&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
-
-&lt;p&gt;Whatever the gift is, make sure its pragmatic.&lt;/p&gt;</content><author><name>tuan</name></author><summary type="html">All year round, when the important day comes, I’ve always had to use the internet to search for some ideas on buying a gift for my mother for Mother’s Day or for her birthday. She is known to be quite picky when it comes to items so its always a tough decision.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/images/2019/mothers-day.jpg" /></entry><entry><title type="html">Slack Command with AWS Lambda and NPM Package</title><link href="/slack-command-with-aws-lambda-and-npm-package/" rel="alternate" type="text/html" title="Slack Command with AWS Lambda and NPM Package" /><published>2018-08-23T00:00:00+10:00</published><updated>2018-08-23T00:00:00+10:00</updated><id>/slack-command-with-aws-lambda-and-npm-package</id><content type="html" xml:base="/slack-command-with-aws-lambda-and-npm-package/">&lt;p&gt;Challenge: Implement a Slack app that flips tables and deploy it to AWS Lambda and NPM.&lt;/p&gt;
+&lt;p&gt;To summarise, I belive that writing code like is a story means as a developer, you must be able to 
+structure and design your codebase so that anyone can easily dive in and contribute.&lt;/p&gt;</content><author><name>tuan</name></author><summary type="html">I always thought I wrote well structured code but got a bit of a surprise when a co-worker described a piece of code I was writing as hard to understand.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/images/2019/write.jpg" /></entry><entry><title type="html">Slack Command with AWS Lambda and NPM Package</title><link href="/slack-command-with-aws-lambda-and-npm-package/" rel="alternate" type="text/html" title="Slack Command with AWS Lambda and NPM Package" /><published>2018-08-23T00:00:00+10:00</published><updated>2018-08-23T00:00:00+10:00</updated><id>/slack-command-with-aws-lambda-and-npm-package</id><content type="html" xml:base="/slack-command-with-aws-lambda-and-npm-package/">&lt;p&gt;Challenge: Implement a Slack app that flips tables and deploy it to AWS Lambda and NPM.&lt;/p&gt;
 
 &lt;p&gt;The following links are apart of this:&lt;/p&gt;
 &lt;ul&gt;
@@ -517,4 +471,258 @@ fallen behind.&lt;/p&gt;
 &lt;h3 id=&quot;excercise&quot;&gt;Excercise&lt;/h3&gt;
 &lt;p&gt;Excercise as often as you can.&lt;/p&gt;
 
-&lt;p&gt;The blog post was written mostly as bullet points it was quicker to jot down the key points. I might update it someday with more information for each part.&lt;/p&gt;</content><author><name>tuan</name></author><category term="featured" /><summary type="html">Twelve months of remote work across Japan, South Korea, Hong Kong, Taiwan and Macao has been a great life experience.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/images/2017/travel.jpg" /></entry></feed>
+&lt;p&gt;The blog post was written mostly as bullet points it was quicker to jot down the key points. I might update it someday with more information for each part.&lt;/p&gt;</content><author><name>tuan</name></author><category term="featured" /><summary type="html">Twelve months of remote work across Japan, South Korea, Hong Kong, Taiwan and Macao has been a great life experience.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/images/2017/travel.jpg" /></entry><entry><title type="html">Salesforce Lightning Component Search List</title><link href="/salesforce-lightning-components-search-list/" rel="alternate" type="text/html" title="Salesforce Lightning Component Search List" /><published>2017-09-07T00:00:00+10:00</published><updated>2017-09-07T00:00:00+10:00</updated><id>/salesforce-lightning-components-search-list</id><content type="html" xml:base="/salesforce-lightning-components-search-list/">&lt;p&gt;This step by step guide is purely for personal learning and is based off another tutorial. The steps will be mostly the same, some copy pasta here and there, along with syntax and variable changes.&lt;/p&gt;
+
+&lt;p&gt;The original tutorial can be found here &lt;a href=&quot;http://developerforce.github.io/lightning-components-tutorial/setup-environment.html&quot;&gt;Lightning Components Tutorial&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;part-1---creating-the-consignmentlistcontroller-class&quot;&gt;Part 1 - Creating the ConsignmentListController Class&lt;/h1&gt;
+
+&lt;p&gt;Create a controller in Apex that will be primarly used to retrieve the data by using SOQL(Salesforce Object Query Language).&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &amp;gt; &lt;strong&gt;New&lt;/strong&gt; &amp;gt; &lt;strong&gt;Apex Class&lt;/strong&gt;, specify &lt;code class=&quot;highlighter-rouge&quot;&gt;ConsignmentListController&lt;/code&gt; as the class name and click OK.
+or&lt;/li&gt;
+      &lt;li&gt;In PHPStorm (with JedIDE), create a class in &lt;code class=&quot;highlighter-rouge&quot;&gt;classes&lt;/code&gt; called &lt;code class=&quot;highlighter-rouge&quot;&gt;ConsignmentListController&lt;/code&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Implement the class as follows:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharing&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ConsignmentListController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@AuraEnabled&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Consignment__c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Name__c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Phone__c&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Consignment__c&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LIMIT&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@AuraEnabled&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Contact&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findByName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;searchKey&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'%'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;searchKey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'%'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Name__c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Phone__c&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Consignment__c&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Name__c&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LIKE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;LIMIT&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@AuraEnabled&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Contact&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;consignmentId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Name__c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Phone__c&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Contact&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Consignment_Id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;consignmentId&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;The @AuraEnabled method annotation makes a method available to Lightning applications&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;part-2---creating-the-quickconsignment-lightning-component&quot;&gt;Part 2 - Creating the QuickConsignment Lightning Component&lt;/h1&gt;
+
+&lt;h2 id=&quot;step-1---create-the-component&quot;&gt;Step 1 - Create the component&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;File&lt;/strong&gt; &amp;gt; &lt;strong&gt;New&lt;/strong&gt; &amp;gt; &lt;strong&gt;Lightning Component&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Implement the component as follows:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;aura:component&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;implements=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;force:appHostable&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;ContactList goes here&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/aura:component&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;step-2---create-a-tab&quot;&gt;Step 2 - Create a tab&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; &amp;gt; &lt;strong&gt;Tabs&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In the Lightning Component Tabs section, click New&lt;/p&gt;
+
+&lt;h1 id=&quot;part-3---creating-the-consignmentlist-component&quot;&gt;Part 3 - Creating the ConsignmentList Component&lt;/h1&gt;
+
+&lt;h2 id=&quot;step-1---create-the-component-1&quot;&gt;Step 1 - Create the component&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;File&lt;/strong&gt; &amp;gt; &lt;strong&gt;New&lt;/strong&gt; &amp;gt; &lt;strong&gt;Lightning Component&lt;/strong&gt;. Specify &lt;code class=&quot;highlighter-rouge&quot;&gt;ConsignmentList&lt;/code&gt; as the bundle name and click OK.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Implement the component as follows:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;aura:component&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;controller=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ConsignmentListController&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;aura:attribute&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;consignments&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Consignment__c[]&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;aura:handler&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;init&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{!this}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{!c.doInit}&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;table&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;slds-table slds-table_bordered slds-table_cell-buffer&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;tbody&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;aura:iteration&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;items=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{!v.consignments}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;var=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;consignment&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-label=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Id&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;slds-truncate&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{! '#/sObject/' + consignment.Id + '/view'}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                                {!consignment.Id}
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-label=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Order Reference&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;slds-truncate&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                            {!consignment.Name__c}
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-label=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Order Reference&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;slds-truncate&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                            {!consignment.Phone__c}
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/aura:iteration&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tbody&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/aura:component&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;notes-1&quot;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;The controller assigned to the component (first line of code) refers to the server-side controller created in the classes file.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;step-2---implement-the-controller&quot;&gt;Step 2 - Implement the Controller&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;doInit&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;c.findAll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setCallback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;v.contacts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getReturnValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+        &lt;span class=&quot;nx&quot;&gt;$A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;enqueueAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;step-3---add-the-component-to-a-page&quot;&gt;Step 3 - Add the component to a page&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;aura:component&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;implements=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;force:appHostable&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;c:ConsignmentList/&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/aura:component&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;notes-2&quot;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;c. is the default namespace for Lightning components&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;part-4&quot;&gt;Part 4&lt;/h1&gt;
+
+&lt;p&gt;Now that we decided to build SearchBar and ContactList as two separate components, we need a way for ContactList to know when the search key changes so that it can retrieve and display the matching contacts. Lightning Events enable that kind of communication between components. In this step, you create a Lightning Event used by the SearchBar component to notify other components when the search key changes.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-1---create-an-event&quot;&gt;Step 1 - Create an event&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;File&lt;/strong&gt; &amp;gt; &lt;strong&gt;New&lt;/strong&gt; &amp;gt; &lt;strong&gt;Lightning Event&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Implement the component as follows:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;aura:event&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;APPLICATION&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;aura:attribute&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;searchKey&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;String&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/aura:event&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;step-2---create-a-searchbar-component&quot;&gt;Step 2 - Create a SearchBar component&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;File &amp;gt; New &amp;gt; Lightning Component&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Implement the component as follows:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;aura:component&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;slds-input&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;search&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;onkeyup=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{!c.searchKeyChange}&quot;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/aura:component&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;step-3---implement-the-controller&quot;&gt;Step 3 - Implement the Controller&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;searchKeyChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myEvent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;e.c:SearchKeyChange&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;myEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;searchKey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;myEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fire&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;notes-3&quot;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Gets an instance of the &lt;strong&gt;SearchKeyChange&lt;/strong&gt; event&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;step-4----listen-for-the-searchkeychange-event-in-consignmentlist&quot;&gt;Step 4 -  Listen for the SearchKeyChange Event in ConsignmentList&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Go back to the ConsignmentList component.&lt;/li&gt;
+  &lt;li&gt;Add the following to the existing code:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;aura:handler&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;event=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;c:SearchKeyChange&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{!c.searchKeyChange}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In the controller, add the following below &lt;code class=&quot;highlighter-rouge&quot;&gt;onInit&lt;/code&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;searchKeyChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;searchKey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getParam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;searchKey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;c.findByName&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setParams&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&quot;searchKey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;searchKey&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setCallback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;v.contacts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getReturnValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;$A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;enqueueAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;step-5---finish-off&quot;&gt;Step 5 - Finish Off&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;c:SearchBar/&amp;gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;c:ContactList/&amp;gt;&lt;/code&gt; to any page to retreive and display the component.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;aura:component&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;implements=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;force:appHostable&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;c:SearchBar/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;c:ContactList/&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/aura:component&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>tuan</name></author><summary type="html">This step by step guide is purely for personal learning and is based off another tutorial. The steps will be mostly the same, some copy pasta here and there, along with syntax and variable changes.</summary></entry></feed>

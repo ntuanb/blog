@@ -7,14 +7,15 @@ image: assets/images/2019/write.jpg
 tags: []
 ---
 
-I always believed I wrote well structured code but got a shock when a team member commented
-on a piece of work I created, describing that it was hard to understand and did a complete rewrite. 
+I always thought I wrote well structured code but got a bit of a surprise when a co-worker described
+a piece of code I was writing as hard to understand.
 
-I took ownership of my work and respected his opinion, so when he did the rewrite, I had to understand why. We sat down, had a discussion and to this day, I will always remember what he said:
+Respecting his constructive criticism, I had to understand why. To summarise the most important section
+of the convsersion:
 
 > ... write code like its a story ...
 
-Now, at first I didn't quite understand what it meant so I had to find my own meaning.
+At first I didn't quite understand what it meant so I had to find my own meaning.
 
 ### Introduction
 
@@ -42,7 +43,5 @@ to the consumer which may involve building the expected structure.
 
 # Summary
 
-Writing code like a story isn't something that should applied to everything. Each language has its own quirks
-and correct way, so follow the best standards.
-
-We should strive to avoid unexpected twists and turns as a developer.
+To summarise, I belive that writing code like is a story means as a developer, you must be able to 
+structure and design your codebase so that anyone can easily dive in and contribute.
