@@ -3,7 +3,7 @@ layout: post
 title:  Slack Command with AWS Lambda and NPM Package
 author: tuan
 categories: [tutorial, software]
-image: assets/images/2018/slack-lambda.jpg
+image: /assets/images/2018/slack-lambda.jpg
 tags: []
 ---
 

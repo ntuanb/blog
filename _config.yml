@@ -1,57 +1,48 @@
-# Site
-name: 'Blog'
-description: 'Welcome to my personal blog!'
-logo: 'assets/avatars/tuan.png'
-favicon: 'assets/avatars/tuan.png'
-baseurl: ''
-disqus: 'tuanb-me'
-email: 'ntuanb@gmail.com'
-mailchimp-list: 'https://whiskyd.us16.list-manage.com/subscribe/post?u=1c791dbb1bcdb3f0dcaf380ae&amp;id=61fed065e3'
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-include: ["_pages"]
-permalink: /:title/
+# Site settings
+title:       Tuan
+email:       ''
+description: ''
+baseurl:     '' # The subpath of your site, e.g. /blog
+url:         'https://tuanb.me/' # The base hostname & protocol for your site
+twitter:     ''
+github:      'https://github.com/ntuanb'
+instagram:   ''
+facebook:    ''
 
-# Plugins
-plugins: 
-  - jekyll-feed
-  - jekyll-sitemap
+markdown:  kramdown
+permalink: pretty
+paginate:  10
+
+sass:
+  style: compressed
+
+plugins:
   - jekyll-paginate
-  - jekyll-seo-tag
-  
-authors:
-    tuan:
-      name:           Tuan
-      site:           https://blog.tuanb.me
-      avatar:         /assets/images/avatars/tuan.png
-      bio:            "I love javascript, automation and write code for no reason."
-      email:          ntuanb@gmail.com
-      twitter:        
- 
-# Defaults
+  - jekyll/tagging
+
+include:
+  - _pages
+
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+
+# Tags
+tag_page_dir:         tag
+tag_page_layout:      tag_page
+tag_permalink_style:  pretty
+
+# Pages path
 defaults:
-
-  # all posts
   - scope:
-      path: "_posts"
+      path: '_pages'
     values:
-      layout: post
-      author: tuan
-      avatar: /assets/avatars/tuan.png
-      
-  # all pages
-  - scope:
-      path: "_pages"
-    values:
-      layout: page
-      
-# Syntax
-markdown: kramdown
-highlighter: rouge
-
-# Paginate
-paginate: 10
-
-
-
-# Exclude metadata and development time dependencies (like Grunt plugins)
-exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
+      permalink: /:basename:output_ext

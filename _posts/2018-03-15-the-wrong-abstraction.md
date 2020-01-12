@@ -3,7 +3,7 @@ layout: post
 title: The Wrong Abstraction
 author: tuan
 categories: [motivation, software]
-image: assets/images/2018/abstraction.jpg
+image: /assets/images/2018/abstraction.jpg
 tags: [featured]
 ---
 

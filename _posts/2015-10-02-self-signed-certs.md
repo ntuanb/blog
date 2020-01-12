@@ -3,7 +3,7 @@ layout: post
 title: Self Signed Certs
 author: tuan
 categories: [tutorial, software]
-image: assets/images/2015/sign.jpg
+image: /assets/images/2015/sign.jpg
 ---
 
 For some reason, its always a struggle to find how to generate a self signed certificate. 

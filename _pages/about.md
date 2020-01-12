@@ -1,11 +1,8 @@
 ---
-title: "About"
-layout: page-sidebar
-permalink: "/about"
-image: "/assets/images/2019/discount.jpg"
-comments: true
+layout: page
+title: About
 ---
 
-All images are taken from royalty free websites such as:
+Welcome to my blog. A website where I write about random things I have learnt recently and felt it should be noted down somewhere. 
 
-- Unsplash
+This site was created using Jekyll.

@@ -3,7 +3,7 @@ layout: post
 title: Deploying a Mobile App That Uses Ionic 2, Node, Hapi and MongoDB
 author: tuan
 categories: [tutorial, software]
-image: assets/images/2017/ionic.jpg
+image: /assets/images/2017/ionic.jpg
 ---
 
 A very short tutorial to help me remember how to deploy one of the mobile applications I created in my own time for fun. 

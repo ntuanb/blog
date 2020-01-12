@@ -3,7 +3,7 @@ layout: post
 title: Serving Static Files
 author: tuan
 categories: [tutorial]
-image: assets/images/2019/storage.jpg
+image: /assets/images/2019/storage.jpg
 tags: []
 ---
 

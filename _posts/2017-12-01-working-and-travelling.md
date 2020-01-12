@@ -3,7 +3,7 @@ layout: post
 title: Working and Travelling
 author: tuan
 categories: [motivation, software, travel]
-image: assets/images/2017/travel.jpg
+image: /assets/images/2017/travel.jpg
 tags: [featured]
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: The Collector’s Fallacy
 author: tuan
 categories: [motivation, software]
-image: assets/images/2018/newspaper.jpg
+image: /assets/images/2018/newspaper.jpg
 tags: [featured, sticky]
 ---
 

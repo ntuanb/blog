@@ -3,7 +3,7 @@ layout: post
 title: Quick Script To Rename Files
 author: tuan
 categories: [tutorial, software]
-image: assets/images/2018/loop.jpg
+image: /assets/images/2018/loop.jpg
 ---
 
 For this particular function, I wanted quick results and didn't care about doing it 'properly'.

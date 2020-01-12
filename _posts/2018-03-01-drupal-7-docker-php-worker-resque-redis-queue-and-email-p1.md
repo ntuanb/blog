@@ -3,7 +3,7 @@ layout: post
 title: Drupal 7, Docker, PHP Worker, Resque, Redis, Queue and Email Part 1
 author: tuan
 categories: [tutorial, software]
-image: assets/images/2018/queue.jpg
+image: /assets/images/2018/queue.jpg
 ---
 
 Our task was to create a module that could import users into the database.

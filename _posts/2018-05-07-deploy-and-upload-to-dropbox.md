@@ -3,7 +3,7 @@ layout: post
 title: Deploy Upload to Dropbox
 author: tuan
 categories: [tutorial, software]
-image: assets/images/2018/dropbox-upload.jpg
+image: /assets/images/2018/dropbox-upload.jpg
 ---
 
 One of the projects requirements was to upload the project to Dropbox when a new release occurred. 

@@ -3,7 +3,7 @@ layout: post
 title:  Code Like a Story
 author: tuan
 categories: [tutorial]
-image: assets/images/2019/write.jpg
+image: /assets/images/2019/write.jpg
 tags: []
 ---
 

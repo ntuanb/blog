@@ -3,7 +3,7 @@ layout: post
 title: Simple Django Website
 author: tuan
 categories: [tutorial, software]
-image: assets/images/2015/django.jpg
+image: /assets/images/2015/django.jpg
 ---
 
 This tutorial is for version 1.5 as it was written about a year ago during the early days
