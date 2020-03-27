@@ -101,18 +101,27 @@
     
       <div class='o-grid__col'>
 
-  <a href='/movies/2020/01/12/top-movies-and-shows-i-watched-in-2019/' class='c-post-card  c-post-card--first  '>
-    <h3 class='c-post-card__title'>Top Movies and Shows I Watched In 2019</h3>
+  <a href='/tutorial/2020/03/27/git-pre-push/' class='c-post-card  c-post-card--first  '>
+    <h3 class='c-post-card__title'>Git Pre Push</h3>
 
     
-      <img src='/assets/images/2020/movie.jpg' class='c-post__image' alt='Top Movies and Shows I Watched In 2019'>
+      <img src='/assets/images/2020/composer.jpg' class='c-post__image' alt='Git Pre Push'>
     
 
     <p class='c-post-card__excerpt u-font-medium'>
-      There a few key points that need to be mentioned for the films listed below: They are listed in no particular order Does not have to be released in 2019 First time watching unless mentioned...
+      Adding a git pre push to force linting and unit tests before its push to remote when working with composer projects.
+
+...
+"scripts": {
+    "post-install-cmd": [
+        "php -r \"copy('hooks/prepush', '.git/hooks/prepush');\""
+    ]
+},
+...
+
     </p>
 
-    <span class='c-post-card__date'>12 Jan 2020</span>
+    <span class='c-post-card__date'>27 Mar 2020</span>
   </a>
 
 </div>

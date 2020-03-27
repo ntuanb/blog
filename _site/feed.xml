@@ -5,45 +5,26 @@
     <description></description>
     <link>https://tuanb.me//</link>
     <atom:link href="https://tuanb.me//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 Jan 2020 16:23:17 +1100</pubDate>
-    <lastBuildDate>Sun, 12 Jan 2020 16:23:17 +1100</lastBuildDate>
+    <pubDate>Sat, 28 Mar 2020 00:22:45 +1100</pubDate>
+    <lastBuildDate>Sat, 28 Mar 2020 00:22:45 +1100</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
 
     
       <item>
-        <title>Top Movies and Shows I Watched In 2019</title>
-        <description>&lt;p&gt;There a few key points that need to be mentioned for the films listed below:&lt;/p&gt;
+        <title>Git Pre Push</title>
+        <description>&lt;p&gt;Adding a git pre push to force linting and unit tests before its push to remote when working with composer projects.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;They are listed in no particular order&lt;/li&gt;
-  &lt;li&gt;Does not have to be released in 2019&lt;/li&gt;
-  &lt;li&gt;First time watching unless mentioned otherwise&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;movies&quot;&gt;Movies&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Parasite&lt;/li&gt;
-  &lt;li&gt;Intimate Strangers - This movie is based on the Italian film Perfect Strangers&lt;/li&gt;
-  &lt;li&gt;The Fugitive - One of the only movies where it showed the protagonist eating food to survive&lt;/li&gt;
-  &lt;li&gt;Knives Out - One of best investigative movies of the year&lt;/li&gt;
-  &lt;li&gt;Luck Key - Random movie that turned out to be quite fun&lt;/li&gt;
-  &lt;li&gt;Memories of a Murder - This movie was watched the 2nd time because 1 of the scenes showed some extra details that wasn’t noticed during the first viewing&lt;/li&gt;
-  &lt;li&gt;Avengers&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;shows&quot;&gt;Shows&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Kingdom&lt;/li&gt;
-  &lt;li&gt;Rick and Morty&lt;/li&gt;
-  &lt;li&gt;The Boys&lt;/li&gt;
-&lt;/ul&gt;
-
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;post-install-cmd&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;php -r &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;copy('hooks/prepush', '.git/hooks/prepush');&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
-        <pubDate>Sun, 12 Jan 2020 00:00:00 +1100</pubDate>
-        <link>https://tuanb.me//movies/2020/01/12/top-movies-and-shows-i-watched-in-2019/</link>
-        <guid isPermaLink="true">https://tuanb.me//movies/2020/01/12/top-movies-and-shows-i-watched-in-2019/</guid>
+        <pubDate>Fri, 27 Mar 2020 00:00:00 +1100</pubDate>
+        <link>https://tuanb.me//tutorial/2020/03/27/git-pre-push/</link>
+        <guid isPermaLink="true">https://tuanb.me//tutorial/2020/03/27/git-pre-push/</guid>
       </item>
     
       <item>
@@ -1466,7 +1447,7 @@ also can not be instantitiated (used or methods called). It must be inherited in
         
           <item>
             <title>About</title>
-            <description>&lt;p&gt;Welcome to my blog. A website where I write about random things I have learnt recently and felt it should be noted down somewhere.&lt;/p&gt;
+            <description>&lt;p&gt;Welcome to my blog. A website where I write about random things that should be noted down somewhere.&lt;/p&gt;
 
 &lt;p&gt;This site was created using Jekyll.&lt;/p&gt;
 </description>
