@@ -5,8 +5,8 @@
     <description></description>
     <link>https://tuanb.me//</link>
     <atom:link href="https://tuanb.me//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Apr 2020 14:20:22 +1000</pubDate>
-    <lastBuildDate>Tue, 14 Apr 2020 14:20:22 +1000</lastBuildDate>
+    <pubDate>Tue, 14 Apr 2020 14:36:59 +1000</pubDate>
+    <lastBuildDate>Tue, 14 Apr 2020 14:36:59 +1000</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
 
     
@@ -69,17 +69,6 @@
         <pubDate>Tue, 14 Apr 2020 00:00:00 +1000</pubDate>
         <link>https://tuanb.me//tutorial/2020/04/14/useful-git-features/</link>
         <guid isPermaLink="true">https://tuanb.me//tutorial/2020/04/14/useful-git-features/</guid>
-      </item>
-    
-      <item>
-        <title>Useful git features</title>
-        <description>&lt;h1 id=&quot;gaijin-engineer-in-tokyo&quot;&gt;Gaijin Engineer in Tokyo&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@xevix/gaijin-software-in-tokyo-aaa9be8919b2&quot;&gt;https://medium.com/@xevix/gaijin-software-in-tokyo-aaa9be8919b2&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 14 Apr 2020 00:00:00 +1000</pubDate>
-        <link>https://tuanb.me//tutorial/2020/04/14/interesting-articles-to-read/</link>
-        <guid isPermaLink="true">https://tuanb.me//tutorial/2020/04/14/interesting-articles-to-read/</guid>
       </item>
     
       <item>
@@ -1530,6 +1519,22 @@ also can not be instantitiated (used or methods called). It must be inherited in
     
       
     
+      
+    
+      
+        
+          <item>
+            <title>Interesting Articles To Read</title>
+            <description>#### Gaijin Engineer in Tokyo
+
+[https://medium.com/@xevix/gaijin-software-in-tokyo-aaa9be8919b2](https://medium.com/@xevix/gaijin-software-in-tokyo-aaa9be8919b2)
+
+#### Validation for Names
+
+[https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/](https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/)</description>
+            <link>https://tuanb.me//interesting-articles-to-read.html</link>
+          </item>
+        
       
     
       

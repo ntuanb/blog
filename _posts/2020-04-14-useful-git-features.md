@@ -3,7 +3,7 @@ layout: post
 title: Useful git features
 author: tuan
 categories: [tutorial]
-image: assets/images/2020/computer.jpg
+image: assets/images/2020/computer.jpeg
 tags: []
 ---
 
