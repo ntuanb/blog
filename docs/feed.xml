@@ -5,10 +5,82 @@
     <description></description>
     <link>https://tuanb.me//</link>
     <atom:link href="https://tuanb.me//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 28 Mar 2020 00:22:45 +1100</pubDate>
-    <lastBuildDate>Sat, 28 Mar 2020 00:22:45 +1100</lastBuildDate>
+    <pubDate>Tue, 14 Apr 2020 14:20:22 +1000</pubDate>
+    <lastBuildDate>Tue, 14 Apr 2020 14:20:22 +1000</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
 
+    
+      <item>
+        <title>Useful git features</title>
+        <description>&lt;p&gt;Useful git features that may help the flow while programming and working in a team.&lt;/p&gt;
+
+&lt;h3 id=&quot;stashing-unfinished-changes&quot;&gt;Stashing unfinished changes&lt;/h3&gt;
+
+&lt;p&gt;I use &lt;code class=&quot;highlighter-rouge&quot;&gt;git stash&lt;/code&gt; quite regularly especially when there is a change in priority or urgent changes is required.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git stash --include-untracked&lt;/code&gt; allows us to save new files that have been created that is not apart of the project yet.&lt;/p&gt;
+
+&lt;p&gt;This is mostly used when I am experimenting changes and not ready to make a commit without losing the work.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git stash apply&lt;/code&gt; is used more often over &lt;code class=&quot;highlighter-rouge&quot;&gt;git stash pop&lt;/code&gt; because it does not remove the stash. This is used in the case I forget and have to remove the changes again.&lt;/p&gt;
+
+&lt;h3 id=&quot;git-commit-with-description-and-template&quot;&gt;Git commit with description and template&lt;/h3&gt;
+
+&lt;p&gt;I use &lt;code class=&quot;highlighter-rouge&quot;&gt;git commit&lt;/code&gt; over &lt;code class=&quot;highlighter-rouge&quot;&gt;git commit -m 'Info..'&lt;/code&gt; because it allows us to add a description to the commit.&lt;/p&gt;
+
+&lt;p&gt;Additionally, a template can be used to set a standard on what is required when performming a change.&lt;/p&gt;
+
+&lt;h3 id=&quot;git-hooks&quot;&gt;Git hooks&lt;/h3&gt;
+
+&lt;p&gt;Forcing a command to run when we run &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; can be done via git hooks.&lt;/p&gt;
+
+&lt;p&gt;The way this works is by creating a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;.git/hooks/&lt;/code&gt; folder and inserting a chosen command to run before the push to remote occurs.&lt;/p&gt;
+
+&lt;p&gt;More information on what is possible can be found here &lt;a href=&quot;https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks&quot;&gt;https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;An example can be done for this specific project. Because we use Jekyll and Github Pages, we need to rebuild the project each time we push to Github.&lt;/p&gt;
+
+&lt;p&gt;We can add in a &lt;code class=&quot;highlighter-rouge&quot;&gt;pre-commit&lt;/code&gt; hook which runs &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;rm -r docs &amp;amp;&amp;amp; mv _site docs&lt;/code&gt; to refresh the folder.&lt;/p&gt;
+
+&lt;h3 id=&quot;git-flow&quot;&gt;Git Flow&lt;/h3&gt;
+
+&lt;p&gt;Git Flow is a workflow designed to manage large projects with release cycles. Its useful as it creates a consistent structure/framework for the team to work with, without too many obstacles.&lt;/p&gt;
+
+&lt;p&gt;It builds on the feature branch workflow, extending it for releases that occur regularly.&lt;/p&gt;
+
+&lt;p&gt;An example to start and finish a release:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git flow release start 1.0.0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git flow release finish 1.0.0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;An example to start and finish a feature branch:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git flow feature start fix-new-bug&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git flow feature finish fix-new-bug&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;More information can be found here &lt;a href=&quot;https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow&quot;&gt;https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;removing-untracked-files-and-folders&quot;&gt;Removing untracked files and folders&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git clean -fd&lt;/code&gt; removes any local project files that are new and have not been commited to the project. This command is useful to run along with &lt;code class=&quot;highlighter-rouge&quot;&gt;git stash&lt;/code&gt; when switching priorities.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 14 Apr 2020 00:00:00 +1000</pubDate>
+        <link>https://tuanb.me//tutorial/2020/04/14/useful-git-features/</link>
+        <guid isPermaLink="true">https://tuanb.me//tutorial/2020/04/14/useful-git-features/</guid>
+      </item>
+    
+      <item>
+        <title>Useful git features</title>
+        <description>&lt;h1 id=&quot;gaijin-engineer-in-tokyo&quot;&gt;Gaijin Engineer in Tokyo&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@xevix/gaijin-software-in-tokyo-aaa9be8919b2&quot;&gt;https://medium.com/@xevix/gaijin-software-in-tokyo-aaa9be8919b2&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 14 Apr 2020 00:00:00 +1000</pubDate>
+        <link>https://tuanb.me//tutorial/2020/04/14/interesting-articles-to-read/</link>
+        <guid isPermaLink="true">https://tuanb.me//tutorial/2020/04/14/interesting-articles-to-read/</guid>
+      </item>
     
       <item>
         <title>Git Pre Push</title>
