@@ -11,7 +11,7 @@
       href="/favicon.png">
       
   <title>Running Nuxt with websockets on Platform.sh</title>
-  <meta name='description' content="To get a websocket server running on Platform.sh, create the following configuration files in a brand new repository:# .platform.app.yamlname: sockettype: 'n...">
+  <meta name='description' content="To get a websocket server running on Platform.sh, create the following configuration files in a brand new repository:">
   <link rel='canonical' href="https://tuanb.me//2021/04/27/nuxt-platform-sh-websockets/">
   <link rel='alternate' type='application/rss+xml' title='Tuan' href="https://tuanb.me//feed.xml">
 
@@ -120,7 +120,7 @@
     
 
 
-  <meta itemprop='og:image' content='https://tuanb.me//assets/images/2021/platform.sh.jpg'>
+  <meta itemprop='og:image' content='https://tuanb.me//assets/images/2021/platform.sh.png'>
 
 
 <div class='o-wrapper'>
@@ -134,10 +134,11 @@
 
         <div class='c-content' itemprop='articleBody'>
           
-  <img src='/assets/images/2021/platform.sh.jpg' class='c-post__image' alt='Running Nuxt with websockets on Platform.sh'>
+  <img src='/assets/images/2021/platform.sh.png' class='c-post__image' alt='Running Nuxt with websockets on Platform.sh'>
 
 
           <p>To get a websocket server running on Platform.sh, create the following configuration files in a brand new repository:</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># .platform.app.yaml
 name: socket
 type: 'nodejs:14'
@@ -184,16 +185,11 @@ const io = new Server(server, {
   },
 });
 
-app.get('/', (req, res) =&gt; {
-  res.json('success')
-});
+app.all('/', async (req, res) =&gt; {
+  console.log(req.body)
 
-io.on('connection', (socket) =&gt; {
-  console.log('a user connected');
-});
-
-io.on('message', (msg) =&gt; {
-  console.log(msg);
+  io.emit('test', req.body);
+  res.json('Success')
 });
 
 server.listen(config.port, () =&gt; {
@@ -217,23 +213,7 @@ module.exports = {
     }]
   }
 </code></pre></div></div>
-<p>And <code class="highlighter-rouge">serverMiddleware/event.js</code>:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const io = require("socket.io-client");
-const socket = io("https://{name}.platformsh.site/");
-const bodyParser = require('body-parser')
-const app = require('express')()
 
-app.use(bodyParser.json())
-
-app.all('/', async (req, res) =&gt; {
-  console.log(req.body)
-
-  socket.emit('test', req.body);
-  res.json('Success')
-});
-
-module.exports = app
-</code></pre></div></div>
 <p>And <code class="highlighter-rouge">pages/index.vue</code>:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
   &lt;div&gt;

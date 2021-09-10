@@ -5,14 +5,15 @@
     <description></description>
     <link>https://tuanb.me//</link>
     <atom:link href="https://tuanb.me//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Sep 2021 15:02:52 +1000</pubDate>
-    <lastBuildDate>Fri, 10 Sep 2021 15:02:52 +1000</lastBuildDate>
+    <pubDate>Fri, 10 Sep 2021 15:16:30 +1000</pubDate>
+    <lastBuildDate>Fri, 10 Sep 2021 15:16:30 +1000</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
 
     
       <item>
         <title>Running Nuxt with websockets on Platform.sh</title>
         <description>&lt;p&gt;To get a websocket server running on Platform.sh, create the following configuration files in a brand new repository:&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# .platform.app.yaml
 name: socket
 type: 'nodejs:14'
@@ -59,16 +60,11 @@ const io = new Server(server, {
   },
 });
 
-app.get('/', (req, res) =&amp;gt; {
-  res.json('success')
-});
+app.all('/', async (req, res) =&amp;gt; {
+  console.log(req.body)
 
-io.on('connection', (socket) =&amp;gt; {
-  console.log('a user connected');
-});
-
-io.on('message', (msg) =&amp;gt; {
-  console.log(msg);
+  io.emit('test', req.body);
+  res.json('Success')
 });
 
 server.listen(config.port, () =&amp;gt; {
@@ -92,23 +88,7 @@ module.exports = {
     }]
   }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;And &lt;code class=&quot;highlighter-rouge&quot;&gt;serverMiddleware/event.js&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const io = require(&quot;socket.io-client&quot;);
-const socket = io(&quot;https://{name}.platformsh.site/&quot;);
-const bodyParser = require('body-parser')
-const app = require('express')()
 
-app.use(bodyParser.json())
-
-app.all('/', async (req, res) =&amp;gt; {
-  console.log(req.body)
-
-  socket.emit('test', req.body);
-  res.json('Success')
-});
-
-module.exports = app
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;And &lt;code class=&quot;highlighter-rouge&quot;&gt;pages/index.vue&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
   &amp;lt;div&amp;gt;

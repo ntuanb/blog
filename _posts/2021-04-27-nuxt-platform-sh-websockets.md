@@ -2,11 +2,12 @@
 layout: post
 title: Running Nuxt with websockets on Platform.sh
 author: tuan
-image: /assets/images/2021/platform.sh.jpg
+image: /assets/images/2021/platform.sh.png
 tags: []
 ---
 
 To get a websocket server running on Platform.sh, create the following configuration files in a brand new repository:
+
 ```
 # .platform.app.yaml
 name: socket
@@ -56,16 +57,11 @@ const io = new Server(server, {
   },
 });
 
-app.get('/', (req, res) => {
-  res.json('success')
-});
+app.all('/', async (req, res) => {
+  console.log(req.body)
 
-io.on('connection', (socket) => {
-  console.log('a user connected');
-});
-
-io.on('message', (msg) => {
-  console.log(msg);
+  io.emit('test', req.body);
+  res.json('Success')
 });
 
 server.listen(config.port, () => {
@@ -90,24 +86,7 @@ In another repository, install `Nuxt` and the module `nuxt-socket-io`. Add the f
     }]
   }
 ```
-And `serverMiddleware/event.js`:
-```
-const io = require("socket.io-client");
-const socket = io("https://{name}.platformsh.site/");
-const bodyParser = require('body-parser')
-const app = require('express')()
 
-app.use(bodyParser.json())
-
-app.all('/', async (req, res) => {
-  console.log(req.body)
-
-  socket.emit('test', req.body);
-  res.json('Success')
-});
-
-module.exports = app
-```
 And `pages/index.vue`:
 ```
 <template>
