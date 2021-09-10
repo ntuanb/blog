@@ -10,9 +10,9 @@
       type="image/png" 
       href="/favicon.png">
       
-  <title>Tuan</title>
-  <meta name='description' content="">
-  <link rel='canonical' href="https://tuanb.me//tag/featured/">
+  <title>Ionic Link Bug</title>
+  <meta name='description' content="Currently on the iOS, there is a link bug which occurs between page transitionswith Ionic. I don’t know if it occurs when the app is published, but itoccurri...">
+  <link rel='canonical' href="https://tuanb.me//2015/10/06/ionic-link-bug/">
   <link rel='alternate' type='application/rss+xml' title='Tuan' href="https://tuanb.me//feed.xml">
 
   <style>
@@ -117,59 +117,91 @@
 
 </header>
 
-    <div class='o-wrapper'>
+    
 
+
+
+<div class='o-wrapper'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <h4>featured</h4>
+      <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
+
+        <h1 class='c-post__title u-text-center'>Ionic Link Bug</h1>
+
+        <time class='c-post__date' datetime='2015-10-06T00:00:00+11:00' itemprop='datePublished'>06 Oct 2015</time>
+
+        <div class='c-content' itemprop='articleBody'>
+          
+
+          <p>Currently on the iOS, there is a link bug which occurs between page transitions
+with Ionic. I don’t know if it occurs when the app is published, but it
+occurring on the Ionic App thats used for testing.</p>
+
+<p>If the link uses <strong>menu-close</strong> or <strong>nav-clear</strong>, occasionally the page swipes
+backwards and other times, the back button occurs. If it was a consistent problem,
+a work around or the bug could be fixed, but in this case, it only occurs occasionally.</p>
+
+<p>To solve this, we’ll use <strong>ng-click</strong> and <strong>$location.path()</strong> to create the link in
+the controller. This solves the transition problem and also lets us control the
+next view animation. This probably isn’t the best solution, but it seems to work
+well enough for now.</p>
+
+<h3 id="html">HTML</h3>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">ng-click=</span><span class="s">"goTo('/app/place')"</span><span class="nt">&gt;</span>
+	Lets Go To This Place
+<span class="nt">&lt;/a&gt;</span></code></pre></figure>
+
+<h3 id="js">JS</h3>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$scope</span><span class="p">.</span><span class="nx">goto</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">goTo</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="c1">// Clears the history because we don't need</span>
+	<span class="nx">$ionicHistory</span><span class="p">.</span><span class="nx">clearHistory</span><span class="p">();</span>
+
+	<span class="c1">// Disables the back button</span>
+	<span class="nx">$ionicHistory</span><span class="p">.</span><span class="nx">nextViewOptions</span><span class="p">({</span><span class="na">disableBack</span><span class="p">:</span> <span class="kc">true</span><span class="p">});</span>
+
+	<span class="c1">// If the sidebar is open, lets close</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">$ionicSideMenuDelegate</span><span class="p">.</span><span class="nx">isOpen</span><span class="p">())</span> <span class="p">{</span>
+		<span class="nx">$ionicSideMenuDelegate</span><span class="p">.</span><span class="nx">toggleLeft</span><span class="p">();</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Lets go to the destination</span>
+	<span class="nx">$location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+
+        </div>
+
+        <div class='c-tags'>
+          
+        </div>
+
+        <hr>
+
+        <section class='disqus'>
+  <div id='disqus_thread'></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://tuanb.me//2015/10/06/ionic-link-bug/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      // Change `aspirethemes-demos` with your Disqus shortcode
+      s.src = '//tuanb-me.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript>
+</section>
+
+      </article>
     </div>
-  </div>
-
-  <div class='o-grid'>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/18/the-collectors-fallacy/' class='c-post-card  c-post-card--first  '>
-    <h3 class='c-post-card__title'>The Collector’s Fallacy</h3>
-
-    
-      <img src='/assets/images/2018/newspaper.jpg' class='c-post__image' alt='The Collector’s Fallacy'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      The web world is too large to consume and remember each and every detail. The best way to fully absorb it is to understand and comprehend the idea, rather than remembering what information was about....
-    </p>
-
-    <span class='c-post-card__date'>18 Mar 2018</span>
-  </a>
-
-</div>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/15/the-wrong-abstraction/' class='c-post-card   c-post-card--last '>
-    <h3 class='c-post-card__title'>The Wrong Abstraction</h3>
-
-    
-      <img src='/assets/images/2018/abstraction.jpg' class='c-post__image' alt='The Wrong Abstraction'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      If you find yourself passing parameters and adding conditional paths through shared code, the abstraction is incorrect. The Wrong Abstraction by Sandi Metz. Problem At Hand Solving the problem should be the main priority. Sometimes,...
-    </p>
-
-    <span class='c-post-card__date'>15 Mar 2018</span>
-  </a>
-
-</div>
-    
-  </div>
-
-  <div class='o-grid'>
-    
-
-
-
   </div>
 </div>
 

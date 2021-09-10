@@ -5,140 +5,10 @@
     <description></description>
     <link>https://tuanb.me//</link>
     <atom:link href="https://tuanb.me//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Sep 2021 15:02:52 +1000</pubDate>
-    <lastBuildDate>Fri, 10 Sep 2021 15:02:52 +1000</lastBuildDate>
+    <pubDate>Sat, 09 Jan 2021 14:33:52 +1100</pubDate>
+    <lastBuildDate>Sat, 09 Jan 2021 14:33:52 +1100</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
 
-    
-      <item>
-        <title>Running Nuxt with websockets on Platform.sh</title>
-        <description>&lt;p&gt;To get a websocket server running on Platform.sh, create the following configuration files in a brand new repository:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# .platform.app.yaml
-name: socket
-type: 'nodejs:14'
-build:
-  flavor: none
-dependencies:
-  nodejs:
-    yarn: &quot;*&quot;
-hooks:
-  build: |
-    yarn install
-web:
-  commands:
-    start: node io.js
-  locations:
-    '/':
-      passthru: true
-      request_buffering:
-        enabled: false
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# .platform/routes.yaml
-&quot;https://www.{default}/&quot;:
-  type: upstream
-  upstream: &quot;socket:http&quot;
-  cache:
-    enabled: false
-
-&quot;https://{default}/&quot;:
-  type: redirect
-  to: &quot;https://www.{default}/&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Create the entry file for the node server. The &lt;code class=&quot;highlighter-rouge&quot;&gt;platformsh-config&lt;/code&gt; library is important to run the server with the provided port in Platform.sh:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const express = require('express');
-const app = express();
-const http = require('http');
-const server = http.createServer(app);
-const { Server } = require(&quot;socket.io&quot;);
-
-const config = require('platformsh-config').config();
-
-const io = new Server(server, {
-  cors: {
-    origin: '*',
-  },
-});
-
-app.get('/', (req, res) =&amp;gt; {
-  res.json('success')
-});
-
-io.on('connection', (socket) =&amp;gt; {
-  console.log('a user connected');
-});
-
-io.on('message', (msg) =&amp;gt; {
-  console.log(msg);
-});
-
-server.listen(config.port, () =&amp;gt; {
-  console.log(`listening on *:${config.port}`);
-});
-
-module.exports = {
-  io
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Log into Platform.sh, set up the Github (or any other service) integration and push the code and a build should process. Once completed, the url provided by Platform.sh should display the expected response when visiting in any browser.&lt;/p&gt;
-
-&lt;p&gt;In another repository, install &lt;code class=&quot;highlighter-rouge&quot;&gt;Nuxt&lt;/code&gt; and the module &lt;code class=&quot;highlighter-rouge&quot;&gt;nuxt-socket-io&lt;/code&gt;. Add the following code to the config file for Nuxt, updating the url with the provided url from the top:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  io: {
-    // module options
-    sockets: [{
-      default: true,
-      name: 'main',
-      url: 'https://{name}.platformsh.site/'
-    }]
-  }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;And &lt;code class=&quot;highlighter-rouge&quot;&gt;serverMiddleware/event.js&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const io = require(&quot;socket.io-client&quot;);
-const socket = io(&quot;https://{name}.platformsh.site/&quot;);
-const bodyParser = require('body-parser')
-const app = require('express')()
-
-app.use(bodyParser.json())
-
-app.all('/', async (req, res) =&amp;gt; {
-  console.log(req.body)
-
-  socket.emit('test', req.body);
-  res.json('Success')
-});
-
-module.exports = app
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;And &lt;code class=&quot;highlighter-rouge&quot;&gt;pages/index.vue&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
-  &amp;lt;div&amp;gt;
-    
-  &amp;lt;/div&amp;gt;
-&amp;lt;/template&amp;gt;
-
-&amp;lt;script&amp;gt;
-export default {
-  mounted() {
-    this.socket = this.$nuxtSocket({
-      name: 'main'
-    })
-    this.socket.on(&quot;tick&quot;, (tickId) =&amp;gt; {
-      this.tick = tickId
-    });
-    this.socket.on(&quot;test&quot;, (msg) =&amp;gt; {
-      console.log(msg)
-    });
-  }
-}
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Once completed, firing a request to the middleware will send a message to the Nuxt frontend.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 27 Apr 2021 00:00:00 +1000</pubDate>
-        <link>https://tuanb.me//2021/04/27/nuxt-platform-sh-websockets/</link>
-        <guid isPermaLink="true">https://tuanb.me//2021/04/27/nuxt-platform-sh-websockets/</guid>
-      </item>
     
       <item>
         <title>Clear Some Space</title>
@@ -259,6 +129,54 @@ not been added to the list to bypass and delivered as is.&lt;/p&gt;
         <pubDate>Mon, 20 May 2019 00:00:00 +1000</pubDate>
         <link>https://tuanb.me//tutorial/2019/05/20/serving-static-files/</link>
         <guid isPermaLink="true">https://tuanb.me//tutorial/2019/05/20/serving-static-files/</guid>
+      </item>
+    
+      <item>
+        <title>Code Like a Story</title>
+        <description>&lt;p&gt;I always thought I wrote well structured code but got a bit of a surprise when a co-worker described
+a piece of code I was writing as hard to understand.&lt;/p&gt;
+
+&lt;p&gt;Respecting his constructive criticism, I had to understand why. To summarise the most important section
+of the convsersion:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;… write code like its a story …&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;At first I didn’t quite understand what it meant so I had to find my own meaning.&lt;/p&gt;
+
+&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;The introduction in a story normally involves introducing the scene, setting the environment, characters 
+and any other parties involved.&lt;/p&gt;
+
+&lt;p&gt;In code, this is usually where you would initialize variables, import required libraries, preprocess data or build 
+the base structure that is required.&lt;/p&gt;
+
+&lt;p&gt;A glance at the first few lines should explain the entire method.&lt;/p&gt;
+
+&lt;h3 id=&quot;middle&quot;&gt;Middle&lt;/h3&gt;
+
+&lt;p&gt;The information that is prepared in the introduction would be processed in this section.&lt;/p&gt;
+
+&lt;p&gt;Normally in a story, there would be twists and turns but when writing code, this would be something 
+that we would avoid.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;The conlusion in a story would wrap a story up, providing a satisfying result and setting the emotions of the reader.&lt;/p&gt;
+
+&lt;p&gt;This is where you would wrap up the function, finalizing any information that needs to be returned
+to the consumer which may involve building the expected structure.&lt;/p&gt;
+
+&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+
+&lt;p&gt;To summarise, I belive that writing code like is a story means as a developer, you must be able to 
+structure and design your codebase so that anyone can easily dive in and contribute.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 04 May 2019 00:00:00 +1000</pubDate>
+        <link>https://tuanb.me//tutorial/2019/05/04/code-like-a-story/</link>
+        <guid isPermaLink="true">https://tuanb.me//tutorial/2019/05/04/code-like-a-story/</guid>
       </item>
     
       <item>
@@ -639,6 +557,122 @@ zip &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; website.zip ~/clone
         <pubDate>Thu, 01 Mar 2018 00:00:00 +1100</pubDate>
         <link>https://tuanb.me//tutorial/software/2018/03/01/drupal-7-docker-php-worker-resque-redis-queue-and-email-p1/</link>
         <guid isPermaLink="true">https://tuanb.me//tutorial/software/2018/03/01/drupal-7-docker-php-worker-resque-redis-queue-and-email-p1/</guid>
+      </item>
+    
+      <item>
+        <title>Working and Travelling</title>
+        <description>&lt;p&gt;Twelve months of remote work across Japan, South Korea, Hong Kong, Taiwan and Macao has been a great life experience.&lt;/p&gt;
+
+&lt;p&gt;Would I do it again? Of course.&lt;/p&gt;
+
+&lt;h1 id=&quot;communication&quot;&gt;Communication&lt;/h1&gt;
+
+&lt;h3 id=&quot;daily-standups&quot;&gt;Daily Standups&lt;/h3&gt;
+&lt;p&gt;We had meetings everyday at 10am where each member of the team would describe &lt;code class=&quot;highlighter-rouge&quot;&gt;What they worked on yeserday&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;What they want to achieve today&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Blockers&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;These were important as I could keep up to date with what was happening and ask questions I couldn’t ask because of any timezone difference.&lt;/p&gt;
+
+&lt;h3 id=&quot;standuply&quot;&gt;Standuply&lt;/h3&gt;
+&lt;p&gt;This didn’t really work because no one read or kept up to date with what the other members typed in.&lt;/p&gt;
+
+&lt;h3 id=&quot;slack&quot;&gt;Slack&lt;/h3&gt;
+&lt;p&gt;The primary chat tool that we used with channels for specific projects. This was great because it also allowed fun tools such as &lt;code class=&quot;highlighter-rouge&quot;&gt;/giphy&lt;/code&gt; and custom emojis, which were used to keep the connection with the team.&lt;/p&gt;
+
+&lt;h3 id=&quot;hangouts&quot;&gt;Hangouts&lt;/h3&gt;
+&lt;p&gt;Anytime a question or discussion was required, the best approach was a call.&lt;/p&gt;
+
+&lt;h1 id=&quot;motivation&quot;&gt;Motivation&lt;/h1&gt;
+
+&lt;h3 id=&quot;atmosphere&quot;&gt;Atmosphere&lt;/h3&gt;
+&lt;p&gt;Working at home for a week was bad for mentality and motivation. Visting the library or cafe once a day, especially after lunch kept things fresh.&lt;/p&gt;
+
+&lt;h3 id=&quot;routine&quot;&gt;Routine&lt;/h3&gt;
+&lt;p&gt;Keeping a consistant routine was important to not stress the body, escpecially because of the quick changes that occurred on a daily basis: weather, food etc.&lt;/p&gt;
+
+&lt;h1 id=&quot;accomodation&quot;&gt;Accomodation&lt;/h1&gt;
+&lt;p&gt;A good desk and internet is important.&lt;/p&gt;
+
+&lt;h1 id=&quot;energy&quot;&gt;Energy&lt;/h1&gt;
+
+&lt;p&gt;These were important:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Slept on time&lt;/li&gt;
+  &lt;li&gt;Ate well and healthy, more when required because of the after work plans&lt;/li&gt;
+  &lt;li&gt;Took time off from travel when required, sometimes a day of doing nothing was good&lt;/li&gt;
+  &lt;li&gt;Did’t need to go out everyday or weekend&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;loneliness&quot;&gt;Loneliness&lt;/h1&gt;
+
+&lt;h3 id=&quot;people&quot;&gt;People&lt;/h3&gt;
+
+&lt;h3 id=&quot;hobbies&quot;&gt;Hobbies&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Continue hobbies&lt;/li&gt;
+  &lt;li&gt;Talk to everyone&lt;/li&gt;
+  &lt;li&gt;dormitory or guesthouse&lt;/li&gt;
+  &lt;li&gt;Must enjoy time with yourself&lt;/li&gt;
+  &lt;li&gt;Long periods of time where won’t meet many people&lt;/li&gt;
+  &lt;li&gt;Keep in contact with friends&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;romance&quot;&gt;Romance&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youngadventuress.com/2013/02/falling-in-love-abroad.html&quot;&gt;5 Things No One Tells You by Liz&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;country-reviews&quot;&gt;Country Reviews&lt;/h1&gt;
+
+&lt;h3 id=&quot;japan&quot;&gt;Japan&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Food&lt;/li&gt;
+  &lt;li&gt;Knew a bit of the language&lt;/li&gt;
+  &lt;li&gt;Atmosphere&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;korea&quot;&gt;Korea&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Atomosphere&lt;/li&gt;
+  &lt;li&gt;Good if know local friends&lt;/li&gt;
+  &lt;li&gt;People are shy to speak english&lt;/li&gt;
+  &lt;li&gt;Busan&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;hong-kong&quot;&gt;Hong Kong&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Rush Hour&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;macao&quot;&gt;Macao&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Casinos&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;taiwan&quot;&gt;Taiwan&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A mix of all the above places&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;lessons&quot;&gt;Lessons&lt;/h1&gt;
+
+&lt;h3 id=&quot;upskill&quot;&gt;Upskill&lt;/h3&gt;
+&lt;p&gt;I stopped upskilling myself through out the trip. Upon returning after a year, I felt like I had
+fallen behind.&lt;/p&gt;
+
+&lt;h3 id=&quot;excercise&quot;&gt;Excercise&lt;/h3&gt;
+&lt;p&gt;Excercise as often as you can.&lt;/p&gt;
+
+&lt;p&gt;The blog post was written mostly as bullet points it was quicker to jot down the key points. I might update it someday with more information for each part.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Dec 2017 00:00:00 +1100</pubDate>
+        <link>https://tuanb.me//motivation/software/travel/2017/12/01/working-and-travelling/</link>
+        <guid isPermaLink="true">https://tuanb.me//motivation/software/travel/2017/12/01/working-and-travelling/</guid>
       </item>
     
       <item>

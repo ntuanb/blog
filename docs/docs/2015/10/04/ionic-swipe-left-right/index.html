@@ -10,9 +10,9 @@
       type="image/png" 
       href="/favicon.png">
       
-  <title>Tuan</title>
-  <meta name='description' content="">
-  <link rel='canonical' href="https://tuanb.me//tag/featured/">
+  <title>Ionic - Swipe to Load Next or Previous Page</title>
+  <meta name='description' content="Hybrid frameworks such as Ionic provide an easier way to develop a phone app usinga language that you would usually prefer into a native looking app that is ...">
+  <link rel='canonical' href="https://tuanb.me//2015/10/04/ionic-swipe-left-right/">
   <link rel='alternate' type='application/rss+xml' title='Tuan' href="https://tuanb.me//feed.xml">
 
   <style>
@@ -117,59 +117,130 @@
 
 </header>
 
-    <div class='o-wrapper'>
+    
 
+
+
+<div class='o-wrapper'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <h4>featured</h4>
+      <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
+
+        <h1 class='c-post__title u-text-center'>Ionic - Swipe to Load Next or Previous Page</h1>
+
+        <time class='c-post__date' datetime='2015-10-04T00:00:00+10:00' itemprop='datePublished'>04 Oct 2015</time>
+
+        <div class='c-content' itemprop='articleBody'>
+          
+
+          <p>Hybrid frameworks such as <strong>Ionic</strong> provide an easier way to develop a phone app using
+a language that you would usually prefer into a native looking app that is smooth
+and has all the features of the phone readily available to be used.</p>
+
+<p>Using Ionic, we can create a page that allows swipe movements on the screen to
+move to the next item in the array.</p>
+
+<h3 id="controller">Controller</h3>
+
+<p>As usual, set up your a blank Ionic project and install all the required components
+to make the project work.</p>
+
+<p>In the controller, add the following snippet to the attached view:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="p">{</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Page 1</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">content</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Page 1 Content</span><span class="dl">'</span><span class="p">},</span>
+	<span class="p">{</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Page 2</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">content</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Page 2 Content</span><span class="dl">'</span><span class="p">},</span>
+	<span class="p">{</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Page 3</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">content</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Page 3 Content</span><span class="dl">'</span><span class="p">},</span>
+<span class="p">];</span>
+
+<span class="nx">$scope</span><span class="p">.</span><span class="nx">swipeRight</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">swipeRight</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="kd">var</span> <span class="nx">curr_page</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+				<span class="nx">curr_page</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span>
+					<span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span>
+				<span class="p">];</span>
+			<span class="p">}</span>
+			<span class="k">else</span> <span class="p">{</span>
+				<span class="nx">curr_page</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+			<span class="p">}</span>
+
+			<span class="nx">$location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="dl">'</span><span class="s1">/pages/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">curr_page</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nx">$scope</span><span class="p">.</span><span class="nx">swipeLeft</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">swipeLeft</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="kd">var</span> <span class="nx">curr_page</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">id</span> <span class="o">==</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+				<span class="nx">curr_page</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+			<span class="p">}</span>
+			<span class="k">else</span> <span class="p">{</span>
+				<span class="nx">curr_page</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">pages</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+			<span class="p">}</span>
+
+			<span class="c1">// Tells Ionic which transition direction</span>
+			<span class="nx">$ionicViewSwitcher</span><span class="p">.</span><span class="nx">nextDirection</span><span class="p">(</span><span class="dl">'</span><span class="s1">back</span><span class="dl">'</span><span class="p">);</span>
+			<span class="nx">$location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="dl">'</span><span class="s1">/pages/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">curr_page</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="html">HTML</h3>
+
+<p>Add the following to the template:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ion-view</span> <span class="na">view-title=</span><span class="s">"page.name"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;ion-content</span>
+		<span class="na">on-swipe-left=</span><span class="s">"swipeLeft()"</span>
+		<span class="na">on-swipe-right=</span><span class="s">"swipeRight()"</span>
+		<span class="nt">&gt;</span>
+		{{ page.content }}
+	<span class="nt">&lt;/ion-content&gt;</span>
+<span class="nt">&lt;/ion-view&gt;</span></code></pre></figure>
+
+<p>There is currently a problem where the swipes aren’t immediate because the page
+needs to slide, but we’ll work on adding them later.</p>
+
+        </div>
+
+        <div class='c-tags'>
+          
+        </div>
+
+        <hr>
+
+        <section class='disqus'>
+  <div id='disqus_thread'></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://tuanb.me//2015/10/04/ionic-swipe-left-right/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      // Change `aspirethemes-demos` with your Disqus shortcode
+      s.src = '//tuanb-me.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript>
+</section>
+
+      </article>
     </div>
-  </div>
-
-  <div class='o-grid'>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/18/the-collectors-fallacy/' class='c-post-card  c-post-card--first  '>
-    <h3 class='c-post-card__title'>The Collector’s Fallacy</h3>
-
-    
-      <img src='/assets/images/2018/newspaper.jpg' class='c-post__image' alt='The Collector’s Fallacy'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      The web world is too large to consume and remember each and every detail. The best way to fully absorb it is to understand and comprehend the idea, rather than remembering what information was about....
-    </p>
-
-    <span class='c-post-card__date'>18 Mar 2018</span>
-  </a>
-
-</div>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/15/the-wrong-abstraction/' class='c-post-card   c-post-card--last '>
-    <h3 class='c-post-card__title'>The Wrong Abstraction</h3>
-
-    
-      <img src='/assets/images/2018/abstraction.jpg' class='c-post__image' alt='The Wrong Abstraction'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      If you find yourself passing parameters and adding conditional paths through shared code, the abstraction is incorrect. The Wrong Abstraction by Sandi Metz. Problem At Hand Solving the problem should be the main priority. Sometimes,...
-    </p>
-
-    <span class='c-post-card__date'>15 Mar 2018</span>
-  </a>
-
-</div>
-    
-  </div>
-
-  <div class='o-grid'>
-    
-
-
-
   </div>
 </div>
 

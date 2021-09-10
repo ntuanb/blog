@@ -10,9 +10,9 @@
       type="image/png" 
       href="/favicon.png">
       
-  <title>Tuan</title>
-  <meta name='description' content="">
-  <link rel='canonical' href="https://tuanb.me//tag/featured/">
+  <title>Ionic ng-if, ng-show, ng-hide and ng-class</title>
+  <meta name='description' content="All these attributes are similiar in a way where they can all be used to displayor hide an element, but differ in the way they function.">
+  <link rel='canonical' href="https://tuanb.me//2015/10/07/ionic-show-and-hide/">
   <link rel='alternate' type='application/rss+xml' title='Tuan' href="https://tuanb.me//feed.xml">
 
   <style>
@@ -117,59 +117,84 @@
 
 </header>
 
-    <div class='o-wrapper'>
+    
 
+
+
+<div class='o-wrapper'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <h4>featured</h4>
+      <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
+
+        <h1 class='c-post__title u-text-center'>Ionic ng-if, ng-show, ng-hide and ng-class</h1>
+
+        <time class='c-post__date' datetime='2015-10-07T00:00:00+11:00' itemprop='datePublished'>07 Oct 2015</time>
+
+        <div class='c-content' itemprop='articleBody'>
+          
+
+          <p>All these attributes are similiar in a way where they can all be used to display
+or hide an element, but differ in the way they function.</p>
+
+<h3 id="ng-show-and-ng-hide">ng-show and ng-hide</h3>
+
+<p>ng-show and ng-hide work by adding and removing an Angular specific class
+<strong>.ng-hide</strong> to the element.</p>
+
+<h3 id="ng-if">ng-if</h3>
+
+<p>ng-if works by displaying the element if the variable is true and completely
+removing the element if false. This can affect performance if the element changes
+constantly, where the DOM has to manually create and remove each time, taking up
+CPU cycles unnecessarily.</p>
+
+<p>In most cases, loading the items straight after the initial load is usually better
+to keep things smoother during usage, as long as it doesn’t hinder the initial load
+speeds.</p>
+
+<h3 id="ng-class">ng-class</h3>
+
+<p>ng-class works by adding a custom class you define if a variable is equal to what
+you choose.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">ng-class=</span><span class="s">"{'d-none': buttonIsViewable == true}"</span><span class="nt">&gt;</span>
+	Button
+<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+
+<p>It works just like ng-show and ng-hide, but with the added customizability. ng-class
+can also get more complicated by adding in || and &amp;&amp;, just like a normal if/else
+statement.</p>
+
+        </div>
+
+        <div class='c-tags'>
+          
+        </div>
+
+        <hr>
+
+        <section class='disqus'>
+  <div id='disqus_thread'></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://tuanb.me//2015/10/07/ionic-show-and-hide/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      // Change `aspirethemes-demos` with your Disqus shortcode
+      s.src = '//tuanb-me.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript>
+</section>
+
+      </article>
     </div>
-  </div>
-
-  <div class='o-grid'>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/18/the-collectors-fallacy/' class='c-post-card  c-post-card--first  '>
-    <h3 class='c-post-card__title'>The Collector’s Fallacy</h3>
-
-    
-      <img src='/assets/images/2018/newspaper.jpg' class='c-post__image' alt='The Collector’s Fallacy'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      The web world is too large to consume and remember each and every detail. The best way to fully absorb it is to understand and comprehend the idea, rather than remembering what information was about....
-    </p>
-
-    <span class='c-post-card__date'>18 Mar 2018</span>
-  </a>
-
-</div>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/15/the-wrong-abstraction/' class='c-post-card   c-post-card--last '>
-    <h3 class='c-post-card__title'>The Wrong Abstraction</h3>
-
-    
-      <img src='/assets/images/2018/abstraction.jpg' class='c-post__image' alt='The Wrong Abstraction'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      If you find yourself passing parameters and adding conditional paths through shared code, the abstraction is incorrect. The Wrong Abstraction by Sandi Metz. Problem At Hand Solving the problem should be the main priority. Sometimes,...
-    </p>
-
-    <span class='c-post-card__date'>15 Mar 2018</span>
-  </a>
-
-</div>
-    
-  </div>
-
-  <div class='o-grid'>
-    
-
-
-
   </div>
 </div>
 

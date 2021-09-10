@@ -10,9 +10,9 @@
       type="image/png" 
       href="/favicon.png">
       
-  <title>Tuan</title>
-  <meta name='description' content="">
-  <link rel='canonical' href="https://tuanb.me//tag/featured/">
+  <title>Missing Bindings for SQLite3</title>
+  <meta name='description' content="This particular problem is related to installing SQLite3 for Node.">
+  <link rel='canonical' href="https://tuanb.me//2017/01/15/missing-bindings-for-sqlite3/">
   <link rel='alternate' type='application/rss+xml' title='Tuan' href="https://tuanb.me//feed.xml">
 
   <style>
@@ -117,59 +117,68 @@
 
 </header>
 
-    <div class='o-wrapper'>
+    
 
+
+
+<div class='o-wrapper'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <h4>featured</h4>
+      <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
+
+        <h1 class='c-post__title u-text-center'>Missing Bindings for SQLite3</h1>
+
+        <time class='c-post__date' datetime='2017-01-15T00:00:00+11:00' itemprop='datePublished'>15 Jan 2017</time>
+
+        <div class='c-content' itemprop='articleBody'>
+          
+
+          <p>This particular problem is related to installing SQLite3 for Node.</p>
+
+<p>To begin, run the command <code class="highlighter-rouge">npm install sqlite3</code>.
+If it doesn’t work, run the command <code class="highlighter-rouge">npm install sqlite3 --build-from-source</code> instead.</p>
+
+<p>If both commands don’t work after starting the node application and an error similiar to 
+<code class="highlighter-rouge">/node_modules/sqlite3/lib/binding/node-v43-darwin-x64/node_sqlite3.node</code> comes up,
+we need to install SQLite3 but switching node versions.</p>
+
+<p>Using NVM, install any major versions <code class="highlighter-rouge">nvm install v5.6</code>, switch to the version <code class="highlighter-rouge">nvm use v5.6</code> and run <code class="highlighter-rouge">npm install sqlite3</code> or <code class="highlighter-rouge">npm install sqlite3 --build-from-source</code>.</p>
+
+<p>Attempt to start the Node application <code class="highlighter-rouge">node index</code>.
+If a similiar error occurs again, switch to another version and repeat the process.</p>
+
+<p>Once its working, switch Node back to the desired version.</p>
+
+        </div>
+
+        <div class='c-tags'>
+          
+        </div>
+
+        <hr>
+
+        <section class='disqus'>
+  <div id='disqus_thread'></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://tuanb.me//2017/01/15/missing-bindings-for-sqlite3/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      // Change `aspirethemes-demos` with your Disqus shortcode
+      s.src = '//tuanb-me.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript>
+</section>
+
+      </article>
     </div>
-  </div>
-
-  <div class='o-grid'>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/18/the-collectors-fallacy/' class='c-post-card  c-post-card--first  '>
-    <h3 class='c-post-card__title'>The Collector’s Fallacy</h3>
-
-    
-      <img src='/assets/images/2018/newspaper.jpg' class='c-post__image' alt='The Collector’s Fallacy'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      The web world is too large to consume and remember each and every detail. The best way to fully absorb it is to understand and comprehend the idea, rather than remembering what information was about....
-    </p>
-
-    <span class='c-post-card__date'>18 Mar 2018</span>
-  </a>
-
-</div>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/15/the-wrong-abstraction/' class='c-post-card   c-post-card--last '>
-    <h3 class='c-post-card__title'>The Wrong Abstraction</h3>
-
-    
-      <img src='/assets/images/2018/abstraction.jpg' class='c-post__image' alt='The Wrong Abstraction'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      If you find yourself passing parameters and adding conditional paths through shared code, the abstraction is incorrect. The Wrong Abstraction by Sandi Metz. Problem At Hand Solving the problem should be the main priority. Sometimes,...
-    </p>
-
-    <span class='c-post-card__date'>15 Mar 2018</span>
-  </a>
-
-</div>
-    
-  </div>
-
-  <div class='o-grid'>
-    
-
-
-
   </div>
 </div>
 

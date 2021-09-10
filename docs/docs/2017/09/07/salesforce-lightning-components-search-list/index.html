@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+  <link rel="icon" 
+      type="image/png" 
+      href="/favicon.png">
+      
+  <title>Salesforce Lightning Component Search List</title>
+  <meta name='description' content="This step by step guide is purely for personal learning and is based off another tutorial. The steps will be mostly the same, some copy pasta here and there,...">
+  <link rel='canonical' href="https://tuanb.me//2017/09/07/salesforce-lightning-components-search-list/">
+  <link rel='alternate' type='application/rss+xml' title='Tuan' href="https://tuanb.me//feed.xml">
+
+  <style>
+    
+
+    html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:0.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace, monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace, monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-cancel-button,[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}body,h1,h2,h3,h4,h5,h6,blockquote,p,pre,dl,dd,ol,ul,figure,hr,fieldset,legend{margin:0;padding:0}li>ol,li>ul{margin-bottom:0}table{border-collapse:collapse;border-spacing:0}address,h1,h2,h3,h4,h5,h6,blockquote,p,pre,dl,ol,ul,figure,hr,table,fieldset{margin-bottom:32px}dd,ol,ul{list-style-position:inside;margin-left:16px}@-webkit-keyframes spin{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spin{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.icon{position:relative;display:inline-block;width:25px;height:25px;overflow:hidden;fill:currentColor}.icon__cnt{width:100%;height:100%;background:inherit;fill:inherit;pointer-events:none;transform:translateX(0);-ms-transform:translate(0.5px, -0.3px)}.icon--m{width:50px;height:50px}.icon--l{width:100px;height:100px}.icon--xl{width:150px;height:150px}.icon--xxl{width:200px;height:200px}.icon__spinner{position:absolute;top:0;left:0;width:100%;height:100%}.icon--ei-spinner .icon__spinner,.icon--ei-spinner-2 .icon__spinner{-webkit-animation:spin 1s steps(12) infinite;animation:spin 1s steps(12) infinite}.icon--ei-spinner-3 .icon__spinner{-webkit-animation:spin 1.5s linear infinite;animation:spin 1.5s linear infinite}.icon--ei-sc-facebook{fill:#3b5998}.icon--ei-sc-github{fill:#333}.icon--ei-sc-google-plus{fill:#dd4b39}.icon--ei-sc-instagram{fill:#3f729b}.icon--ei-sc-linkedin{fill:#0976b4}.icon--ei-sc-odnoklassniki{fill:#ed812b}.icon--ei-sc-skype{fill:#00aff0}.icon--ei-sc-soundcloud{fill:#f80}.icon--ei-sc-tumblr{fill:#35465c}.icon--ei-sc-twitter{fill:#55acee}.icon--ei-sc-vimeo{fill:#1ab7ea}.icon--ei-sc-vk{fill:#45668e}.icon--ei-sc-youtube{fill:#e52d27}.icon--ei-sc-pinterest{fill:#bd081c}.icon--ei-sc-telegram{fill:#0088cc}.highlight{margin:0;background:#fff}.highlighter-rouge .highlight{background:#FAFAFA}.highlight .c{color:#998;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .k{font-weight:bold}.highlight .o{font-weight:bold}.highlight .cm{color:#998;font-style:italic}.highlight .cp{color:#999;font-weight:bold}.highlight .c1{color:#998;font-style:italic}.highlight .cs{color:#999;font-weight:bold;font-style:italic}.highlight .gd{color:#000;background-color:#fdd}.highlight .gd .x{color:#000;background-color:#faa}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#999}.highlight .gi{color:#000;background-color:#dfd}.highlight .gi .x{color:#000;background-color:#afa}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:bold}.highlight .gu{color:#aaa}.highlight .gt{color:#a00}.highlight .kc{font-weight:bold}.highlight .kd{font-weight:bold}.highlight .kp{font-weight:bold}.highlight .kr{font-weight:bold}.highlight .kt{color:#458;font-weight:bold}.highlight .m{color:#099}.highlight .s{color:#d14}.highlight .na{color:#008080}.highlight .nb{color:#0086B3}.highlight .nc{color:#458;font-weight:bold}.highlight .no{color:#008080}.highlight .ni{color:#800080}.highlight .ne{color:#900;font-weight:bold}.highlight .nf{color:#900;font-weight:bold}.highlight .nn{color:#555}.highlight .nt{color:#000080}.highlight .nv{color:#008080}.highlight .ow{font-weight:bold}.highlight .w{color:#bbb}.highlight .mf{color:#099}.highlight .mh{color:#099}.highlight .mi{color:#099}.highlight .mo{color:#099}.highlight .sb{color:#d14}.highlight .sc{color:#d14}.highlight .sd{color:#d14}.highlight .s2{color:#d14}.highlight .se{color:#d14}.highlight .sh{color:#d14}.highlight .si{color:#d14}.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .bp{color:#999}.highlight .vc{color:#008080}.highlight .vg{color:#008080}.highlight .vi{color:#008080}.highlight .il{color:#099}body{color:#323232;font-size:19px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";line-height:32px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}*::selection{color:#fff;background:#00A0FF}a{text-decoration:none;color:#323232;transition:.4s}a:hover,a:active,a:focus{text-decoration:underline}img{display:block;max-width:100%;font-style:italic}hr{height:1px;margin:32px 0;border:0;background-color:#E9EFF3}h1,h2,h3,h4,h5,h6{font-weight:inherit;line-height:initial;font-weight:600}h1{font-size:36px}h2{font-size:28px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}blockquote{padding-left:16px;border-left:3px solid #2B5F72}pre,code{font-family:Courier,monospace;background-color:#FAFAFA}pre{overflow:auto;padding:32px;margin-bottom:16px;font-size:16px;line-height:25px;white-space:pre-wrap;word-wrap:break-word}li code,p code{padding:4px 8px}input[type='text'],input[type='tel'],input[type='number'],input[type='email'],select,textarea{width:100%;padding:16px;border:1px solid #E9EFF3;border-radius:0;outline:none;background-color:#fff;font-size:14px;appearance:none;transition:.4s}input[type='text']:hover,input[type='text']:active,input[type='text']:focus,input[type='tel']:hover,input[type='tel']:active,input[type='tel']:focus,input[type='number']:hover,input[type='number']:active,input[type='number']:focus,input[type='email']:hover,input[type='email']:active,input[type='email']:focus,select:hover,select:active,select:focus,textarea:hover,textarea:active,textarea:focus{border:1px solid #323232}.o-grid{margin:0 auto;display:flex;flex-wrap:wrap;max-width:700px}.o-grid:after{content:'';display:table;clear:both}.o-grid .o-grid{margin-right:-16px;margin-left:-16px;padding:0}.o-grid--full{max-width:100vw}.o-grid__col{float:left;padding-right:16px;padding-left:16px}.o-grid__col--1-4-s{width:25%}.o-grid__col--1-3-s{width:33.3333333333%}.o-grid__col--2-4-s{width:50%}.o-grid__col--3-4-s{width:75%}.o-grid__col--4-4-s{width:100%}@media (min-width: 40em){.o-grid__col--1-4-m{width:25%}.o-grid__col--1-3-m{width:33.3333333333%}.o-grid__col--2-4-m{width:50%}.o-grid__col--3-4-m{width:75%}}@media (min-width: 64em){.o-grid__col--1-4-l{width:25%}.o-grid__col--1-3-l{width:33.3333333333%}.o-grid__col--2-4-l{width:50%}.o-grid__col--3-4-l{width:75%}}.o-grid__col--full{width:100%}.o-grid__col--center{margin:0 auto}.o-grid__col--end{margin-left:auto}.o-wrapper{padding:32px 0}.c-off-canvas-container{display:flex;min-height:100vh;flex-direction:column}.c-off-canvas-container .o-wrapper{flex:1 0 auto}.o-plain-list{margin:0;padding:0;list-style:none}.c-header__inner{padding:16px 0;border-bottom:1px solid #E9EFF3}.c-header__icon{vertical-align:middle}.c-logo__link{font-size:19px;font-weight:900;transition:.4s}.c-logo__link:hover,.c-logo__link:active,.c-logo__link:focus{color:#00A0FF;text-decoration:none}.c-nav__item{font-size:16px}.c-nav__link{display:block;transition:.4s}.c-nav__link--current{color:#00A0FF}.home-template .c-nav__link--current:not(:hover){color:#323232}.c-nav__link:hover,.c-nav__link:active,.c-nav__link:focus{color:#00A0FF;text-decoration:none}.c-off-canvas-toggle{float:right;position:relative;top:8px;z-index:10;height:19px;width:25px;cursor:pointer}.c-off-canvas-toggle__icon{position:absolute;left:0;height:1px;width:25px;background:#323232;cursor:pointer}.c-off-canvas-toggle__icon:before,.c-off-canvas-toggle__icon:after{content:'';display:block;height:100%;background-color:inherit;transition:.4s}.c-off-canvas-toggle__icon:before{transform:translateY(16px)}.c-off-canvas-toggle__icon:after{transform:translateY(7px)}.c-off-canvas-toggle--close .c-off-canvas-toggle__icon{height:2px;background-color:transparent}.c-off-canvas-toggle--close .c-off-canvas-toggle__icon:before,.c-off-canvas-toggle--close .c-off-canvas-toggle__icon:after{position:relative;visibility:visible;background:#323232}.c-off-canvas-toggle--close .c-off-canvas-toggle__icon:before{top:11px;transform:rotate(-45deg)}.c-off-canvas-toggle--close .c-off-canvas-toggle__icon:after{top:9px;transform:rotate(45deg)}.c-off-canvas-toggle--close{top:0;float:none;display:block;margin-left:auto}html,body{overflow-x:hidden}.c-off-canvas-content{position:fixed;top:0;right:0;width:300px;height:100%;padding:24px 32px;background-color:#fff;transform:translate3d(300px, 0, 0)}.c-off-canvas-container{transform:translate3d(0, 0, 0);transition:transform .4s cubic-bezier(0.16, 0.68, 0.43, 0.99)}.c-off-canvas-container.is-active{transform:translate3d(-300px, 0, 0)}.c-off-canvas-container.is-active:after{position:fixed;top:0;right:0;bottom:0;left:0;content:'';background-color:rgba(0,0,0,0.2)}.c-tags a{display:inline-block;padding:4px 16px;margin:0 8px 4px 0;font-size:12px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";line-height:25px;background-color:#FAFAFA;transition:.4s}.c-tags a:hover,.c-tags a:active,.c-tags a:focus{text-decoration:none;background-color:#FAFAFA}@media (max-width: 39.99em){.c-tags{margin-bottom:22px}}.c-btn{display:inline-block;padding:8px 32px;cursor:pointer;transition:.4s;text-align:center;vertical-align:middle;white-space:nowrap;line-height:inherit;border:0;border-radius:0;color:#fff;background-color:#207cdf;font-size:16px}.c-btn:hover,.c-btn:active,.c-btn:focus{text-decoration:none;background-color:#238cf6}.c-btn--full{width:100%}.c-btn--small{padding:4px 16px}.c-post-card{display:block;padding:32px 0;word-break:break-word;border-bottom:1px solid #E9EFF3}.c-post-card--first{padding-top:0}.c-post-card--last{padding-bottom:0;border-bottom:0}.c-post-card__title{margin-bottom:10px;font-size:19px;font-weight:600;transition:.4s}@media (min-width: 40em){.c-post-card__title{font-size:28px}}.c-post-card__excerpt{margin-bottom:10px}.c-post-card__date{display:block;color:#2B5F72;direction:ltr;font-size:12px;font-weight:600;line-height:22px;text-transform:uppercase}.c-post-card:hover{color:#323232;text-decoration:none}.c-post-card:hover .c-post-card__title{color:#00A0FF}.c-pagination{text-transform:uppercase;transition:.4s}.c-pagination:hover,.c-pagination:active,.c-pagination:focus{color:#00A0FF;text-decoration:none}.c-pagination__text{position:relative;font-size:14px;letter-spacing:2px}.c-pagination__text--prev{left:-16px}.c-pagination__text--next{right:-16px}.c-pagination__icon{vertical-align:text-top}.c-pagination__icon--prev{left:-8px}.c-pagination__icon--next{right:-8px}.c-post{margin:0 auto;max-width:740px}.c-post__title{font-size:24px;margin-bottom:16px}@media (min-width: 40em){.c-post__title{font-size:28px}}.c-post__date{position:relative;padding-top:16px;display:block;text-align:center;margin-bottom:16px;font-size:14px;font-weight:600;line-height:22px;color:#2B5F72}.c-post__date:after{position:absolute;content:'';top:0;left:50%;height:1px;width:64px;background:#FAFAFA;transform:translateX(-50%)}.c-post__image{margin:0 auto 16px}.c-content a:not(.c-btn){text-decoration:underline;text-decoration-skip:ink}.c-content a:not(.c-btn):hover,.c-content a:not(.c-btn):active,.c-content a:not(.c-btn):focus{color:#00A0FF}.twitter-tweet,.fluid-width-video-wrapper{margin-bottom:16px !important}.c-social-nav__item{display:inline-block}.c-social-nav__icon{fill:#323232;vertical-align:middle;transition:.4s}.c-social-nav__icon:hover,.c-social-nav__icon:active,.c-social-nav__icon:focus{fill:#00A0FF}.c-footer{padding:32px 0;background-color:#FAFAFA}.u-hidden{display:none}.u-hidden-visually{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.u-font-medium{font-size:16px;line-height:25px}.u-font-small{font-size:14px;line-height:22px}.u-font-tiny{font-size:12px;line-height:19px}.u-text-left{text-align:left}.u-text-right{text-align:right}.u-text-center{text-align:center}.u-text-justify{text-align:justify}.u-inline{display:inline}.u-block{display:block}.u-inline-block{display:inline-block}.u-left{float:left}.u-right{float:right}.u-clearfix:after{content:'';display:table;clear:both}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Google Analytics Code -->
+
+  <div class='js-off-canvas-container c-off-canvas-container'>
+    <header class='c-header'>
+
+  <div class='o-grid'>
+    <div class='o-grid__col o-grid__col--full'>
+      <div class='c-header__inner'>
+
+        <div class='o-grid'>
+          <div class='o-grid__col o-grid__col--3-4-s'>
+            <div class='c-logo u-text-left'>
+              <a class='c-logo__link' href='/'>Tuan</a>
+            </div>
+          </div>
+
+          <div class='o-grid__col o-grid__col--1-4-s'>
+            <label class='js-off-canvas-toggle c-off-canvas-toggle' aria-label='Toggle navigation'>
+              <span class='c-off-canvas-toggle__icon'></span>
+            </label>
+          </div>
+
+          <div class='o-grid__col o-grid__col--1-4-s'>
+            <div class='c-off-canvas-content'>
+              <label class='js-off-canvas-toggle c-off-canvas-toggle c-off-canvas-toggle--close'>
+                <span class='c-off-canvas-toggle__icon'></span>
+              </label>
+
+              <ul class='c-nav o-plain-list '>
+                
+  
+
+  
+    
+      <li class='c-nav__item' role='presentation'>
+        <a class='c-nav__link' href='/about.html'>About</a>
+      </li>
+    
+
+  
+
+  
+    
+
+  
+
+  
+    
+
+  
+
+  
+    
+      <li class='c-nav__item' role='presentation'>
+        <a class='c-nav__link' href='/interesting-articles-to-read.html'>Interesting Articles To Read</a>
+      </li>
+    
+
+  
+
+  
+    
+
+  
+
+  
+    
+
+  
+
+  
+    
+
+  
+
+  
+    
+
+  
+
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</header>
+
+    
+
+
+
+<div class='o-wrapper'>
+  <div class='o-grid'>
+    <div class='o-grid__col'>
+      <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
+
+        <h1 class='c-post__title u-text-center'>Salesforce Lightning Component Search List</h1>
+
+        <time class='c-post__date' datetime='2017-09-07T00:00:00+10:00' itemprop='datePublished'>07 Sep 2017</time>
+
+        <div class='c-content' itemprop='articleBody'>
+          
+
+          <p>This step by step guide is purely for personal learning and is based off another tutorial. The steps will be mostly the same, some copy pasta here and there, along with syntax and variable changes.</p>
+
+<p>The original tutorial can be found here <a href="http://developerforce.github.io/lightning-components-tutorial/setup-environment.html">Lightning Components Tutorial</a>.</p>
+
+<h1 id="part-1---creating-the-consignmentlistcontroller-class">Part 1 - Creating the ConsignmentListController Class</h1>
+
+<p>Create a controller in Apex that will be primarly used to retrieve the data by using SOQL(Salesforce Object Query Language).</p>
+
+<ol>
+  <li>
+    <ul>
+      <li><strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Apex Class</strong>, specify <code class="highlighter-rouge">ConsignmentListController</code> as the class name and click OK.
+or</li>
+      <li>In PHPStorm (with JedIDE), create a class in <code class="highlighter-rouge">classes</code> called <code class="highlighter-rouge">ConsignmentListController</code>.</li>
+    </ul>
+  </li>
+  <li>Implement the class as follows:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">with</span> <span class="n">sharing</span> <span class="kd">class</span> <span class="nc">ConsignmentListController</span> <span class="o">{</span>
+
+    <span class="nd">@AuraEnabled</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">List</span><span class="o">&lt;</span><span class="n">Consignment__c</span><span class="o">&gt;</span> <span class="nf">findAll</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">[</span><span class="no">SELECT</span> <span class="nc">Id</span><span class="o">,</span> <span class="n">Name__c</span><span class="o">,</span> <span class="n">Phone__c</span> <span class="no">FROM</span> <span class="n">Consignment__c</span> <span class="no">LIMIT</span> <span class="mi">50</span><span class="o">];</span>
+    <span class="o">}</span>
+
+    <span class="nd">@AuraEnabled</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Contact</span><span class="o">&gt;</span> <span class="nf">findByName</span><span class="o">(</span><span class="nc">String</span> <span class="n">searchKey</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="sc">'%'</span> <span class="o">+</span> <span class="n">searchKey</span> <span class="o">+</span> <span class="sc">'%'</span><span class="o">;</span>
+
+        <span class="k">return</span> <span class="o">[</span>
+            <span class="no">SELECT</span> <span class="nc">Id</span><span class="o">,</span> <span class="n">Name__c</span><span class="o">,</span> <span class="n">Phone__c</span>
+            <span class="no">FROM</span> <span class="n">Consignment__c</span>
+            <span class="no">WHERE</span> <span class="n">Name__c</span> <span class="no">LIKE</span> <span class="o">:</span><span class="n">name</span>
+            <span class="no">LIMIT</span> <span class="mi">50</span>
+        <span class="o">];</span>
+    <span class="o">}</span>
+
+    <span class="nd">@AuraEnabled</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Contact</span> <span class="nf">findById</span><span class="o">(</span><span class="nc">String</span> <span class="n">consignmentId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">[</span>
+            <span class="no">SELECT</span> <span class="nc">Id</span><span class="o">,</span> <span class="n">Name__c</span><span class="o">,</span> <span class="n">Phone__c</span>
+            <span class="no">FROM</span> <span class="nc">Contact</span>
+            <span class="no">WHERE</span> <span class="n">Consignment_Id</span> <span class="o">=</span> <span class="o">:</span><span class="n">consignmentId</span>
+        <span class="o">];</span>
+    <span class="o">}</span>
+
+<span class="o">}</span></code></pre></figure>
+
+<h3 id="notes">Notes</h3>
+<ul>
+  <li>The @AuraEnabled method annotation makes a method available to Lightning applications</li>
+</ul>
+
+<h1 id="part-2---creating-the-quickconsignment-lightning-component">Part 2 - Creating the QuickConsignment Lightning Component</h1>
+
+<h2 id="step-1---create-the-component">Step 1 - Create the component</h2>
+
+<ol>
+  <li>
+    <p><strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Lightning Component</strong>.</p>
+  </li>
+  <li>
+    <p>Implement the component as follows:</p>
+  </li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;aura:component</span> <span class="na">implements=</span><span class="s">"force:appHostable"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;p&gt;</span>ContactList goes here<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;/aura:component&gt;</span></code></pre></figure>
+
+<h2 id="step-2---create-a-tab">Step 2 - Create a tab</h2>
+
+<ol>
+  <li><strong>Create</strong> &gt; <strong>Tabs</strong></li>
+</ol>
+
+<p>In the Lightning Component Tabs section, click New</p>
+
+<h1 id="part-3---creating-the-consignmentlist-component">Part 3 - Creating the ConsignmentList Component</h1>
+
+<h2 id="step-1---create-the-component-1">Step 1 - Create the component</h2>
+
+<ol>
+  <li>
+    <p><strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Lightning Component</strong>. Specify <code class="highlighter-rouge">ConsignmentList</code> as the bundle name and click OK.</p>
+  </li>
+  <li>
+    <p>Implement the component as follows:</p>
+  </li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;aura:component</span> <span class="na">controller=</span><span class="s">"ConsignmentListController"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;aura:attribute</span> <span class="na">name=</span><span class="s">"consignments"</span> <span class="na">type=</span><span class="s">"Consignment__c[]"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;aura:handler</span> <span class="na">name=</span><span class="s">"init"</span> <span class="na">value=</span><span class="s">"{!this}"</span> <span class="na">action=</span><span class="s">"{!c.doInit}"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"slds-table slds-table_bordered slds-table_cell-buffer"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tbody&gt;</span>
+            <span class="nt">&lt;aura:iteration</span> <span class="na">items=</span><span class="s">"{!v.consignments}"</span> <span class="na">var=</span><span class="s">"consignment"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;td</span> <span class="na">data-label=</span><span class="s">"Id"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"slds-truncate"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{! '#/sObject/' + consignment.Id + '/view'}"</span><span class="nt">&gt;</span>
+                                {!consignment.Id}
+                            <span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;td</span> <span class="na">data-label=</span><span class="s">"Order Reference"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"slds-truncate"</span><span class="nt">&gt;</span>
+                            {!consignment.Name__c}
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;td</span> <span class="na">data-label=</span><span class="s">"Order Reference"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"slds-truncate"</span><span class="nt">&gt;</span>
+                            {!consignment.Phone__c}
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+            <span class="nt">&lt;/aura:iteration&gt;</span>
+        <span class="nt">&lt;/tbody&gt;</span>
+    <span class="nt">&lt;/table&gt;</span>
+
+<span class="nt">&lt;/aura:component&gt;</span></code></pre></figure>
+
+<h3 id="notes-1">Notes</h3>
+<ul>
+  <li>The controller assigned to the component (first line of code) refers to the server-side controller created in the classes file.</li>
+</ul>
+
+<h2 id="step-2---implement-the-controller">Step 2 - Implement the Controller</h2>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">({</span>
+    <span class="na">doInit</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">component</span><span class="p">,</span> <span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">action</span> <span class="o">=</span> <span class="nx">component</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">c.findAll</span><span class="dl">"</span><span class="p">);</span>
+
+        <span class="nx">action</span><span class="p">.</span><span class="nx">setCallback</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">component</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">v.contacts</span><span class="dl">"</span><span class="p">,</span> <span class="nx">a</span><span class="p">.</span><span class="nx">getReturnValue</span><span class="p">());</span>
+        <span class="p">});</span>
+
+        <span class="nx">$A</span><span class="p">.</span><span class="nx">enqueueAction</span><span class="p">(</span><span class="nx">action</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">})</span></code></pre></figure>
+
+<h2 id="step-3---add-the-component-to-a-page">Step 3 - Add the component to a page</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;aura:component</span> <span class="na">implements=</span><span class="s">"force:appHostable"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;c:ConsignmentList/&gt;</span>
+
+<span class="nt">&lt;/aura:component&gt;</span></code></pre></figure>
+
+<h3 id="notes-2">Notes</h3>
+<ul>
+  <li>c. is the default namespace for Lightning components</li>
+</ul>
+
+<h1 id="part-4">Part 4</h1>
+
+<p>Now that we decided to build SearchBar and ContactList as two separate components, we need a way for ContactList to know when the search key changes so that it can retrieve and display the matching contacts. Lightning Events enable that kind of communication between components. In this step, you create a Lightning Event used by the SearchBar component to notify other components when the search key changes.</p>
+
+<h2 id="step-1---create-an-event">Step 1 - Create an event</h2>
+
+<ol>
+  <li>
+    <p><strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Lightning Event</strong></p>
+  </li>
+  <li>
+    <p>Implement the component as follows:</p>
+  </li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;aura:event</span> <span class="na">type=</span><span class="s">"APPLICATION"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;aura:attribute</span> <span class="na">name=</span><span class="s">"searchKey"</span> <span class="na">type=</span><span class="s">"String"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/aura:event&gt;</span></code></pre></figure>
+
+<h2 id="step-2---create-a-searchbar-component">Step 2 - Create a SearchBar component</h2>
+
+<ol>
+  <li>
+    <p>File &gt; New &gt; Lightning Component</p>
+  </li>
+  <li>
+    <p>Implement the component as follows:</p>
+  </li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;aura:component&gt;</span>
+
+    <span class="nt">&lt;input</span>
+        <span class="na">type=</span><span class="s">"text"</span>
+        <span class="na">class=</span><span class="s">"slds-input"</span>
+        <span class="na">placeholder=</span><span class="s">"search"</span>
+        <span class="na">onkeyup=</span><span class="s">"{!c.searchKeyChange}"</span>
+        <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/aura:component&gt;</span></code></pre></figure>
+
+<h2 id="step-3---implement-the-controller">Step 3 - Implement the Controller</h2>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">({</span>
+    <span class="na">searchKeyChange</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">component</span><span class="p">,</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">helper</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">myEvent</span> <span class="o">=</span> <span class="nx">$A</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">e.c:SearchKeyChange</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nx">myEvent</span><span class="p">.</span><span class="nx">setParams</span><span class="p">({</span><span class="dl">"</span><span class="s2">searchKey</span><span class="dl">"</span><span class="p">:</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">});</span>
+        <span class="nx">myEvent</span><span class="p">.</span><span class="nx">fire</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">})</span></code></pre></figure>
+
+<h3 id="notes-3">Notes</h3>
+<ul>
+  <li>Gets an instance of the <strong>SearchKeyChange</strong> event</li>
+</ul>
+
+<h2 id="step-4----listen-for-the-searchkeychange-event-in-consignmentlist">Step 4 -  Listen for the SearchKeyChange Event in ConsignmentList</h2>
+
+<ol>
+  <li>Go back to the ConsignmentList component.</li>
+  <li>Add the following to the existing code:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;aura:handler</span> <span class="na">event=</span><span class="s">"c:SearchKeyChange"</span> <span class="na">action=</span><span class="s">"{!c.searchKeyChange}"</span><span class="nt">/&gt;</span></code></pre></figure>
+
+<ol>
+  <li>In the controller, add the following below <code class="highlighter-rouge">onInit</code>:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">searchKeyChange</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">component</span><span class="p">,</span> <span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">searchKey</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">getParam</span><span class="p">(</span><span class="dl">"</span><span class="s2">searchKey</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">action</span> <span class="o">=</span> <span class="nx">component</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">c.findByName</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="nx">action</span><span class="p">.</span><span class="nx">setParams</span><span class="p">({</span>
+      <span class="dl">"</span><span class="s2">searchKey</span><span class="dl">"</span><span class="p">:</span> <span class="nx">searchKey</span>
+    <span class="p">});</span>
+
+    <span class="nx">action</span><span class="p">.</span><span class="nx">setCallback</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">component</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">v.contacts</span><span class="dl">"</span><span class="p">,</span> <span class="nx">a</span><span class="p">.</span><span class="nx">getReturnValue</span><span class="p">());</span>
+    <span class="p">});</span>
+
+    <span class="nx">$A</span><span class="p">.</span><span class="nx">enqueueAction</span><span class="p">(</span><span class="nx">action</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<h1 id="step-5---finish-off">Step 5 - Finish Off</h1>
+
+<ol>
+  <li>Add <code class="highlighter-rouge">&lt;c:SearchBar/&gt;</code> and <code class="highlighter-rouge">&lt;c:ContactList/&gt;</code> to any page to retreive and display the component.</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;aura:component</span> <span class="na">implements=</span><span class="s">"force:appHostable"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;c:SearchBar/&gt;</span>
+    <span class="nt">&lt;c:ContactList/&gt;</span>
+
+<span class="nt">&lt;/aura:component&gt;</span></code></pre></figure>
+
+        </div>
+
+        <div class='c-tags'>
+          
+        </div>
+
+        <hr>
+
+        <section class='disqus'>
+  <div id='disqus_thread'></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://tuanb.me//2017/09/07/salesforce-lightning-components-search-list/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      // Change `aspirethemes-demos` with your Disqus shortcode
+      s.src = '//tuanb-me.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript>
+</section>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+    <footer class='c-footer'>
+  <div class='o-grid'>
+    <div class='o-grid__col o-grid__col--full'>
+
+      <ul class='o-plain-list c-social-nav u-text-center'>
+        
+        
+        
+        
+        <li class='c-social-nav__item'>
+          <a href='https://github.com/ntuanb' target='_blank'>
+            <span class='c-social-nav__icon' data-icon='ei-sc-github' data-size='s'></span>
+          </a>
+        </li>
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</footer>
+  </div>
+
+  <script src="/js/jquery-3.1.1.min.js"> </script>
+  <script src="/js/evil-icons.min.js">   </script>
+  <script src="/js/jquery.fitvids.js">   </script>
+  <script src="/js/app.js">              </script>
+</body>
+
+</html>

@@ -10,9 +10,9 @@
       type="image/png" 
       href="/favicon.png">
       
-  <title>Tuan</title>
-  <meta name='description' content="">
-  <link rel='canonical' href="https://tuanb.me//tag/featured/">
+  <title>Continuous Deployment With Codeship</title>
+  <meta name='description' content="  Continuous delivery (CD) is a software softwaring approach in which teams produce software in short cycles, ensuring that the software can be reliably rele...">
+  <link rel='canonical' href="https://tuanb.me//tutorial/software/2016/12/24/continuous-deployment-with-codeship/">
   <link rel='alternate' type='application/rss+xml' title='Tuan' href="https://tuanb.me//feed.xml">
 
   <style>
@@ -117,59 +117,84 @@
 
 </header>
 
-    <div class='o-wrapper'>
+    
 
+
+  <meta itemprop='og:image' content='https://tuanb.me//assets/images/2016/codeship.jpg'>
+
+
+<div class='o-wrapper'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <h4>featured</h4>
+      <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
+
+        <h1 class='c-post__title u-text-center'>Continuous Deployment With Codeship</h1>
+
+        <time class='c-post__date' datetime='2016-12-24T00:00:00+11:00' itemprop='datePublished'>24 Dec 2016</time>
+
+        <div class='c-content' itemprop='articleBody'>
+          
+  <img src='/assets/images/2016/codeship.jpg' class='c-post__image' alt='Continuous Deployment With Codeship'>
+
+
+          <blockquote>
+  <p>Continuous delivery (CD) is a software softwaring approach in which teams produce 
+software in short cycles, ensuring that the software can be reliably released at any 
+time. It aims at building, testing, and releasing software faster and more frequently. - Wikipedia</p>
+</blockquote>
+
+<p>Using Codeship as our deployer, create a new project and attach a git 
+repository to the chosen project.</p>
+
+<p>After doing so, go into the <strong>General</strong> options, grab the public SSH key and paste it
+the server at <code class="highlighter-rouge">~/.ssh/authorized_keys</code>. Each project requires a seperate key attachment
+as they point to different folders on the server.</p>
+
+<p>In Codeship, select a custom script deployment and add the following line
+<code class="highlighter-rouge">scp -rp ~/clone/* root@123.456.789.0:/var/www/blog.tuanb.me/</code>. By doing so, we can now
+allow the entire repo to be cloned onto the server everytime we make a push to the 
+desired branch (preferably <code class="highlighter-rouge">master</code>) in the deployment pipeline.</p>
+
+<p>More commands can be added such as <code class="highlighter-rouge">composer install</code> or <code class="highlighter-rouge">apt-get update</code> but we must
+ssh in with <code class="highlighter-rouge">ssh root@123.123.123.123</code>, to allow more automation. Another option is to 
+create a script file and run that script file instead.</p>
+
+<p>After it is all set up, we can now deploy to the server after every push rather using a file
+manager to manually copy over files or ssh into the server to run git pull. Certain hooks
+can be added into the pipeline and tests can also be ran for each push to master.</p>
+
+<p>Codeship is one of many continous deployment applications out there.</p>
+
+        </div>
+
+        <div class='c-tags'>
+          
+        </div>
+
+        <hr>
+
+        <section class='disqus'>
+  <div id='disqus_thread'></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://tuanb.me//tutorial/software/2016/12/24/continuous-deployment-with-codeship/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      // Change `aspirethemes-demos` with your Disqus shortcode
+      s.src = '//tuanb-me.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript>
+</section>
+
+      </article>
     </div>
-  </div>
-
-  <div class='o-grid'>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/18/the-collectors-fallacy/' class='c-post-card  c-post-card--first  '>
-    <h3 class='c-post-card__title'>The Collector’s Fallacy</h3>
-
-    
-      <img src='/assets/images/2018/newspaper.jpg' class='c-post__image' alt='The Collector’s Fallacy'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      The web world is too large to consume and remember each and every detail. The best way to fully absorb it is to understand and comprehend the idea, rather than remembering what information was about....
-    </p>
-
-    <span class='c-post-card__date'>18 Mar 2018</span>
-  </a>
-
-</div>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/15/the-wrong-abstraction/' class='c-post-card   c-post-card--last '>
-    <h3 class='c-post-card__title'>The Wrong Abstraction</h3>
-
-    
-      <img src='/assets/images/2018/abstraction.jpg' class='c-post__image' alt='The Wrong Abstraction'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      If you find yourself passing parameters and adding conditional paths through shared code, the abstraction is incorrect. The Wrong Abstraction by Sandi Metz. Problem At Hand Solving the problem should be the main priority. Sometimes,...
-    </p>
-
-    <span class='c-post-card__date'>15 Mar 2018</span>
-  </a>
-
-</div>
-    
-  </div>
-
-  <div class='o-grid'>
-    
-
-
-
   </div>
 </div>
 

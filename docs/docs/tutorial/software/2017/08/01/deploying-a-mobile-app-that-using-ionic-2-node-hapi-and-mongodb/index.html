@@ -10,9 +10,9 @@
       type="image/png" 
       href="/favicon.png">
       
-  <title>Tuan</title>
-  <meta name='description' content="">
-  <link rel='canonical' href="https://tuanb.me//tag/featured/">
+  <title>Deploying a Mobile App That Uses Ionic 2, Node, Hapi and MongoDB</title>
+  <meta name='description' content="A very short tutorial to help me remember how to deploy one of the mobile applications I created in my own time for fun.">
+  <link rel='canonical' href="https://tuanb.me//tutorial/software/2017/08/01/deploying-a-mobile-app-that-using-ionic-2-node-hapi-and-mongodb/">
   <link rel='alternate' type='application/rss+xml' title='Tuan' href="https://tuanb.me//feed.xml">
 
   <style>
@@ -117,59 +117,126 @@
 
 </header>
 
-    <div class='o-wrapper'>
+    
 
+
+  <meta itemprop='og:image' content='https://tuanb.me//assets/images/2017/ionic.jpg'>
+
+
+<div class='o-wrapper'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <h4>featured</h4>
+      <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
+
+        <h1 class='c-post__title u-text-center'>Deploying a Mobile App That Uses Ionic 2, Node, Hapi and MongoDB</h1>
+
+        <time class='c-post__date' datetime='2017-08-01T00:00:00+10:00' itemprop='datePublished'>01 Aug 2017</time>
+
+        <div class='c-content' itemprop='articleBody'>
+          
+  <img src='/assets/images/2017/ionic.jpg' class='c-post__image' alt='Deploying a Mobile App That Uses Ionic 2, Node, Hapi and MongoDB'>
+
+
+          <p>A very short tutorial to help me remember how to deploy one of the mobile applications I created in my own time for fun.</p>
+
+<p>The app uses a variety of different libraries and tools, mostly for practice and learning purposes. I don’t plan on any more updates to this app unless required because it is a very simple idea that works as intended.</p>
+
+<p>The app is called Last Link because it displays what the last person searched using the search form. You can see the app on the Play Store using the following <a href="https://play.google.com/store/apps/details?id=com.ntuanb.lastlink">link</a>.</p>
+
+<p>Note, if the connection does not work, that might be because I haven’t set up SSL renewing properly yet.</p>
+
+<h1 id="angular">Angular</h1>
+
+<ol>
+  <li>Run the command <code class="highlighter-rouge">ionic-app-scripts build</code> to build the APK.</li>
+  <li>Deploy the APK to the Google Play Store.</li>
+</ol>
+
+<h1 id="node-and-hapi">Node and Hapi</h1>
+
+<p>Make sure your Hapi server points to the right chosen port.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">self</span><span class="p">.</span><span class="nx">server</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hapi</span><span class="p">.</span><span class="nx">Server</span><span class="p">();</span>
+<span class="nb">self</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">connection</span><span class="p">({</span>
+    <span class="na">port</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> 
+    <span class="na">host</span><span class="p">:</span> <span class="dl">'</span><span class="s1">localhost</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">routes</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">cors</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">origin</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">],</span>
+            <span class="na">additionalHeaders</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">key</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">cache-control</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">x-requested-with</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Access-Control-Allow-Origin</span><span class="dl">'</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Make sure that your MongoDB connection is set to the right internal url.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">mongoose</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="dl">'</span><span class="s1">mongodb://localhost/lastLink</span><span class="dl">'</span><span class="p">);</span></code></pre></figure>
+
+<ol>
+  <li>Install Package Manager 2 with the following cmd <code class="highlighter-rouge">sudo npm install pm2 -g</code>.</li>
+  <li>Run your application with the following cmd <code class="highlighter-rouge">sudo pm2 start /var/www/index.js</code>.</li>
+  <li>Check you app is in a healthy state with <code class="highlighter-rouge">sudo pm2 l</code>.</li>
+</ol>
+
+<h1 id="mongodb">MongoDB</h1>
+
+<ol>
+  <li>Install Mongod as a service with the following cmd <code class="highlighter-rouge">sudo apt-get install -y mongodb-org</code>.</li>
+  <li>Start Mongod with <code class="highlighter-rouge">sudo service mongod start</code>.</li>
+</ol>
+
+<h1 id="finally">Finally</h1>
+<p>Setup your Nginx install to use a proxy pass configuration that points to the point that we are using, in this case port <code class="highlighter-rouge">3000</code> and include any relavent SSL configurations.</p>
+
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">server_name</span> <span class="s">...</span>
+
+<span class="s">location</span> <span class="n">/</span> <span class="p">{</span>
+    <span class="kn">proxy_pass</span> <span class="s">http://localhost:3000</span><span class="p">;</span>
+    <span class="kn">proxy_redirect</span> <span class="no">off</span><span class="p">;</span>
+    <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$http_host</span><span class="p">;</span>
+    <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+    <span class="kn">proxy_set_header</span> <span class="s">X-NginX-Proxy</span> <span class="s">true</span><span class="p">;</span>
+    <span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">...</span></code></pre></figure>
+
+<p>Restart your server <code class="highlighter-rouge">sudo service nginx restart</code> and test your application’s api endpoints via <code class="highlighter-rouge">curl localhost:3000</code>.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>My plan was to add in <code class="highlighter-rouge">[Fastlane](https://fastlane.tools/)</code> at some point.</p>
+
+        </div>
+
+        <div class='c-tags'>
+          
+        </div>
+
+        <hr>
+
+        <section class='disqus'>
+  <div id='disqus_thread'></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://tuanb.me//tutorial/software/2017/08/01/deploying-a-mobile-app-that-using-ionic-2-node-hapi-and-mongodb/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      // Change `aspirethemes-demos` with your Disqus shortcode
+      s.src = '//tuanb-me.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript>
+</section>
+
+      </article>
     </div>
-  </div>
-
-  <div class='o-grid'>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/18/the-collectors-fallacy/' class='c-post-card  c-post-card--first  '>
-    <h3 class='c-post-card__title'>The Collector’s Fallacy</h3>
-
-    
-      <img src='/assets/images/2018/newspaper.jpg' class='c-post__image' alt='The Collector’s Fallacy'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      The web world is too large to consume and remember each and every detail. The best way to fully absorb it is to understand and comprehend the idea, rather than remembering what information was about....
-    </p>
-
-    <span class='c-post-card__date'>18 Mar 2018</span>
-  </a>
-
-</div>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/15/the-wrong-abstraction/' class='c-post-card   c-post-card--last '>
-    <h3 class='c-post-card__title'>The Wrong Abstraction</h3>
-
-    
-      <img src='/assets/images/2018/abstraction.jpg' class='c-post__image' alt='The Wrong Abstraction'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      If you find yourself passing parameters and adding conditional paths through shared code, the abstraction is incorrect. The Wrong Abstraction by Sandi Metz. Problem At Hand Solving the problem should be the main priority. Sometimes,...
-    </p>
-
-    <span class='c-post-card__date'>15 Mar 2018</span>
-  </a>
-
-</div>
-    
-  </div>
-
-  <div class='o-grid'>
-    
-
-
-
   </div>
 </div>
 

@@ -10,9 +10,9 @@
       type="image/png" 
       href="/favicon.png">
       
-  <title>Tuan</title>
-  <meta name='description' content="">
-  <link rel='canonical' href="https://tuanb.me//tag/featured/">
+  <title>Useful git features</title>
+  <meta name='description' content="Useful git features that may help the flow while programming and working in a team.">
+  <link rel='canonical' href="https://tuanb.me//tutorial/2020/04/14/useful-git-features/">
   <link rel='alternate' type='application/rss+xml' title='Tuan' href="https://tuanb.me//feed.xml">
 
   <style>
@@ -117,59 +117,110 @@
 
 </header>
 
-    <div class='o-wrapper'>
+    
 
+
+  <meta itemprop='og:image' content='https://tuanb.me//assets/images/2020/computer.jpeg'>
+
+
+<div class='o-wrapper'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <h4>featured</h4>
+      <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
+
+        <h1 class='c-post__title u-text-center'>Useful git features</h1>
+
+        <time class='c-post__date' datetime='2020-04-14T00:00:00+10:00' itemprop='datePublished'>14 Apr 2020</time>
+
+        <div class='c-content' itemprop='articleBody'>
+          
+  <img src='/assets/images/2020/computer.jpeg' class='c-post__image' alt='Useful git features'>
+
+
+          <p>Useful git features that may help the flow while programming and working in a team.</p>
+
+<h3 id="stashing-unfinished-changes">Stashing unfinished changes</h3>
+
+<p>I use <code class="highlighter-rouge">git stash</code> quite regularly especially when there is a change in priority or urgent changes is required.</p>
+
+<p><code class="highlighter-rouge">git stash --include-untracked</code> allows us to save new files that have been created that is not apart of the project yet.</p>
+
+<p>This is mostly used when I am experimenting changes and not ready to make a commit without losing the work.</p>
+
+<p><code class="highlighter-rouge">git stash apply</code> is used more often over <code class="highlighter-rouge">git stash pop</code> because it does not remove the stash. This is used in the case I forget and have to remove the changes again.</p>
+
+<h3 id="git-commit-with-description-and-template">Git commit with description and template</h3>
+
+<p>I use <code class="highlighter-rouge">git commit</code> over <code class="highlighter-rouge">git commit -m 'Info..'</code> because it allows us to add a description to the commit.</p>
+
+<p>Additionally, a template can be used to set a standard on what is required when performming a change.</p>
+
+<h3 id="git-hooks">Git hooks</h3>
+
+<p>Forcing a command to run when we run <code class="highlighter-rouge">git push</code> can be done via git hooks.</p>
+
+<p>The way this works is by creating a file in the <code class="highlighter-rouge">.git/hooks/</code> folder and inserting a chosen command to run before the push to remote occurs.</p>
+
+<p>More information on what is possible can be found here <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks">https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks</a>.</p>
+
+<p>An example can be done for this specific project. Because we use Jekyll and Github Pages, we need to rebuild the project each time we push to Github.</p>
+
+<p>We can add in a <code class="highlighter-rouge">pre-commit</code> hook which runs <code class="highlighter-rouge">jekyll build</code> and <code class="highlighter-rouge">rm -r docs &amp;&amp; mv _site docs</code> to refresh the folder.</p>
+
+<h3 id="git-flow">Git Flow</h3>
+
+<p>Git Flow is a workflow designed to manage large projects with release cycles. Its useful as it creates a consistent structure/framework for the team to work with, without too many obstacles.</p>
+
+<p>It builds on the feature branch workflow, extending it for releases that occur regularly.</p>
+
+<p>An example to start and finish a release:</p>
+<ul>
+  <li><code class="highlighter-rouge">git flow release start 1.0.0</code></li>
+  <li><code class="highlighter-rouge">git flow release finish 1.0.0</code></li>
+</ul>
+
+<p>An example to start and finish a feature branch:</p>
+<ul>
+  <li><code class="highlighter-rouge">git flow feature start fix-new-bug</code></li>
+  <li><code class="highlighter-rouge">git flow feature finish fix-new-bug</code></li>
+</ul>
+
+<p>More information can be found here <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow</a>.</p>
+
+<h3 id="removing-untracked-files-and-folders">Removing untracked files and folders</h3>
+
+<p><code class="highlighter-rouge">git clean -fd</code> removes any local project files that are new and have not been commited to the project. This command is useful to run along with <code class="highlighter-rouge">git stash</code> when switching priorities.</p>
+
+        </div>
+
+        <div class='c-tags'>
+          
+        </div>
+
+        <hr>
+
+        <section class='disqus'>
+  <div id='disqus_thread'></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://tuanb.me//tutorial/2020/04/14/useful-git-features/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      // Change `aspirethemes-demos` with your Disqus shortcode
+      s.src = '//tuanb-me.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript>
+</section>
+
+      </article>
     </div>
-  </div>
-
-  <div class='o-grid'>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/18/the-collectors-fallacy/' class='c-post-card  c-post-card--first  '>
-    <h3 class='c-post-card__title'>The Collector’s Fallacy</h3>
-
-    
-      <img src='/assets/images/2018/newspaper.jpg' class='c-post__image' alt='The Collector’s Fallacy'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      The web world is too large to consume and remember each and every detail. The best way to fully absorb it is to understand and comprehend the idea, rather than remembering what information was about....
-    </p>
-
-    <span class='c-post-card__date'>18 Mar 2018</span>
-  </a>
-
-</div>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/15/the-wrong-abstraction/' class='c-post-card   c-post-card--last '>
-    <h3 class='c-post-card__title'>The Wrong Abstraction</h3>
-
-    
-      <img src='/assets/images/2018/abstraction.jpg' class='c-post__image' alt='The Wrong Abstraction'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      If you find yourself passing parameters and adding conditional paths through shared code, the abstraction is incorrect. The Wrong Abstraction by Sandi Metz. Problem At Hand Solving the problem should be the main priority. Sometimes,...
-    </p>
-
-    <span class='c-post-card__date'>15 Mar 2018</span>
-  </a>
-
-</div>
-    
-  </div>
-
-  <div class='o-grid'>
-    
-
-
-
   </div>
 </div>
 

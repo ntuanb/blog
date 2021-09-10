@@ -10,9 +10,9 @@
       type="image/png" 
       href="/favicon.png">
       
-  <title>Tuan</title>
-  <meta name='description' content="">
-  <link rel='canonical' href="https://tuanb.me//tag/featured/">
+  <title>Compiling For Testing and Submission of the Ionic App for Apple</title>
+  <meta name='description' content="Using the CLI, run the command ionic add platform ios to add Xcode files to the project.">
+  <link rel='canonical' href="https://tuanb.me//2015/12/30/compiling-and-testing-ionic-app-on-apple/">
   <link rel='alternate' type='application/rss+xml' title='Tuan' href="https://tuanb.me//feed.xml">
 
   <style>
@@ -117,59 +117,101 @@
 
 </header>
 
-    <div class='o-wrapper'>
+    
 
+
+
+<div class='o-wrapper'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <h4>featured</h4>
+      <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
+
+        <h1 class='c-post__title u-text-center'>Compiling For Testing and Submission of the Ionic App for Apple</h1>
+
+        <time class='c-post__date' datetime='2015-12-30T00:00:00+11:00' itemprop='datePublished'>30 Dec 2015</time>
+
+        <div class='c-content' itemprop='articleBody'>
+          
+
+          <p>Using the CLI, run the command <code class="highlighter-rouge">ionic add platform ios</code> to add Xcode files to the project.</p>
+
+<p>Using the Finder, open the <code class="highlighter-rouge">PROJECTNAME.xcodeproj</code> located in <code class="highlighter-rouge">{PATH_TO_PROJECT}/platforms/ios</code>.</p>
+
+<p>Once in Xcode, go to <code class="highlighter-rouge">Product &gt; Compile</code> and from there you can compile for testing.</p>
+
+<h3 id="new-project">New Project</h3>
+
+<ul>
+  <li>NOTE: make sure your account is the highest role if you run into problems in creating certain parts.</li>
+  <li>
+    <p>NOTE: connect an Apple Mobile during the entire process or once you have registered it to XCode Organizer.</p>
+  </li>
+  <li>Using Apple Developer and ITunes Connect accounts, create your projects. (App IDS for Apple Developer and My Apps for ITunes Connect.)</li>
+  <li>Create a certificate for the development and production releases.</li>
+  <li>Create development and distribution provisioning profiles for development and production releases.</li>
+  <li><code class="highlighter-rouge">ionic prepare ios</code> to compile your project <code class="highlighter-rouge">config.xml</code></li>
+  <li>In <code class="highlighter-rouge">XCode</code> go to <code class="highlighter-rouge">XCode &gt; Perferences</code> and add your account.</li>
+  <li>in <code class="highlighter-rouge">XCode</code> go to <code class="highlighter-rouge">Product &gt; Archive</code> to create an archive.</li>
+  <li>In <code class="highlighter-rouge">XCode</code> go to <code class="highlighter-rouge">Window &gt; Organizer</code> and click on <code class="highlighter-rouge">Archives</code>, and complete both <code class="highlighter-rouge">Validate</code> and <code class="highlighter-rouge">Distribute</code>.</li>
+  <li>NOTE: if problems occurr, you either don’t have enough privileges, did not create your <code class="highlighter-rouge">distribution</code> provisioning profile or you set an incorrect App ID in your <code class="highlighter-rouge">config.xml</code></li>
+  <li>
+    <p>Once done, go into ITunes Connect, complete all the required fields and submit for review.</p>
+  </li>
+  <li>Clone the project</li>
+  <li>Pull the latest <code class="highlighter-rouge">develop</code> branch to get the latest files.</li>
+  <li>Install all the required packages using <code class="highlighter-rouge">npm install</code> and <code class="highlighter-rouge">bower install</code>. (NOTE: There might be some packages that are manually installed atm.)</li>
+  <li>Make sure the <code class="highlighter-rouge">config.xml</code> file is correct and contains the correct name for the APP ID. (NOTE: Do not add the random ID into the name, it will do it automatically. For this project, it was added it by mistake, so the ID is always be 4GAJFJCHB4.4GAJFJCHB4.com as the full string.)</li>
+  <li><code class="highlighter-rouge">ionic prepare ios</code> to compile the ID</li>
+</ul>
+
+<h3 id="existing-project">Existing Project</h3>
+
+<ul>
+  <li>Pull the latest <code class="highlighter-rouge">develop</code> branch to get the latest files.</li>
+  <li>Install all the required packages using <code class="highlighter-rouge">npm install</code> and <code class="highlighter-rouge">bower install</code>. (NOTE: There might be some packages that are manually installed atm.)</li>
+  <li>Make sure the <code class="highlighter-rouge">config.xml</code> file is correct and contains the correct name for the APP ID. (NOTE: Do not add the random ID into the name, it will do it automatically. For this project, it was added it by mistake, so the ID is always be 4GAJFJCHB4.4GAJFJCHB4.com as the full string.)</li>
+  <li><code class="highlighter-rouge">ionic prepare ios</code> to compile the ID</li>
+  <li>Using the Finder, open the <code class="highlighter-rouge">PROJECTNAME.xcodeproj</code> located in <code class="highlighter-rouge">{PATH_TO_PROJECT}/platfroms/ios</code>.</li>
+  <li>Once in XCode, go <code class="highlighter-rouge">Product &gt; Archive</code> to compile the project using correct credentials.</li>
+  <li>Next, go <code class="highlighter-rouge">Window &gt; Organizer</code> and go <code class="highlighter-rouge">Archives</code> to view your project so it can be Validated or Distributed.</li>
+</ul>
+
+<p>Manaul Compile</p>
+
+<ul>
+  <li><code class="highlighter-rouge">xcodebuild</code></li>
+</ul>
+
+        </div>
+
+        <div class='c-tags'>
+          
+        </div>
+
+        <hr>
+
+        <section class='disqus'>
+  <div id='disqus_thread'></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://tuanb.me//2015/12/30/compiling-and-testing-ionic-app-on-apple/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      // Change `aspirethemes-demos` with your Disqus shortcode
+      s.src = '//tuanb-me.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript>
+</section>
+
+      </article>
     </div>
-  </div>
-
-  <div class='o-grid'>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/18/the-collectors-fallacy/' class='c-post-card  c-post-card--first  '>
-    <h3 class='c-post-card__title'>The Collector’s Fallacy</h3>
-
-    
-      <img src='/assets/images/2018/newspaper.jpg' class='c-post__image' alt='The Collector’s Fallacy'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      The web world is too large to consume and remember each and every detail. The best way to fully absorb it is to understand and comprehend the idea, rather than remembering what information was about....
-    </p>
-
-    <span class='c-post-card__date'>18 Mar 2018</span>
-  </a>
-
-</div>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/15/the-wrong-abstraction/' class='c-post-card   c-post-card--last '>
-    <h3 class='c-post-card__title'>The Wrong Abstraction</h3>
-
-    
-      <img src='/assets/images/2018/abstraction.jpg' class='c-post__image' alt='The Wrong Abstraction'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      If you find yourself passing parameters and adding conditional paths through shared code, the abstraction is incorrect. The Wrong Abstraction by Sandi Metz. Problem At Hand Solving the problem should be the main priority. Sometimes,...
-    </p>
-
-    <span class='c-post-card__date'>15 Mar 2018</span>
-  </a>
-
-</div>
-    
-  </div>
-
-  <div class='o-grid'>
-    
-
-
-
   </div>
 </div>
 

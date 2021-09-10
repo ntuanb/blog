@@ -10,9 +10,9 @@
       type="image/png" 
       href="/favicon.png">
       
-  <title>Tuan</title>
-  <meta name='description' content="">
-  <link rel='canonical' href="https://tuanb.me//tag/featured/">
+  <title>Quick Script To Rename Files</title>
+  <meta name='description' content="For this particular function, I wanted quick results and didn’t care about doing it ‘properly’.">
+  <link rel='canonical' href="https://tuanb.me//tutorial/software/2018/05/07/quick-script-to-rename-files/">
   <link rel='alternate' type='application/rss+xml' title='Tuan' href="https://tuanb.me//feed.xml">
 
   <style>
@@ -117,59 +117,84 @@
 
 </header>
 
-    <div class='o-wrapper'>
+    
 
+
+  <meta itemprop='og:image' content='https://tuanb.me//assets/images/2018/loop.jpg'>
+
+
+<div class='o-wrapper'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <h4>featured</h4>
+      <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
+
+        <h1 class='c-post__title u-text-center'>Quick Script To Rename Files</h1>
+
+        <time class='c-post__date' datetime='2018-05-07T00:00:00+10:00' itemprop='datePublished'>07 May 2018</time>
+
+        <div class='c-content' itemprop='articleBody'>
+          
+  <img src='/assets/images/2018/loop.jpg' class='c-post__image' alt='Quick Script To Rename Files'>
+
+
+          <p>For this particular function, I wanted quick results and didn’t care about doing it ‘properly’.</p>
+
+<p>I wanted to loop through a list of directories to rename all pictures with there respective index in the folder and figured there were 2 ways that I would do this, by using either Node or Bash.</p>
+
+<p>I figured that since I was comfortable using Node and would have no trouble in producing a solution, bash would be the preferred method here.</p>
+
+<p>Result from the first try:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash</span>
+
+<span class="nv">galleries</span><span class="o">=</span>../static/img/gallery
+
+find <span class="nv">$galleries</span> <span class="nt">-mindepth</span> 1 <span class="nt">-maxdepth</span> 1 <span class="nt">-type</span> d | 
+    <span class="nb">cat</span> <span class="nt">-n</span> |
+        <span class="k">while </span><span class="nb">read </span>n gallery<span class="p">;</span>
+            <span class="k">do </span>find <span class="s2">"</span><span class="nv">$gallery</span><span class="s2">"</span> <span class="nt">-mindepth</span> 1 <span class="nt">-maxdepth</span> 1 <span class="nt">-not</span> <span class="nt">-type</span> d |
+                <span class="nb">cat</span> <span class="nt">-n</span> |
+                <span class="k">while </span><span class="nb">read </span>n image<span class="p">;</span> 
+                    <span class="k">do </span><span class="nb">mv</span> <span class="s2">"</span><span class="nv">$image</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$gallery</span><span class="s2">/</span><span class="nv">$n</span><span class="s2">.jpg"</span> <span class="p">;</span>
+                <span class="k">done
+        done</span></code></pre></figure>
+
+<p><code class="highlighter-rouge">mindepth</code> removes the <code class="highlighter-rouge">.</code> and <code class="highlighter-rouge">..</code> from appearing.</p>
+
+<p>Is there a better solution?</p>
+
+<p>For now, this solution works as it does exactly what I want so I am happy with the outcome.</p>
+
+        </div>
+
+        <div class='c-tags'>
+          
+        </div>
+
+        <hr>
+
+        <section class='disqus'>
+  <div id='disqus_thread'></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://tuanb.me//tutorial/software/2018/05/07/quick-script-to-rename-files/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      // Change `aspirethemes-demos` with your Disqus shortcode
+      s.src = '//tuanb-me.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript>
+</section>
+
+      </article>
     </div>
-  </div>
-
-  <div class='o-grid'>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/18/the-collectors-fallacy/' class='c-post-card  c-post-card--first  '>
-    <h3 class='c-post-card__title'>The Collector’s Fallacy</h3>
-
-    
-      <img src='/assets/images/2018/newspaper.jpg' class='c-post__image' alt='The Collector’s Fallacy'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      The web world is too large to consume and remember each and every detail. The best way to fully absorb it is to understand and comprehend the idea, rather than remembering what information was about....
-    </p>
-
-    <span class='c-post-card__date'>18 Mar 2018</span>
-  </a>
-
-</div>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/15/the-wrong-abstraction/' class='c-post-card   c-post-card--last '>
-    <h3 class='c-post-card__title'>The Wrong Abstraction</h3>
-
-    
-      <img src='/assets/images/2018/abstraction.jpg' class='c-post__image' alt='The Wrong Abstraction'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      If you find yourself passing parameters and adding conditional paths through shared code, the abstraction is incorrect. The Wrong Abstraction by Sandi Metz. Problem At Hand Solving the problem should be the main priority. Sometimes,...
-    </p>
-
-    <span class='c-post-card__date'>15 Mar 2018</span>
-  </a>
-
-</div>
-    
-  </div>
-
-  <div class='o-grid'>
-    
-
-
-
   </div>
 </div>
 

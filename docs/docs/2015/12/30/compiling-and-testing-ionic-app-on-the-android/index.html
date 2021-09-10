@@ -10,9 +10,9 @@
       type="image/png" 
       href="/favicon.png">
       
-  <title>Tuan</title>
-  <meta name='description' content="">
-  <link rel='canonical' href="https://tuanb.me//tag/featured/">
+  <title>Compiling Testing the Ionic App on the Android</title>
+  <meta name='description' content="To be able to compile the Ionic Application, Cordova, Android SDK and ADB must be installed. npm install -g cordova.">
+  <link rel='canonical' href="https://tuanb.me//2015/12/30/compiling-and-testing-ionic-app-on-the-android/">
   <link rel='alternate' type='application/rss+xml' title='Tuan' href="https://tuanb.me//feed.xml">
 
   <style>
@@ -117,59 +117,66 @@
 
 </header>
 
-    <div class='o-wrapper'>
+    
 
+
+
+<div class='o-wrapper'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <h4>featured</h4>
+      <article class='c-post' itemscope itemtype='http://schema.org/BlogPosting'>
+
+        <h1 class='c-post__title u-text-center'>Compiling Testing the Ionic App on the Android</h1>
+
+        <time class='c-post__date' datetime='2015-12-30T00:00:00+11:00' itemprop='datePublished'>30 Dec 2015</time>
+
+        <div class='c-content' itemprop='articleBody'>
+          
+
+          <p>To be able to compile the Ionic Application, Cordova, Android SDK and ADB must be installed. <code class="highlighter-rouge">npm install -g cordova</code>.</p>
+
+<p>Plug in the Android phone and turn on developer mode. Run the command <code class="highlighter-rouge">adb devices -l</code> to get the device’s ID.</p>
+
+<p>Next run, <code class="highlighter-rouge">cordova run android --target=YOUR_PHONE_ID</code> to compile the Ionic Application to an APK package.</p>
+
+<p>Once completed, the application should automatically run on the phone. To view any Problems that occur that you would usually view with the console and command <code class="highlighter-rouge">console.log</code>, use Chrome’s Device Inspection in Chrome with the link <code class="highlighter-rouge">chrome://inspect/#devices</code>. This should allow the device to view all applications currently running on the phone. Find the newly created app and from there, all logs can be seen. <code class="highlighter-rouge">chrome://flags</code> also has many other options that can be useful.</p>
+
+<h3 id="problems">Problems</h3>
+
+<p>If the build fails, run <code class="highlighter-rouge">ionic platform rm android</code> and <code class="highlighter-rouge">ionic platform add android</code> again. An error might occur because the app’s ID is incorrect.</p>
+
+<p>Another problem occurs because Ionic might need to be updated. In this case, run <code class="highlighter-rouge">npm uninstall ionic</code> and <code class="highlighter-rouge">npm install ionic</code> to re-install some of the packages.</p>
+
+        </div>
+
+        <div class='c-tags'>
+          
+        </div>
+
+        <hr>
+
+        <section class='disqus'>
+  <div id='disqus_thread'></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://tuanb.me//2015/12/30/compiling-and-testing-ionic-app-on-the-android/';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      // Change `aspirethemes-demos` with your Disqus shortcode
+      s.src = '//tuanb-me.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript>
+</section>
+
+      </article>
     </div>
-  </div>
-
-  <div class='o-grid'>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/18/the-collectors-fallacy/' class='c-post-card  c-post-card--first  '>
-    <h3 class='c-post-card__title'>The Collector’s Fallacy</h3>
-
-    
-      <img src='/assets/images/2018/newspaper.jpg' class='c-post__image' alt='The Collector’s Fallacy'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      The web world is too large to consume and remember each and every detail. The best way to fully absorb it is to understand and comprehend the idea, rather than remembering what information was about....
-    </p>
-
-    <span class='c-post-card__date'>18 Mar 2018</span>
-  </a>
-
-</div>
-    
-      <div class='o-grid__col'>
-
-  <a href='/motivation/software/2018/03/15/the-wrong-abstraction/' class='c-post-card   c-post-card--last '>
-    <h3 class='c-post-card__title'>The Wrong Abstraction</h3>
-
-    
-      <img src='/assets/images/2018/abstraction.jpg' class='c-post__image' alt='The Wrong Abstraction'>
-    
-
-    <p class='c-post-card__excerpt u-font-medium'>
-      If you find yourself passing parameters and adding conditional paths through shared code, the abstraction is incorrect. The Wrong Abstraction by Sandi Metz. Problem At Hand Solving the problem should be the main priority. Sometimes,...
-    </p>
-
-    <span class='c-post-card__date'>15 Mar 2018</span>
-  </a>
-
-</div>
-    
-  </div>
-
-  <div class='o-grid'>
-    
-
-
-
   </div>
 </div>
 
